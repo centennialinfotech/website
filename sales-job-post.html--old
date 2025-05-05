@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Job Descriptions Accordion
+    </title>
+    <link rel="stylesheet" href="sales-job-post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      h2.headertitle{  text-align: center;}
+      .rejection-container {
+       margin: 50px auto; border-radius: 5px; width: 49vw; }
+       .rejection-container button{ padding: 10px }
+      #rd{ position: relative; background: #ffffff; color: #000; padding: 15px;
+      margin: 10px; border-radius: 10px; width: 150px; height: 50px; font-size:
+      17px; display: flex; justify-content: center; align-items: center; flex-direction:
+      column; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); cursor: pointer; transition:
+      all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+     @media only screen and (max-width: 480px) {
+  .title-and-copy {
+   width: 100%;
+  }
+  .accordion-item{ margin: 0; width:100%; margin-bottom: 20px; }
+  .accordion{ width: calc(100% - 94px); font-size: 12px; padding-top: 13px;
+    padding-bottom: 10px; }
+  .copy-btn-title, .change-desc-btn {width: 21%; padding-top: 10px; padding-bottom: 10px;}
+}
+    </style>
+  </head>
+  
+  <body>
+    <div class="accordion-container">
+      <h2 class="headertitle">
+        Job Titles and Descriptions
+      </h2>
+      <div class="accordion-item">
+        <div class="title-and-copy">
+          <button class="accordion" onclick="toggleAccordion(this)">
+            Remote Customer Engagement Specialist &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click
+            to view description&nbsp;
+            <i class="fa-solid fa-arrow-down">
+            </i>
+          </button>
+          <button class="copy-btn-title" onclick="copyTitle('Remote Customer Engagement Specialist')">
+            Copy Title
+          </button>
+        </div>
+        <div class="panel">
+          <div class="desc-options">
+            <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+            onclick="copyDesc('desc4', this)">
+              Copy Desc
+            </button>
+          </div>
+          <div id="desc4">
+            <p contenteditable="false">
+              <strong>
+                Join a pioneering company that values creativity and excellence. This
+                remote role is perfect for both seasoned sales professionals and enthusiastic
+                newcomers. Experience flexibility and unleash your earning potential with
+                our dedicated support, all while building a rewarding career.
+              </strong>
+              <br/>
+              <br/>
+              <strong>
+                Key Responsibilities:
+              </strong>
+              <br/>
+              <ul>
+                <li>
+                  Collaborate with seasoned mentors and grow within a supportive team.
+                </li>
+                <li>
+                  Reach out to potential clients by phone to understand their needs.
+                </li>
+                <li>
+                  Schedule and conduct virtual consultations (via Zoom or phone) to discuss
+                  client requirements in detail.
+                </li>
+                <li>
+                  Develop customized insurance quotes tailored to individual needs.
+                </li>
+                <li>
+                  Deliver persuasive presentations to close sales and offer tailored solutions.
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                What We Offer:
+              </strong>
+              <br/>
+              <ul>
+                <li>
+                  Life insurance coverage
+                </li>
+                <li>
+                  Healthcare, dental, and vision options
+                </li>
+                <li>
+                  Performance-based bonuses
+                </li>
+                <li>
+                  Incentive trips for top performers
+                </li>
+               </ul>
+              <br/>
+              <strong>
+                This is a 1099 commission-based role.
+              </strong>
+            </p>
+            <br/>
+            <br/>
+            <p>
+              Ready to transform your sales career? Apply now and join a team dedicated
+              to your professional growth and success.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="title-and-copy">
+          <button class="accordion" onclick="toggleAccordion(this)">
+            Remote Sales Performance Analyst&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+            <i class="fa-solid fa-arrow-down">
+            </i>
+          </button>
+          <button class="copy-btn-title" onclick="copyTitle('Remote Sales Performance Analyst')">
+            Copy Title
+          </button>
+        </div>
+        <div class="panel">
+          <div class="desc-options">
+            <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+            onclick="copyDesc('desc12', this)">
+              Copy Desc
+            </button>
+          </div>
+          <div id="desc12">
+            <p contenteditable="false">
+              <strong>
+                Take the next step in your career with a forward-thinking company that
+                values growth and success. This remote role is perfect for both seasoned
+                sales professionals and those new to the industry. Benefit from outstanding
+                support and maximize your earning potential with us.
+              </strong>
+              <br/>
+              <br/>
+              <strong>
+                Key Responsibilities:
+              </strong>
+              <ul>
+                <li>
+                  Work closely with experienced mentors in a supportive team environment.
+                </li>
+                <li>
+                  Reach out to potential clients by phone to understand their insurance
+                  needs.
+                </li>
+                <li>
+                  Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                  discussions.
+                </li>
+                <li>
+                  Create personalized insurance quotes to meet individual client requirements.
+                </li>
+                <li>
+                  Present persuasive sales presentations to secure sales and provide customized
+                  solutions.
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                What We Offer:
+              </strong>
+              <br/>
+              <ul>
+                <li>
+                  Life insurance coverage
+                </li>
+                <li>
+                  Healthcare, dental, and vision options
+                </li>
+                <li>
+                  Performance-based bonuses
+                </li>
+                <li>
+                  Incentive trips for top performers
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                This is a 1099 commission-based role.
+              </strong>
+            </p>
+            <br/>
+            <br/>
+            <p>
+              Ready to transform your sales career? Apply now and join a team dedicated
+              to your professional growth and success.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="title-and-copy">
+          <button class="accordion" onclick="toggleAccordion(this)">
+            Digital Client Relations Manager&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+            <i class="fa-solid fa-arrow-down">
+            </i>
+          </button>
+          <button class="copy-btn-title" onclick="copyTitle(' Digital Client Relations Manager')">
+            Copy Title
+          </button>
+        </div>
+        <div class="panel">
+          <div class="desc-options">
+            <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+            onclick="copyDesc('desc7', this)">
+              Copy Desc
+            </button>
+          </div>
+          <div id="desc7">
+            <p contenteditable="false">
+              <strong>
+                Be part of an innovative company that champions growth and excellence.
+                This remote role offers the flexibility to experienced sales professionals
+                and motivated newcomers alike. Enjoy exceptional support and maximize your
+                earning potential in a fulfilling career path.
+              </strong>
+              <br/>
+              <br/>
+              <strong>
+                Key Responsibilities:
+              </strong>
+              <ul>
+                <li>
+                  Collaborate with seasoned mentors and excel in a supportive team setting.
+                </li>
+                <li>
+                  Initiate client interactions via phone to understand their needs.
+                </li>
+                <li>
+                  Schedule and lead virtual consultations (via Zoom or phone) for comprehensive
+                  discussions.
+                </li>
+                <li>
+                  Design personalized insurance quotes to meet each client's needs.
+                </li>
+                <li>
+                  Present effective solutions to close sales and provide customized insurance
+                  plans.
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                What We Offer:
+              </strong>
+              <br/>
+              <ul>
+                <li>
+                  Life insurance coverage
+                </li>
+                <li>
+                  Healthcare, dental, and vision options
+                </li>
+                <li>
+                  Performance-based bonuses
+                </li>
+                <li>
+                  Incentive trips for top performers
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                This is a 1099 commission-based role.
+              </strong>
+            </p>
+            <br/>
+            <br/>
+            <p>
+              Ready to transform your sales career? Apply now and join a team dedicated
+              to your professional growth and success.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="title-and-copy">
+          <button class="accordion" onclick="toggleAccordion(this)">
+            Remote Sales Operations Specialist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+            <i class="fa-solid fa-arrow-down">
+            </i>
+          </button>
+          <button class="copy-btn-title" onclick="copyTitle('Remote Sales Operations Specialist')">
+            Copy Title
+          </button>
+        </div>
+        <div class="panel">
+          <div class="desc-options">
+            <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+            onclick="copyDesc('desc3', this)">
+              Copy Desc
+            </button>
+          </div>
+          <div id="desc3">
+            <p contenteditable="false">
+              <strong>
+                Join a forward-thinking company that champions excellence. This remote
+                role is perfect for both experienced sales professionals and ambitious
+                newcomers. Enjoy flexibility, exceptional support, and the opportunity
+                to boost your career.
+              </strong>
+              <br/>
+              <br/>
+              <strong>
+                Key Responsibilities:
+              </strong>
+              <ul>
+                <li>
+                  Engage with expert mentors and thrive in a supportive team environment.
+                </li>
+                <li>
+                  Connect with prospective clients via phone to understand their financial
+                  needs.
+                </li>
+                <li>
+                  Organize and conduct virtual consultations (via Zoom or phone) for comprehensive
+                  discussions.
+                </li>
+                <li>
+                  Craft personalized insurance quotes tailored to individual client needs.
+                </li>
+                <li>
+                  Execute persuasive presentations to close sales and offer tailored solutions.
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                What We Offer:
+              </strong>
+              <br/>
+              <ul>
+                <li>
+                  Life insurance coverage
+                </li>
+                <li>
+                  Healthcare, dental, and vision options
+                </li>
+                <li>
+                  Performance-based bonuses
+                </li>
+                <li>
+                  Incentive trips for top performers
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                This is a 1099 commission-based role.
+              </strong>
+            </p>
+            <br/>
+            <br/>
+            <p>
+              Ready to transform your sales career? Apply now and join a team dedicated
+              to your professional growth and success.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- //////////////////////////////// -->
+      <!-- Accordion Item -->
+      <div class="accordion-item">
+        <div class="title-and-copy">
+          <button class="accordion" onclick="toggleAccordion(this)">
+            Remote Business Growth Strategist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+            <i class="fa-solid fa-arrow-down">
+            </i>
+          </button>
+          <button class="copy-btn-title" onclick="copyTitle('Remote Business Growth Strategist')">
+            Copy Title
+          </button>
+        </div>
+        <div class="panel">
+          <div class="desc-options">
+            <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+            onclick="copyDesc('desc1', this)">
+              Copy Desc
+            </button>
+          </div>
+          <div id="desc1">
+            <p contenteditable="false">
+              <strong>
+                Join a dynamic company that values innovation and excellence. Whether
+                you are an experienced sales professional or a newcomer, this remote role
+                offers flexibility and the opportunity to ignite your career. Maximize
+                your earning potential with our support and embark on a fulfilling career
+                path.
+              </strong>
+              <br/>
+              <br/>
+              <strong>
+                Key Responsibilities:
+              </strong>
+              <ul>
+                <li>
+                  Collaborate with experienced mentors and thrive in a supportive team environment.
+                </li>
+                <li>
+                  Contact prospective clients via phone to understand their needs.
+                </li>
+                <li>
+                  Arrange and lead virtual consultations (via Zoom or phone) for detailed
+                  client discussions.
+                </li>
+                <li>
+                  Create customized insurance quotes tailored to individual client needs.
+                </li>
+                <li>
+                  Deliver compelling presentations to close sales and provide personalized
+                  solutions.
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                What We Offer:
+              </strong>
+              <br/>
+              <ul>
+                <li>
+                  Life insurance coverage
+                </li>
+                <li>
+                  Healthcare, dental, and vision options
+                </li>
+                <li>
+                  Performance-based bonuses
+                </li>
+                <li>
+                  Incentive trips for top performers
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                This is a 1099 commission-based role.
+              </strong>
+            </p>
+            <br/>
+            <br/>
+            <p>
+              Ready to transform your sales career? Apply now and join a team dedicated
+              to your professional growth and success.
+            </p>
+          </div>
+        </div>
+      </div>
+<div class="accordion-item">
+        <div class="title-and-copy">
+          <button class="accordion" onclick="toggleAccordion(this)">
+            Remote Sales Development Specialist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+            <i class="fa-solid fa-arrow-down">
+            </i>
+          </button>
+          <button class="copy-btn-title" onclick="copyTitle('Remote Sales Development Specialist')">
+                  Copy Title
+          </button>
+        </div>
+        <div class="panel">
+          <div class="desc-options">
+            <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+            onclick="copyDesc('desc10', this)">
+              Copy Desc
+            </button>
+          </div>
+          <div id="desc10">
+            <p contenteditable="false">
+              <strong>
+                Take the next step in your career with a forward-thinking company that
+                values growth and success. This remote role is perfect for both seasoned
+                sales professionals and those new to the industry. Benefit from outstanding
+                support and maximize your earning potential with us.
+              </strong>
+              <br/>
+              <br/>
+              <strong>
+                Key Responsibilities:
+              </strong>
+              <ul>
+                <li>
+                  Work closely with experienced mentors in a supportive team environment.
+                </li>
+                <li>
+                  Reach out to potential clients by phone to understand their insurance
+                  needs.
+                </li>
+                <li>
+                  Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                  discussions.
+                </li>
+                <li>
+                  Create personalized insurance quotes to meet individual client requirements.
+                </li>
+                <li>
+                  Present persuasive sales presentations to secure sales and provide customized
+                  solutions.
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                What We Offer:
+              </strong>
+              <br/>
+              <ul>
+                <li>
+                  Life insurance coverage
+                </li>
+                <li>
+                  Healthcare, dental, and vision options
+                </li>
+                <li>
+                  Performance-based bonuses
+                </li>
+                <li>
+                  Incentive trips for top performers
+                </li>
+              </ul>
+              <br/>
+              <strong>
+                This is a 1099 commission-based role.
+              </strong>
+            </p>
+            <br/>
+            <br/>
+            <p>
+              Ready to transform your sales career? Apply now and join a team dedicated
+              to your professional growth and success.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Remote Sales Navigator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle(' Remote Sales Navigator')">
+          Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc2', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc2">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+   
+   
+     <div class="accordion-item">
+    <div class="title-and-copy">
+    <button class="accordion" onclick="toggleAccordion(this)">Remote Financial Products Specialist &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+click to view description&nbsp;</button>
+    <button class="copy-btn-title" onclick="copyTitle('Remote Financial Products Specialist')">Copy Title</button>
+    </div>
+    <div class="panel">
+    <div class="desc-options">
+    <button class="copy-desc-btn"  style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"onclick="copyDesc('desc5', this)">Copy Desc</button>
+    </div>
+    <div id="desc5">
+    <p contenteditable="false"><strong>Elevate your career with an innovative company that prioritizes your growth and success. This remote role is ideal for both experienced sales professionals and those new to the industry. 
+    Benefit from our unparalleled support and maximize your earning potential.</strong>
+    <br/>
+    <br/>
+    <strong> Key Responsibilities:</strong><ul>
+    <ul>
+    <li>Work closely with experienced mentors in a supportive team environment.</li>
+    <li>Reach out to potential clients by phone to understand their insurance needs.</li>
+    <li>Schedule and conduct virtual consultations (via Zoom or phone) for detailed discussions.</li>
+    <li>Create personalized insurance quotes to meet individual client requirements.</li>
+    <li>Present persuasive sales presentations to secure sales and provide customized solutions.</li>
+    </ul>
+    <br/>
+    <strong> What We Offer:</strong>
+    <br/>
+    <ul>
+    <li>Life insurance coverage</li>
+    <li>Healthcare, dental, and vision options</li>
+    <li>Performance-based bonuses</li>
+    <li>Incentive trips for top performers</li>
+    </ul>
+    <br/>
+    <strong>This is a 1099 commission-based role.</strong></p>
+    <br/>
+    <br/>
+    <p>Ready to transform your sales career? Apply now and join a team dedicated to your professional growth and success
+    .</p></div>
+    </div>
+    </div> 
+   
+
+   <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Remote Sales Consultant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Remote Sales Consultant')">
+          Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc13', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc13">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Remote Sales Advisor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Remote Sales Advisor')">
+          Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc6', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc6">
+          <p contenteditable="false">
+            <strong>
+              Join a forward-thinking company that values excellence and innovation.
+              This remote role is ideal for both experienced sales professionals and
+              ambitious newcomers. Enjoy flexibility, exceptional support, and the opportunity
+              to advance your career.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Engage with expert mentors and thrive in a supportive team environment.
+              </li>
+              <li>
+                Connect with prospective clients via phone to understand their financial
+                needs.
+              </li>
+              <li>
+                Organize and conduct virtual consultations (via Zoom or phone) for in-depth
+                client discussions.
+              </li>
+              <li>
+                Craft personalized insurance quotes tailored to each client's needs.
+              </li>
+              <li>
+                Execute compelling presentations to close sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Remote Sales Innovator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle(' Remote Sales Innovator')">
+          Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc8', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc8">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+     <div class="accordion-item">
+    <div class="title-and-copy">
+    <button class="accordion" onclick="toggleAccordion(this)">Remote Insurance Sales Advisor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+click to view description&nbsp;</button>
+    <button class="copy-btn-title" onclick="copyTitle('Remote Insurance Sales Advisor')">Copy Title</button>
+    </div>
+    <div class="panel">
+    <div class="desc-options">
+    <button class="copy-desc-btn"  style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"onclick="copyDesc('desc9', this)">Copy Desc</button>
+    </div>
+    <div id="desc9">
+    <p contenteditable="false"><strong>Take the next step in your career with a forward-thinking company that values growth and success. This remote role is perfect for both seasoned sales professionals and those new to the industry. 
+    Benefit from outstanding support and maximize your earning potential with us.</strong>
+    <br/>
+    <br/>
+    <strong> Key Responsibilities:</strong><ul>
+    <li>Work closely with experienced mentors in a supportive team environment.</li>
+    <li>Reach out to potential clients by phone to understand their insurance needs.</li>
+    <li>Schedule and conduct virtual consultations (via Zoom or phone) for detailed discussions.</li>
+    <li>Create personalized insurance quotes to meet individual client requirements.</li>
+    <li>Present persuasive sales presentations to secure sales and provide customized solutions.</li></ul>
+    <br/>
+    <strong> What We Offer:</strong><ul>
+        <br/>
+    <li>Life insurance coverage</li>
+    <li>Healthcare, dental, and vision options</li>
+    <li>Performance-based bonuses</li>
+    <li>Incentive trips for top performers</li></ul>
+    <br/>
+        <strong>This is a 1099 commission-based role.</strong></p>
+        <br/>
+        <br/>
+    <p>Ready to transform your sales career? Apply now and join a team dedicated to your professional growth and success
+    .</p></div>
+    </div>
+    </div>
+    
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Client Sales Representative&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Client Sales Representative')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Client Acquisition Specialist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Client Acquisition Specialist')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Insurance Agent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Insurance Agent')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Solutions Consultant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Solutions Consultant')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Consumer Insurance Specialist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Consumer Insurance Specialist')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Insurance Business Consultant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Insurance Business Consultant')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Account Coordinator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Account Coordinator')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Account Development Representative&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Account Development Representative')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Inside Representative&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Inside Representative')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Outside Representative&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Outside Representative')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Business Executive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Business Executive')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="title-and-copy">
+        <button class="accordion" onclick="toggleAccordion(this)">
+          Insurance Sales Agent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click to view description&nbsp;
+          <i class="fa-solid fa-arrow-down">
+          </i>
+        </button>
+        <button class="copy-btn-title" onclick="copyTitle('Insurance Sales Agent')">
+                Copy Title
+        </button>
+      </div>
+      <div class="panel">
+        <div class="desc-options">
+          <button class="copy-desc-btn" style="background-color: #FF9800;border-radius:5px ;height: 40px;border-color:transparent;color:white"
+          onclick="copyDesc('desc10', this)">
+            Copy Desc
+          </button>
+        </div>
+        <div id="desc10">
+          <p contenteditable="false">
+            <strong>
+              Take the next step in your career with a forward-thinking company that
+              values growth and success. This remote role is perfect for both seasoned
+              sales professionals and those new to the industry. Benefit from outstanding
+              support and maximize your earning potential with us.
+            </strong>
+            <br/>
+            <br/>
+            <strong>
+              Key Responsibilities:
+            </strong>
+            <ul>
+              <li>
+                Work closely with experienced mentors in a supportive team environment.
+              </li>
+              <li>
+                Reach out to potential clients by phone to understand their insurance
+                needs.
+              </li>
+              <li>
+                Schedule and conduct virtual consultations (via Zoom or phone) for detailed
+                discussions.
+              </li>
+              <li>
+                Create personalized insurance quotes to meet individual client requirements.
+              </li>
+              <li>
+                Present persuasive sales presentations to secure sales and provide customized
+                solutions.
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              What We Offer:
+            </strong>
+            <br/>
+            <ul>
+              <li>
+                Life insurance coverage
+              </li>
+              <li>
+                Healthcare, dental, and vision options
+              </li>
+              <li>
+                Performance-based bonuses
+              </li>
+              <li>
+                Incentive trips for top performers
+              </li>
+            </ul>
+            <br/>
+            <strong>
+              This is a 1099 commission-based role.
+            </strong>
+          </p>
+          <br/>
+          <br/>
+          <p>
+            Ready to transform your sales career? Apply now and join a team dedicated
+            to your professional growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+
+     <div class="rejection-container">
+  <div class="rejection-vertical-center">
+      <button class="copy-btn-rejection" onclick="copyRejection('We regret to inform you that we will not be moving forward with your application now. Thank you for being so interested in the position.')">
+            Copy Rejection Message
+          </button>
+      </div></div>
+    
+    </div>
+    
+    <!-- Notification Message -->
+    <div id="notification" class="notification">
+    </div>
+    <script src="sales-job-post.js">
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,427 @@
+body {
+
+    font-family: Arial, sans-serif;
+
+    padding: 20px;
+
+    background-color: #f4f4f4;
+
+}
+
+
+
+.container {
+
+    max-width: 100%;
+
+    margin: auto;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+h2 {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.form-group {
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+
+}
+
+
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 4px;
+
+    box-sizing: border-box;
+
+}
+
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+}
+
+
+
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+    background-color: #4CAF50;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+}
+
+
+
+button:hover {
+
+    background-color: #45a049;
+
+}
+
+
+
+.btn-container {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+
+.leadbulkupdatetable {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+}
+
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+
+th,
+
+td {
+
+    padding: 8px;
+
+    text-align: left;
+
+    border: 1px solid #ddd;
+
+}
+
+
+
+th {
+
+    background-color: #f2f2f2;
+
+}
+
+
+
+/* Responsive Table for Mobile */
+
+@media (max-width: 767.98px) {
+
+
+
+    table,
+
+    thead,
+
+    tbody,
+
+    th,
+
+    td,
+
+    tr {
+
+        display: block;
+
+    }
+
+
+
+    thead tr {
+
+        position: absolute;
+
+        top: -9999px;
+
+        left: -9999px;
+
+    }
+
+
+
+    td {
+
+        border: none;
+
+        position: relative;
+
+        padding-left: 50%;
+
+    }
+
+
+
+    td:before {
+
+        content: none;
+
+        /* Remove label inside table cells */
+
+    }
+
+
+
+    td:first-child {
+
+        padding-top: 15px;
+
+    }
+
+
+
+    td:last-child {
+
+        padding-bottom: 15px;
+
+    }
+
+
+
+    .form-group label {
+
+        font-weight: bold;
+
+    }
+
+}
+
+
+
+.sticky-top {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1;
+
+}
+
+
+
+/* Make the table body scrollable */
+
+.table-responsive {
+
+    overflow-x: auto;
+
+}
+
+
+
+.table {
+
+    width: 100%;
+
+}
+
+
+
+/* Ensure the scrollable body has a fixed height */
+
+.table-responsive>div {
+
+    max-height: 400px;
+
+    overflow-y: auto;
+
+}
+
+
+
+/* Ensures columns have consistent width */
+
+th,
+
+td {
+
+    word-wrap: break-word;
+
+}
+
+/* Apply styles only to the form with name "leadbulkupdateform" */
+form[name="leadbulkupdateform"] {
+    /* Ensure it only affects this form */
+}
+
+/* Desktop-specific styles for the targeted form */
+@media (min-width: 992px) {
+
+    /* Hide labels only in the specified form */
+    form[name="leadbulkupdateform"] label {
+        display: none;
+    }
+
+    /* Reduce textarea size only in the specified form */
+    form[name="leadbulkupdateform"] textarea {
+        height: 50px !important;
+    }
+}
+
+@media (max-width: 768px) {
+            .form-group {
+                flex-direction: column;
+                align-items: flex-start !important;
+            }
+
+            .form-group label {
+                margin-bottom: 5px;
+            }
+
+            .form-group input {
+                width: 100% !important;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            background: none;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .loginphone {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .form-group {
+            width: 100%;
+            text-align: center;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #successMessage {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        span.errormessage {
+    color: #FF0000;
+    font-size: 12px;
+}
+.successMessage{
+
+    text-align: center;
+    color: #FF0000;
+}
+
+
+/* CSS end here */
