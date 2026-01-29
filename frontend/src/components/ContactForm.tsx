@@ -31,9 +31,7 @@ function ContactForm() {
     control,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset,
-    setValue,
-    getValues
+    reset
   } = useForm<ContactFormData>({
     mode: 'onSubmit', // Only validate on submit to prevent premature validation
     reValidateMode: 'onBlur', // Re-validate on blur after first submit
