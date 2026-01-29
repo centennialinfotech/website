@@ -1,5 +1,0 @@
-# Enable URL rewriting
-RewriteEngine On
-
-# Ensure that the subdomain is processed correctly
-RewriteCond %{HTTP_HOST} ^interns\.centennialinfotech\.com$ [NC]
