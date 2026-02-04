@@ -1,10 +1,18 @@
 services:
   - type: web
-    name: centennial-web-app
+    name: frontend
     env: static
-    staticPublishPath: dist
+    rootDir: frontend
     buildCommand: npm install && npm run build
+    staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
+
+  - type: web
+    name: backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
