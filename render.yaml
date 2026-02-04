@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: static
     name: centennial-web-app
     env: static
     staticPublishPath: dist
