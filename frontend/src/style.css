@@ -166,13 +166,23 @@ nav.navbar.navbar-expand-sm.navbar-dark {
 }
 
 .buttonknow {
-    padding: 18px 24px;
-    border-radius: 27.5px;
-    background: #1177BD;
-    color: #fff;
-    border: none;
-    opacity: 1;
+  text-decoration: none;
+  color: white;           
+  background-color: #1579c6;
+  padding: 12px 28px;
+  border-radius: 30px;
+  display: inline-block;
+  font-weight: 500;
 }
+
+
+.buttonknow:hover,
+.buttonknow:focus,
+.buttonknow:active {
+  text-decoration: none;
+  color: white;
+}
+
 
 .cards {
     display: flex;

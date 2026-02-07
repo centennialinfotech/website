@@ -1,5 +1,4 @@
 import Breadcrumb from '../components/Breadcrumb'
-import { BASE_URL } from '../config/env'
 import useScrollToTop from '../hooks/useScrollToTop'
 
 interface MissionItem {
@@ -92,7 +91,7 @@ function About() {
               <p className="abouttext_para">
                 At Centennial Infotech, our mission is to transform your ideas into reality with cutting-edge technology and innovative solutions. We strive to deliver satisfactory results that not only meet but exceed your expectations. Our goal is to expand our scope of services continuously and keep up with the evolving technological landscape to provide the best solutions to our clients.
               </p>
-              <img src={`${BASE_URL}/img/aboutuser.png`} alt="About Us" className="img-fluid pt-4" />
+              <img src={`/img/aboutuser.png`} alt="About Us" className="img-fluid pt-4" />
             </div>
 
             <div className="col-sm-6 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
@@ -100,7 +99,7 @@ function About() {
                 {missionItems.map((item, index) => (
                   <div key={index} className="col-xl-6 col-lg-6 col-md-6">
                     <div className="aboutpd-one__single">
-                      <img src={`${BASE_URL}/${item.img}`} alt={item.title} />
+                      <img src={`/${item.img}`} alt={item.title} />
                       <h3 className="aboutpd-one__title">{item.title}</h3>
                       <p className="aboutpd-one__text">{item.text}</p>
                     </div>
@@ -123,7 +122,7 @@ function About() {
             {coreValues.map((item, index) => (
               <div key={index} className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <div className="aboutprdocut-one__single">
-                  <img src={`${BASE_URL}/${item.img}`} alt={item.title} />
+                  <img src={`/${item.img}`} alt={item.title} />
                   <h3 className="aboutprdocut-one__title">{item.title}</h3>
                   <p className="aboutprdocut-one__text">{item.text}</p>
                 </div>
@@ -148,7 +147,7 @@ function About() {
               </p>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-6 pt-5">
-              <img src={`${BASE_URL}/img/vision.jpg`} alt="Vision" className="img-fluid" style={{ borderRadius: '32px' }} />
+              <img src={`/img/vision.jpg`} alt="Vision" className="img-fluid" style={{ borderRadius: '32px' }} />
             </div>
           </div>
         </div>
@@ -180,7 +179,7 @@ function About() {
           <p className="para text-start">Tracing Milestones, Building Legacy</p>
 
           <div className="wavetimeline">
-            <img src={`${BASE_URL}/img/processgr.png`} alt="Timeline" className="img-fluid" />
+            <img src={`/img/processgr.png`} alt="Timeline" className="img-fluid" />
             <div className="waverr">
               <div className="ourhistory__single ourhistory__single_two">
                 <h3 className="ourhistory__title">2024 founded</h3>
@@ -221,9 +220,9 @@ function About() {
           <div className="row pt-5">
             {teamMembers.map((member, index) => (
               <div key={index} className="col-xl-4 col-lg-4 col-md-4">
-                <img src={`${BASE_URL}/${member.bg}`} alt="Team Background" className="img-fluid" />
+                <img src={`/${member.bg}`} alt="Team Background" className="img-fluid" />
                 <div className="pt-3">
-                  <img src={`${BASE_URL}/${member.photo}`} alt={member.name} className="img-fluid team_imgtt" />
+                  <img src={`/${member.photo}`} alt={member.name} className="img-fluid team_imgtt" />
                   <h3 className="team__title">{member.title}</h3>
                   <p className="team__titletext">{member.name}</p>
                 </div>

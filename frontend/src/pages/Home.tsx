@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { BASE_URL } from '../config/env'
 import useScrollToTop from '../hooks/useScrollToTop'
 
 interface Product {
@@ -178,15 +177,15 @@ function Home() {
                 <h1 className="heading1">Expanding Horizons with Design Tech & Analytics</h1>
                 <div className="cards">
                   <div className="card">
-                    <img src={`${BASE_URL}/img/star_a.png`} alt="Legacy" />
+                    <img src={`/img/star_a.png`} alt="Legacy" />
                     <p className="spans">30 Years of <br /><span>Legacy</span></p>
                   </div>
                   <div className="card">
-                    <img src={`${BASE_URL}/img/Group.png`} alt="Clients" />
+                    <img src={`/img/Group.png`} alt="Clients" />
                     <p className="spans">2700 <br /><span>Satisfied Clients</span></p>
                   </div>
                   <div className="card">
-                    <img src={`${BASE_URL}/img/list-check-solid 1.png`} alt="Projects" />
+                    <img src={`/img/list-check-solid 1.png`} alt="Projects" />
                     <p className="spans">200 <br /><span>Projects</span></p>
                   </div>
                 </div>
@@ -195,7 +194,7 @@ function Home() {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
               <div className="img">
-                <img src={`${BASE_URL}/img/human1.png`} alt="Hero" />
+                <img src={`/img/human1.png`} alt="Hero" />
               </div>
             </div>
           </div>
@@ -252,31 +251,31 @@ function Home() {
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`${BASE_URL}/img/why.png`} alt="Quality Assurance" />
+                <img src={`/img/why.png`} alt="Quality Assurance" />
                 <p>Quality Assurance<span>As ISO 9001 certified, our commitment to quality management ensures that every solution we deliver meets rigorous standards of reliability, security, and performance.</span></p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`${BASE_URL}/img/why_a.png`} alt="Strong reputation" />
+                <img src={`/img/why_a.png`} alt="Strong reputation" />
                 <p>Strong reputation<span>Our portfolio showcases our ability to turn complex challenges into success stories, delivering measurable results and tangible business value.</span></p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`${BASE_URL}/img/why_g.png`} alt="Customized solutions" />
+                <img src={`/img/why_g.png`} alt="Customized solutions" />
                 <p>Customized solutions<span>Our agile methodology ensures flexibility and responsiveness to your evolving needs.</span></p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`${BASE_URL}/img/why_d.png`} alt="Innovative & powerful platforms" />
+                <img src={`/img/why_d.png`} alt="Innovative & powerful platforms" />
                 <p>Innovative & powerful platforms<span>We specialize in harnessing the latest technologies like AI, blockchain, and IoT to develop cutting-edge solutions that propel your business forward.</span></p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`${BASE_URL}/img/why_e.png`} alt="Reliable & dependable support" />
+                <img src={`/img/why_e.png`} alt="Reliable & dependable support" />
                 <p>Reliable & dependable support<span>Our portfolio showcases our ability to turn complex challenges into success stories, delivering measurable results and tangible business value.</span></p>
               </div>
             </div>
@@ -301,7 +300,7 @@ function Home() {
                     onClick={() => handleProductClick(product.changeImage)}
                     style={{ backgroundColor: selectedProduct === product.changeImage ? 'rgb(245 249 255)' : 'white' }}
                   >
-                    <img src={`${BASE_URL}/${product.image}`} alt={product.title} />
+                    <img src={`/${product.image}`} alt={product.title} />
                     <p>
                       {product.title}
                       <span>{product.description}</span>
@@ -312,7 +311,7 @@ function Home() {
             </div>
             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
               <div className="product-image-container">
-                <img src={`${BASE_URL}/${selectedProduct}`} className="productimage" id="mainProductImage" alt="Product" />
+                <img src={`/${selectedProduct}`} className="productimage" id="mainProductImage" alt="Product" />
               </div>
             </div>
           </div>
@@ -322,7 +321,7 @@ function Home() {
       {/* Branches Section */}
       <div className="brances">
         <div className="brances-img">
-          <img src={`${BASE_URL}/img/place.png`} className="img-fluid" alt="Branches" />
+          <img src={`/img/place.png`} className="img-fluid" alt="Branches" />
         </div>
         <div className="text-branches">
           <h5>Explore our prime location</h5>
@@ -344,17 +343,17 @@ function Home() {
                 <ul className="d-flex justify-content-end">
                   <li>
                     <a href="https://wa.me/918146511568" target="_blank" rel="noopener noreferrer">
-                      <img src={`${BASE_URL}/img/contact-a.png`} alt="WhatsApp" className="img-fluid" />
+                      <img src={`/img/contact-a.png`} alt="WhatsApp" className="img-fluid" />
                     </a>
                   </li>
                   <li>
                     <a href="tel:+918146511568">
-                      <img src={`${BASE_URL}/img/contact-b.png`} alt="Phone" className="img-fluid" />
+                      <img src={`/img/contact-b.png`} alt="Phone" className="img-fluid" />
                     </a>
                   </li>
                   <li>
                     <a href="mailto:support@centennialinfotech.com">
-                      <img src={`${BASE_URL}/img/contact_c.png`} alt="Mail" className="img-fluid" />
+                      <img src={`/img/contact_c.png`} alt="Mail" className="img-fluid" />
                     </a>
                   </li>
                 </ul>
@@ -376,7 +375,7 @@ function Home() {
             {achievements.map((achievement, index) => (
               <div key={index} className="col-sm-3 col-md-3 pb-4">
                 <div className="archieve-img">
-                  <img src={`${BASE_URL}/img/archieve.png`} alt={`Achievement ${index + 1}`} />
+                  <img src={`/img/archieve.png`} alt={`Achievement ${index + 1}`} />
                 </div>
                 <div className="archieve-text">
                   <h5>{achievement.num}</h5>
@@ -384,7 +383,7 @@ function Home() {
                   <p>{achievement.desc}</p>
                 </div>
                 <div className="archieve-img-right">
-                  <img src={`${BASE_URL}/img/archive_b.png`} alt="Achievement Icon" />
+                  <img src={`/img/archive_b.png`} alt="Achievement Icon" />
                 </div>
               </div>
             ))}
@@ -404,7 +403,7 @@ function Home() {
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
               <div className="blog_section">
                 <div className="img-blog">
-                  <img src={`${BASE_URL}/img/blog_img.jpg`} alt="Blog" />
+                  <img src={`/img/blog_img.jpg`} alt="Blog" />
                 </div>
                 <div className="img-blog-text">
                   <span>Positive</span>
@@ -455,7 +454,7 @@ function Home() {
                     <h3>{title}</h3>
                     <div className="icons-right">
                       <Link to="/blogs">
-                        <img src={`${BASE_URL}/img/ArrowLeft.png`} alt="Arrow" />
+                        <img src={`/img/ArrowLeft.png`} alt="Arrow" />
                       </Link>
                     </div>
                   </div>
@@ -474,7 +473,7 @@ function Home() {
         <div className="container">
           <div className="testimonials-item">
             <div className="item">
-              <h5 className="customer">We <img src={`${BASE_URL}/img/heart.png`} alt="love" /> our clients</h5>
+              <h5 className="customer">We <img src={`/img/heart.png`} alt="love" /> our clients</h5>
               <h2 className="customer1">What do people praise about centennial?</h2>
               <p className="customer2">our client testimonials</p>
             </div>
@@ -483,7 +482,7 @@ function Home() {
                 {testimonials.map((testimonial, index) => (
                   <img
                     key={index}
-                    src={`${BASE_URL}/${testimonial.image}`}
+                    src={`/${testimonial.image}`}
                     alt={`Testimonial ${index + 1}`}
                     className="imgt"
                     style={{ display: index === currentTestimonial ? 'none' : 'inline-block' }}
@@ -492,7 +491,7 @@ function Home() {
               </div>
               <div className="right-item-testi">
                 <div className="large-img">
-                  <img src={`${BASE_URL}/${testimonials[currentTestimonial].image}`} alt="Testimonial" className="imgt1" />
+                  <img src={`/${testimonials[currentTestimonial].image}`} alt="Testimonial" className="imgt1" />
                 </div>
                 <div className="text-content">
                   <div className="testimonials-item">
@@ -502,10 +501,10 @@ function Home() {
                   </div>
                   <div className="buttons">
                     <button type="button" className="btnn1" onClick={handleTestimonialNext}>
-                      <img src={`${BASE_URL}/img/arrow_new_left.png`} alt="Previous" />
+                      <img src={`/img/arrow_new_left.png`} alt="Previous" />
                     </button>
                     <button type="button" className="btnn2" onClick={handleTestimonialPrev}>
-                      <img src={`${BASE_URL}/img/arrow_new.png`} alt="Next" />
+                      <img src={`/img/arrow_new.png`} alt="Next" />
                     </button>
                   </div>
                 </div>
@@ -533,7 +532,7 @@ function Home() {
                     className={`accordion ${activeAccordion === index ? 'active' : ''}`}
                     onClick={() => toggleAccordion(index)}
                   >
-                    <img className="arrow-accordian" src={`${BASE_URL}/img/arrow.png`} alt="Arrow" />
+                    <img className="arrow-accordian" src={`/img/arrow.png`} alt="Arrow" />
                     {faq.question}
                   </button>
                   <div className="panel" style={{ display: activeAccordion === index ? 'block' : 'none' }}>

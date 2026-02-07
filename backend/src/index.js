@@ -15,12 +15,12 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json()); // For parsing application/json
 
-
-
-app.use(cors({
-  origin: "*",
-  credentials: true
+app.use(cors(
+  { 
+  origin: "*", 
+  credentials: true 
 }));
+
 
 // // Connect to MongoDB
 dbConnect();

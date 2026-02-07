@@ -1,7 +1,6 @@
 import { useState} from 'react'
 import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
-import { BASE_URL } from '../config/env'
 import useScrollToTop from '../hooks/useScrollToTop'
 
 function Clients() {
@@ -88,8 +87,8 @@ function Clients() {
       <section className="servicesbg">
         <div className="container-fluid pb-5">
           <div>
-            <img src={`${BASE_URL}/img/services_icon_2.png`} alt="icon" className="img-fluid" />
-            <img src={`${BASE_URL}/img/Ellipse 1.png`} alt="icon" className="services-one__shape-2 img-fluid" />
+            <img src={`/img/services_icon_2.png`} alt="icon" className="img-fluid" />
+            <img src={`/img/Ellipse 1.png`} alt="icon" className="services-one__shape-2 img-fluid" />
           </div>
 
           <h2 className="services_banner_title">
@@ -113,8 +112,8 @@ function Clients() {
           </ul>
 
           <div>
-            <img src={`${BASE_URL}/img/services_icon_1.png`} alt="img" className="services-one__shape-1" />
-            <img src={`${BASE_URL}/img/services_icon.png`} alt="icon" className="img-fluid services-one__shape-2" />
+            <img src={`/img/services_icon_1.png`} alt="img" className="services-one__shape-1" />
+            <img src={`/img/services_icon.png`} alt="icon" className="img-fluid services-one__shape-2" />
           </div>
         </div>
 
@@ -129,7 +128,7 @@ function Clients() {
               <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className="clientlogo-one__single">
                   <div className="clientlogo-one__single-inner">
-                    <img src={`${BASE_URL}/${logo}`} alt="img" />
+                    <img src={`/${logo}`} alt="img" />
                   </div>
                 </div>
               </div>
@@ -168,7 +167,7 @@ function Clients() {
             {industries.map((industry, index) => (
               <div key={index} className="col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className="client-card-one">
-                  <img src={`${BASE_URL}/${industry.image}`} className="img-fluid" alt={industry.name} />
+                  <img src={`/${industry.image}`} className="img-fluid" alt={industry.name} />
                   <p>{industry.name}</p>
                 </div>
               </div>
@@ -229,7 +228,7 @@ function Clients() {
                     <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                       <div className="client_section">
                         <div className="img-blog">
-                          <img src={`${BASE_URL}/${blog.image}`} alt={blog.title} />
+                          <img src={`/${blog.image}`} alt={blog.title} />
                         </div>
                         <div className="client_blog_title">
                           <h3>{blog.title}</h3>
@@ -251,7 +250,7 @@ function Clients() {
                     <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                       <div className="client_section">
                         <div className="img-blog">
-                          <img src={`${BASE_URL}/${blog.image}`} alt={blog.title} />
+                          <img src={`/${blog.image}`} alt={blog.title} />
                         </div>
                         <div className="client_blog_title">
                           <h3>{blog.title}</h3>
@@ -273,7 +272,7 @@ function Clients() {
                     <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                       <div className="client_section">
                         <div className="img-blog">
-                          <img src={`${BASE_URL}/${blog.image}`} alt={blog.title} />
+                          <img src={`/${blog.image}`} alt={blog.title} />
                         </div>
                         <div className="client_blog_title">
                           <h3>{blog.title}</h3>
@@ -298,21 +297,21 @@ function Clients() {
             <div className="testimonials-item">
               <div className="item">
                 <h5 className="customer">
-                  We <img src={`${BASE_URL}/img/heart.png`} alt="heart" /> our clients
+                  We <img src={`/img/heart.png`} alt="heart" /> our clients
                 </h5>
                 <h2 className="customer1">What do people praise about centennial?</h2>
                 <p className="customer2">our client testimonials</p>
               </div>
               <div className="slider">
                 <div className="imgtt">
-                  <img src={`${BASE_URL}/img/testimonials.jpg`} alt="img" className="imgt" />
-                  <img src={`${BASE_URL}/img/testimonials-1.jpg`} alt="img" className="imgt" />
-                  <img src={`${BASE_URL}/img/testimonials-2.jpg`} alt="img" className="imgt" />
-                  <img src={`${BASE_URL}/img/testimonials-3.jpg`} alt="img" className="imgt" />
+                  <img src={`/img/testimonials.jpg`} alt="img" className="imgt" />
+                  <img src={`/img/testimonials-1.jpg`} alt="img" className="imgt" />
+                  <img src={`/img/testimonials-2.jpg`} alt="img" className="imgt" />
+                  <img src={`/img/testimonials-3.jpg`} alt="img" className="imgt" />
                 </div>
                 <div className="right-item-testi">
                   <div className="large-img">
-                    <img src={`${BASE_URL}/img/testimonials.jpg`} alt="img" className="imgt1" />
+                    <img src={`/img/testimonials.jpg`} alt="img" className="imgt1" />
                   </div>
                   <div className="text-content">
                     <div className="testimonials-item">
@@ -325,10 +324,10 @@ function Clients() {
                     </div>
                     <div className="buttons">
                       <button type="button" className="btnn1">
-                        <img src={`${BASE_URL}/img/arrow_new_left.png`} alt="left arrow" />
+                        <img src={`/img/arrow_new_left.png`} alt="left arrow" />
                       </button>
                       <button type="button" className="btnn2">
-                        <img src={`${BASE_URL}/img/arrow_new.png`} alt="right arrow" />
+                        <img src={`/img/arrow_new.png`} alt="right arrow" />
                       </button>
                     </div>
                   </div>

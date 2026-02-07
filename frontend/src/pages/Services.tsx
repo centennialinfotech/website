@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
-import { BASE_URL } from '../config/env'
 import useScrollToTop from '../hooks/useScrollToTop'
 
 function Services() {
   useScrollToTop()
 
-  const [mainImage, setMainImage] = useState(`${BASE_URL}/img/ui.jpeg`)
+  const [mainImage, setMainImage] = useState(`/img/ui.jpeg`)
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -57,7 +56,7 @@ function Services() {
   }, [])
 
   const handleImageChange = (imagePath: string) => {
-    setMainImage(`${BASE_URL}/${imagePath}`)
+    setMainImage(`/${imagePath}`)
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -190,8 +189,8 @@ function Services() {
       <section className="servicesbg">
         <div className="container-fluid pb-5">
           <div>
-            <img src={`${BASE_URL}/img/services_icon_2.png`} alt="icon" className="img-fluid" />
-            <img src={`${BASE_URL}/img/Ellipse 1.png`} alt="icon" className="services-one__shape-2 img-fluid" />
+            <img src={`/img/services_icon_2.png`} alt="icon" className="img-fluid" />
+            <img src={`/img/Ellipse 1.png`} alt="icon" className="services-one__shape-2 img-fluid" />
           </div>
 
           <h2 className="services_banner_title">
@@ -202,12 +201,12 @@ function Services() {
           <h3 className="services-wt">Take control of your business. Begin your journey with us!</h3>
 
           <div>
-            <img src={`${BASE_URL}/img/services_icon.png`} alt="icon" className="img-fluid services-one__shape-2" />
+            <img src={`/img/services_icon.png`} alt="icon" className="img-fluid services-one__shape-2" />
           </div>
         </div>
 
         <div className="container pb-5">
-          <img src={`${BASE_URL}/img/services_icon_1.png`} alt="img" className="services-one__shape-4" />
+          <img src={`/img/services_icon_1.png`} alt="img" className="services-one__shape-4" />
 
           <div className="mt-5 services_contact_bg">
             <h3 className="services_contact_title">Let's take your requirement</h3>
@@ -234,7 +233,8 @@ function Services() {
               </div>
               <div className="col-xl-3 col-lg-4 col-md-3 mb-4">
                 <input
-                  id="mobile"
+                  id="phone"
+                  //name="phone"
                   className="form-control services_contact_input"
                   type="tel"
                   placeholder="XXXXXXXXXX"
@@ -271,7 +271,7 @@ function Services() {
                 >
                   <div className="services-one__single">
                     <div className="services-one__icon">
-                      <img src={`${BASE_URL}/${service.image}`} alt="img" className="img-fluid" />
+                      <img src={`/${service.image}`} alt="img" className="img-fluid" />
                     </div>
                     <div className="services-one__content-box">
                       <h3 className="services-one__title">{service.title}</h3>
@@ -304,14 +304,14 @@ function Services() {
                 <h3 className="services-one__title">{industries[0].title}</h3>
                 <p className="industries-one__text">{industries[0].description}</p>
               </div>
-              <img src={`${BASE_URL}/${industries[0].image}`} alt="img" className="img-fluid services-one" />
+              <img src={`/${industries[0].image}`} alt="img" className="img-fluid services-one" />
             </div>
 
             <div className="industries-one__single">
               <div className="industries-one__single-inner">
                 <h3 className="services-one__title">{industries[1].title}</h3>
                 <p className="industries-one__text">{industries[1].description}</p>
-                <img src={`${BASE_URL}/${industries[1].image}`} alt="img" className="img-fluid services-one" />
+                <img src={`/${industries[1].image}`} alt="img" className="img-fluid services-one" />
               </div>
             </div>
           </div>
@@ -321,7 +321,7 @@ function Services() {
               <div className="industries-one__single-inner">
                 <h3 className="services-one__title">{industries[2].title}</h3>
                 <p className="industries-one__text">{industries[2].description}</p>
-                <img src={`${BASE_URL}/${industries[2].image}`} alt="img" className="img-fluid pt-5" />
+                <img src={`/${industries[2].image}`} alt="img" className="img-fluid pt-5" />
               </div>
             </div>
           </div>
@@ -344,7 +344,7 @@ function Services() {
                     <p className="industries-one__text">{industries[4].description}</p>
                   </div>
                   <img
-                    src={`${BASE_URL}/${industries[4].image}`}
+                    src={`/${industries[4].image}`}
                     alt="img"
                     className="img-fluid industries-one__imgt"
                     style={{ float: 'right' }}
@@ -358,7 +358,7 @@ function Services() {
                 <h3 className="services-one__title">{industries[5].title}</h3>
                 <p className="industries-one__text">{industries[5].description}</p>
               </div>
-              <img src={`${BASE_URL}/${industries[5].image}`} alt="img" className="img-fluid industires_img_wt" />
+              <img src={`/${industries[5].image}`} alt="img" className="img-fluid industires_img_wt" />
             </div>
           </div>
         </div>
@@ -393,7 +393,7 @@ function Services() {
           We make it easy to get started investing with our platforms to get you on the right track
         </p>
         <div className="pt-5">
-          <img src={`${BASE_URL}/img/assets.png`} className="img-fluid" alt="img" />
+          <img src={`/img/assets.png`} className="img-fluid" alt="img" />
         </div>
       </div>
 
@@ -408,7 +408,7 @@ function Services() {
             <div key={index} className="col-xl-3 col-lg-3 col-md-3">
               <div className="clientlogo-one__single">
                 <div className="clientlogo-one__single-inner">
-                  <img src={`${BASE_URL}/${logo}`} alt="img" />
+                  <img src={`/${logo}`} alt="img" />
                 </div>
               </div>
             </div>
@@ -428,7 +428,7 @@ function Services() {
             {achievements.map((achievement, index) => (
               <div key={index} className="col-sm-3 col-md-3 pb-4">
                 <div className="archieve-img">
-                  <img src={`${BASE_URL}/img/archieve.png`} alt={`Achievement ${index + 1}`} />
+                  <img src={`/img/archieve.png`} alt={`Achievement ${index + 1}`} />
                 </div>
                 <div className="archieve-text">
                   <h5>{achievement.number}</h5>
@@ -436,7 +436,7 @@ function Services() {
                   <p>{achievement.description}</p>
                 </div>
                 <div className="archieve-img-right">
-                  <img src={`${BASE_URL}/img/archive_b.png`} alt="Achievement Icon" />
+                  <img src={`/img/archive_b.png`} alt="Achievement Icon" />
                 </div>
               </div>
             ))}
