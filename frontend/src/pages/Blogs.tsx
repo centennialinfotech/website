@@ -1,77 +1,75 @@
-import { useState, useEffect } from 'react'
-import Breadcrumb from '../components/Breadcrumb'
-import { BASE_URL } from '../config/env'
-import useScrollToTop from '../hooks/useScrollToTop'
+import { useState, useEffect } from "react";
+import Breadcrumb from "../components/Breadcrumb";
+import DOMPurify from 'dompurify';
+import useScrollToTop from "../hooks/useScrollToTop";
+import { Link } from "react-router-dom";
 
 interface Blog {
-  _id: string
-  name: string
-  description: string
-  image: string
-  category: string
+  _id: string;
+  name: string;
+  description: string;
+  image: string;
+  category: string;
 }
 
 function Blogs() {
-  useScrollToTop()
+  useScrollToTop();
 
-  const [blogs, setBlogs] = useState<Blog[]>([])
-  const [loading, setLoading] = useState(true)
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchBlogs()
-  }, [])
+    fetchBlogs();
+  }, []);
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('https://cc-5vhm.onrender.com/v1/getBlog')
-      const result = await response.json()
+      const response = await fetch("https://cc-5vhm.onrender.com/v1/getBlog");
+      const result = await response.json();
 
       if (response.ok && result.data) {
-        setBlogs(result.data)
+        setBlogs(result.data);
       } else {
-        console.error('Error:', result.message)
+        console.error("Error:", result.message);
       }
     } catch (error) {
-      console.error('Error fetching blogs:', error)
+      console.error("Error fetching blogs:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const categories = [
-    { name: 'Industry Insights', count: '05' },
-    { name: 'Technology Trends', count: '02' },
-    { name: 'Cybersecurity Tips', count: '01' },
-    { name: 'Software Development', count: '01' },
-    { name: 'IT Best Practices', count: '01' },
-    { name: 'Innovative Solutions', count: '01' },
-    { name: 'Data Management', count: '01' },
-    { name: 'AI & Machine Learning', count: '01' },
-    { name: 'Digital Transformation', count: '01' },
-    { name: 'Company News', count: '1' },
-    { name: 'Tech Tutorials', count: '01' }
-  ]
+    { name: "Industry Insights", count: "05" },
+    { name: "Technology Trends", count: "02" },
+    { name: "Cybersecurity Tips", count: "01" },
+    { name: "Software Development", count: "01" },
+    { name: "IT Best Practices", count: "01" },
+    { name: "Innovative Solutions", count: "01" },
+    { name: "Data Management", count: "01" },
+    { name: "AI & Machine Learning", count: "01" },
+    { name: "Digital Transformation", count: "01" },
+    { name: "Company News", count: "1" },
+    { name: "Tech Tutorials", count: "01" },
+  ];
 
   const instagramPosts = [
-    'img/blogs-4.png',
-    'img/blogs-11.png',
-    'img/blogs-2.png',
-    'img/blogs-3.png',
-    'img/blogs-5.png',
-    'img/blogs-6.png',
-    'img/blogs-7.png',
-    'img/blogs-8.png',
-    'img/blogs.png'
-  ]
+    "img/blogs-4.png",
+    "img/blogs-11.png",
+    "img/blogs-2.png",
+    "img/blogs-3.png",
+    "img/blogs-5.png",
+    "img/blogs-6.png",
+    "img/blogs-7.png",
+    "img/blogs-8.png",
+    "img/blogs.png",
+  ];
 
   return (
     <>
       <Breadcrumb
         title="Blogs"
-        items={[
-          { label: 'Home', link: '/' },
-          { label: 'Blogs' }
-        ]}
+        items={[{ label: "Home", link: "/" }, { label: "Blogs" }]}
       />
 
       <section className="pt-72 pb-72 blogs-bg">
@@ -90,13 +88,18 @@ function Blogs() {
                 ) : blogs.length === 0 ? (
                   <p>No blogs available at the moment.</p>
                 ) : (
-                  blogs.map((blog) => (
-                    <div key={blog._id} className="blog-item">
+                  blogs.map((blog) => {
+                    const cleanHtml = DOMPurify.sanitize(blog.description);
+                    return (<div key={blog._id} className="blog-item">
                       <div className="blogs_card">
                         <div className="row m-0 align-items-center">
                           <div className="col-lg-5 col-md-6 p-0">
                             <div className="img-blog-blog">
-                              <img src={blog.image} alt={blog.name} className="img-fluid" />
+                              <img
+                                src={blog.image}
+                                alt={blog.name}
+                                className="img-fluid"
+                              />
                             </div>
                           </div>
 
@@ -107,16 +110,16 @@ function Blogs() {
                               </div>
 
                               <h6 className="blogs_title">
-                                <a href="/blogsDetails">{blog.name}</a>
+                                <Link to="/blog-details">{blog.name}</Link>
                               </h6>
 
-                              <p className="blogs_para">{blog.description}</p>
+                              <p className="blogs_para" dangerouslySetInnerHTML={{ __html: cleanHtml }}></p>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))
+                    </div>)
+})
                 )}
               </div>
             </div>
@@ -177,8 +180,15 @@ function Blogs() {
 
               <div className="row pt-5">
                 {instagramPosts.map((post, index) => (
-                  <div key={index} className={`col-4 ${index >= 3 ? 'pt-3' : ''}`}>
-                    <img src={`${BASE_URL}/${post}`} alt="img" className="img-fluid" />
+                  <div
+                    key={index}
+                    className={`col-4 ${index >= 3 ? "pt-3" : ""}`}
+                  >
+                    <img
+                      src={`/${post}`}
+                      alt="img"
+                      className="img-fluid"
+                    />
                   </div>
                 ))}
               </div>
@@ -187,7 +197,7 @@ function Blogs() {
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default Blogs
+export default Blogs;
