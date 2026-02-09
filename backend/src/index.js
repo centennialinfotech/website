@@ -5,9 +5,10 @@ const cors = require('cors');
 const { dbConnect } = require('../config/DbConnection');
 const nodemamailSender = require('../Utils/MailSender'); // Adjust the path as necessary
 const {subscribeTemplate, adminSubscribeTemplate} = require('../Template/subscribe')
-const {serviceTemplate, adminServiceTemplate} = require("../Template/service")
+const {serviceTemplate} = require("../Template/service")
 const Blog = require("../routes/Blog")
 const Contact = require("../routes/Contact")
+const Upload = require("../routes/Upload")
 
 
 const app = express();
@@ -27,6 +28,7 @@ dbConnect();
 
 app.use("/v1", Blog);
 app.use("/v1", Contact);
+app.use("/v1", Upload);
 
 // Define email schema and model
 const EmailSchema = new mongoose.Schema({

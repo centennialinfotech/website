@@ -16,8 +16,30 @@ const uploadImageFromBase64 = async (base64Image, folder = 'default_folder') => 
 
     return result.secure_url;
   } catch (error) {
-    console.error('Error uploading image:', error);
-    throw new Error('Error uploading image');
+    console.error('\n❌ Error uploading base64 image to Cloudinary:');
+    console.error(`   Folder: ${folder}`);
+    console.error(`   Error message: ${error.message}`);
+    console.error(`   Error code: ${error.http_code || error.code || 'N/A'}`);
+    console.error(`   Error name: ${error.name || 'N/A'}`);
+    
+    if (error.http_code) {
+      console.error(`   HTTP Status: ${error.http_code}`);
+    }
+    if (error.response) {
+      console.error(`   Response: ${JSON.stringify(error.response, null, 2)}`);
+    }
+    if (error.stack) {
+      console.error(`   Stack trace: ${error.stack}`);
+    }
+    console.error(`   Full error object:`, JSON.stringify(error, Object.getOwnPropertyNames(error), 2));
+    console.error('');
+    
+    // Throw error with more details
+    const errorMessage = error.message || 'Error uploading image';
+    const detailedError = new Error(`Error uploading image: ${errorMessage}`);
+    detailedError.originalError = error;
+    detailedError.httpCode = error.http_code || error.code;
+    throw detailedError;
   }
 };
 
