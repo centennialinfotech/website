@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { getCloudinaryUrl } from "../utils/imageUrl";
 
 interface RelatedBlog {
   title: string;
@@ -23,9 +24,9 @@ const BlogDetails = () => {
       title: "The Internet of Things (IoT): Transforming Everyday Life",
       description:
         "In the rapidly evolving landscape of technology, the Internet of Things (IoT) stands out as a transformative force.",
-      image: "/img/blog_new_1.jpg",
+      image: getCloudinaryUrl("/img/blog_new_1.jpg"),
       author: "Jesica koli",
-      authorImage: "/img/user.jpeg",
+      authorImage: getCloudinaryUrl("/img/user.jpeg"),
       date: "June 01, 2024",
       readTime: "10 minutes ago",
     },
@@ -33,9 +34,9 @@ const BlogDetails = () => {
       title: "Building a Successful Remote IT Team",
       description:
         "In today's digital age, building and managing a remote IT team requires the right tools, culture, and leadership.",
-      image: "/img/blog_new_1.jpg",
+      image: getCloudinaryUrl("/img/blog_new_1.jpg"),
       author: "Jesica koli",
-      authorImage: "/img/user.jpeg",
+      authorImage: getCloudinaryUrl("/img/user.jpeg"),
       date: "June 01, 2024",
       readTime: "8 minutes ago",
     },
@@ -43,9 +44,9 @@ const BlogDetails = () => {
       title: "Digital Marketing Strategies for IT Companies",
       description:
         "In the competitive landscape of IT services, effective digital marketing is essential for standing out and attracting potential clients.",
-      image: "/img/blog_new_1.jpg",
+      image: getCloudinaryUrl("/img/blog_new_1.jpg"),
       author: "Jesica koli",
-      authorImage: "/img/user.jpeg",
+      authorImage: getCloudinaryUrl("/img/user.jpeg"),
       date: "June 01, 2024",
       readTime: "8 minutes ago",
     },
@@ -108,7 +109,7 @@ const BlogDetails = () => {
             <li>
               <span className="blogsdetails_username">
                 <img
-                  src="/img/user.jpeg"
+                  src={getCloudinaryUrl("/img/user.jpeg")}
                   alt="img"
                   className="img-fluid blogsdetails-one__img"
                 />
@@ -124,7 +125,7 @@ const BlogDetails = () => {
           </ul>
 
           <img
-            src="/img/blogdetails_user.png"
+            src={getCloudinaryUrl("/img/blogdetails_user.png")}
             className="img-fluid mt-4"
             alt="img"
           />
@@ -156,7 +157,7 @@ const BlogDetails = () => {
           <div className="parablog">
             <div className="blogsdetails_comment">
               <img
-                src="/img/user.jpeg"
+                src={getCloudinaryUrl("/img/user.jpeg")}
                 alt="User"
                 className="img-fluid blogsdetails-one__img"
               />

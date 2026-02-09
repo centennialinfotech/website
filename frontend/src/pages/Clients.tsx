@@ -2,6 +2,7 @@ import { useState} from 'react'
 import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import useScrollToTop from '../hooks/useScrollToTop'
+import { getCloudinaryUrl } from '../utils/imageUrl'
 
 function Clients() {
   useScrollToTop()
@@ -9,57 +10,57 @@ function Clients() {
   const [activeTab, setActiveTab] = useState('menu1')
 
   const clientLogos = [
-    'img/vodafone.png',
-    'img/ebay.png',
-    'img/hero.png',
-    'img/amazon.png',
-    'img/asianpaints.png',
-    'img/itc-hotels.png',
-    'img/flipkart.png',
-    'img/muthoot-fincorp.png'
+    getCloudinaryUrl('img/vodafone.png'),
+    getCloudinaryUrl('img/ebay.png'),
+    getCloudinaryUrl('img/hero.png'),
+    getCloudinaryUrl('img/amazon.png'),
+    getCloudinaryUrl('img/asianpaints.png'),
+    getCloudinaryUrl('img/itc-hotels.png'),
+    getCloudinaryUrl('img/flipkart.png'),
+    getCloudinaryUrl('img/muthoot-fincorp.png')
   ]
 
   const industries = [
-    { name: 'Banking', image: 'img/bank.png' },
-    { name: 'Finance', image: 'img/fiance.png' },
-    { name: 'Insurance', image: 'img/Insurance.png' },
-    { name: 'HealthCare', image: 'img/HealthCare.png' },
-    { name: 'Education', image: 'img/Education.png' },
-    { name: 'Non Profit Organizations', image: 'img/Non-Profit-Organizations.png' },
-    { name: 'Internrt E-commerce', image: 'img/Internrt-E-commerce.png' },
-    { name: 'It & Telecom', image: 'img/It-Telecom.png' }
+    { name: 'Banking', image: getCloudinaryUrl('img/bank.png') },
+    { name: 'Finance', image: getCloudinaryUrl('img/fiance.png') },
+    { name: 'Insurance', image: getCloudinaryUrl('img/Insurance.png') },
+    { name: 'HealthCare', image: getCloudinaryUrl('img/HealthCare.png') },
+    { name: 'Education', image: getCloudinaryUrl('img/Education.png') },
+    { name: 'Non Profit Organizations', image: getCloudinaryUrl('img/Non-Profit-Organizations.png') },
+    { name: 'Internrt E-commerce', image: getCloudinaryUrl('img/Internrt-E-commerce.png') },
+    { name: 'It & Telecom', image: getCloudinaryUrl('img/It-Telecom.png') }
   ]
 
   const allBlogs = [
     {
       title: 'Cybersecurity Best Practices for Businesses in the Digital Age',
-      image: 'img/Cybersecurity.jpg'
+      image: getCloudinaryUrl('img/Cybersecurity.jpg')
     },
     {
       title: 'Enhancing User Experience: The Importance of UI/UX Design',
-      image: 'img/client-uiux.jpeg'
+      image: getCloudinaryUrl('img/client-uiux.jpeg')
     },
     {
       title: 'Investment Strategies for Business Growth in 2024',
-      image: 'img/investment.jpeg'
+      image: getCloudinaryUrl('img/investment.jpeg')
     },
     {
       title: 'Navigating Business Loans: What You Need to Know',
-      image: 'img/navigatin-business.jpg'
+      image: getCloudinaryUrl('img/navigatin-business.jpg')
     }
   ]
 
   const uxUiBlogs = [
     {
       title: 'Enhancing User Experience: The Importance of UI/UX Design',
-      image: 'img/client-uiux.jpeg'
+      image: getCloudinaryUrl('img/client-uiux.jpeg')
     }
   ]
 
   const digitalTransformationBlogs = [
     {
       title: 'Cybersecurity Best Practices for Businesses in the Digital Age',
-      image: 'img/Cybersecurity.jpg'
+      image: getCloudinaryUrl('img/Cybersecurity.jpg')
     }
   ]
 
@@ -87,8 +88,8 @@ function Clients() {
       <section className="servicesbg">
         <div className="container-fluid pb-5">
           <div>
-            <img src={`/img/services_icon_2.png`} alt="icon" className="img-fluid" />
-            <img src={`/img/Ellipse 1.png`} alt="icon" className="services-one__shape-2 img-fluid" />
+            <img src={getCloudinaryUrl('/img/services_icon_2.png')} alt="icon" className="img-fluid" />
+            <img src={getCloudinaryUrl('/img/Ellipse 1.png')} alt="icon" className="services-one__shape-2 img-fluid" />
           </div>
 
           <h2 className="services_banner_title">
@@ -112,8 +113,8 @@ function Clients() {
           </ul>
 
           <div>
-            <img src={`/img/services_icon_1.png`} alt="img" className="services-one__shape-1" />
-            <img src={`/img/services_icon.png`} alt="icon" className="img-fluid services-one__shape-2" />
+            <img src={getCloudinaryUrl('/img/services_icon_1.png')} alt="img" className="services-one__shape-1" />
+            <img src={getCloudinaryUrl('/img/services_icon.png')} alt="icon" className="img-fluid services-one__shape-2" />
           </div>
         </div>
 
@@ -128,7 +129,7 @@ function Clients() {
               <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className="clientlogo-one__single">
                   <div className="clientlogo-one__single-inner">
-                    <img src={`/${logo}`} alt="img" />
+                    <img src={logo} alt="img" />
                   </div>
                 </div>
               </div>
@@ -167,7 +168,7 @@ function Clients() {
             {industries.map((industry, index) => (
               <div key={index} className="col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className="client-card-one">
-                  <img src={`/${industry.image}`} className="img-fluid" alt={industry.name} />
+                  <img src={industry?.image} className="img-fluid" alt={industry?.name} />
                   <p>{industry.name}</p>
                 </div>
               </div>
@@ -228,13 +229,13 @@ function Clients() {
                     <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                       <div className="client_section">
                         <div className="img-blog">
-                          <img src={`/${blog.image}`} alt={blog.title} />
+                          <img src={blog?.image} alt={blog?.title} />
                         </div>
                         <div className="client_blog_title">
                           <h3>{blog.title}</h3>
                         </div>
                         <div className="btn-button">
-                          <Link to="/clientDeatils" className="btn-btn">
+                          <Link to="/clientDetails" className="btn-btn">
                             know more
                           </Link>
                         </div>
@@ -250,13 +251,13 @@ function Clients() {
                     <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                       <div className="client_section">
                         <div className="img-blog">
-                          <img src={`/${blog.image}`} alt={blog.title} />
+                          <img src={blog?.image} alt={blog?.title} />
                         </div>
                         <div className="client_blog_title">
                           <h3>{blog.title}</h3>
                         </div>
                         <div className="btn-button">
-                          <Link to="/clientDeatils" className="btn-btn">
+                          <Link to="/clientDetails" className="btn-btn">
                             know more
                           </Link>
                         </div>
@@ -272,13 +273,13 @@ function Clients() {
                     <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                       <div className="client_section">
                         <div className="img-blog">
-                          <img src={`/${blog.image}`} alt={blog.title} />
+                          <img src={blog?.image} alt={blog?.title} />
                         </div>
                         <div className="client_blog_title">
                           <h3>{blog.title}</h3>
                         </div>
                         <div className="btn-button">
-                          <Link to="/clientDeatils" className="btn-btn">
+                          <Link to="/clientDetails" className="btn-btn">
                             know more
                           </Link>
                         </div>
@@ -297,21 +298,21 @@ function Clients() {
             <div className="testimonials-item">
               <div className="item">
                 <h5 className="customer">
-                  We <img src={`/img/heart.png`} alt="heart" /> our clients
+                  We <img src={getCloudinaryUrl('/img/heart.png')} alt="heart" /> our clients
                 </h5>
                 <h2 className="customer1">What do people praise about centennial?</h2>
                 <p className="customer2">our client testimonials</p>
               </div>
               <div className="slider">
                 <div className="imgtt">
-                  <img src={`/img/testimonials.jpg`} alt="img" className="imgt" />
-                  <img src={`/img/testimonials-1.jpg`} alt="img" className="imgt" />
-                  <img src={`/img/testimonials-2.jpg`} alt="img" className="imgt" />
-                  <img src={`/img/testimonials-3.jpg`} alt="img" className="imgt" />
+                  <img src={getCloudinaryUrl('/img/testimonials.jpg')} alt="img" className="imgt" />
+                  <img src={getCloudinaryUrl('/img/testimonials-1.jpg')} alt="img" className="imgt" />
+                  <img src={getCloudinaryUrl('/img/testimonials-2.jpg')} alt="img" className="imgt" />
+                  <img src={getCloudinaryUrl('/img/testimonials-3.jpg')} alt="img" className="imgt" />
                 </div>
                 <div className="right-item-testi">
                   <div className="large-img">
-                    <img src={`/img/testimonials.jpg`} alt="img" className="imgt1" />
+                    <img src={getCloudinaryUrl('/img/testimonials.jpg')} alt="img" className="imgt1" />
                   </div>
                   <div className="text-content">
                     <div className="testimonials-item">
@@ -324,10 +325,10 @@ function Clients() {
                     </div>
                     <div className="buttons">
                       <button type="button" className="btnn1">
-                        <img src={`/img/arrow_new_left.png`} alt="left arrow" />
+                        <img src={getCloudinaryUrl('/img/arrow_new_left.png')} alt="left arrow" />
                       </button>
                       <button type="button" className="btnn2">
-                        <img src={`/img/arrow_new.png`} alt="right arrow" />
+                        <img src={getCloudinaryUrl('/img/arrow_new.png')} alt="right arrow" />
                       </button>
                     </div>
                   </div>

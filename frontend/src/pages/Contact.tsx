@@ -2,6 +2,7 @@ import Breadcrumb from '../components/Breadcrumb'
 import ContactForm from '../components/ContactForm'
 import NewsletterForm from '../components/NewsletterForm'
 import useScrollToTop from '../hooks/useScrollToTop'
+import { getCloudinaryUrl } from '../utils/imageUrl'
 
 function Contact() {
   useScrollToTop()
@@ -23,7 +24,7 @@ function Contact() {
             <div className="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
               <div className="contact-left">
                 <div>
-                  <img src={`/img/contact.png`} alt="Contact" />
+                  <img src={getCloudinaryUrl('/img/contact.png')} alt="Contact" />
                 </div>
                 <div className="cl-num">
                   <div className="contact-info">

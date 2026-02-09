@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import { getCloudinaryUrl } from '../utils/imageUrl'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -10,7 +11,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-sm navbar-dark">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            <img src={`/img/logo.png`} alt="Centennial Infotech" />
+            <img src={getCloudinaryUrl('/img/logo.png')} alt="Centennial Infotech" />
           </Link>
           <button 
             className="navbar-toggler" 

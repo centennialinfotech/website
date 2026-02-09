@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import useScrollToTop from '../hooks/useScrollToTop'
+import { getCloudinaryUrl } from '../utils/imageUrl'
 
 function Services() {
   useScrollToTop()
 
-  const [mainImage, setMainImage] = useState(`/img/ui.jpeg`)
+  const [mainImage, setMainImage] = useState(getCloudinaryUrl('/img/ui.jpeg'))
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -56,7 +57,7 @@ function Services() {
   }, [])
 
   const handleImageChange = (imagePath: string) => {
-    setMainImage(`/${imagePath}`)
+    setMainImage(getCloudinaryUrl(imagePath))
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -136,32 +137,32 @@ function Services() {
   }
 
   const services = [
-    { id: 'UI/UX-Design', title: 'UI/UX Design', description: 'Designing intuitive and engaging interfaces that enhance user satisfaction and drive engagement.', image: 'img/services-3.png', mainImage: 'img/ui.jpeg' },
-    { id: 'Quality-Assurance', title: 'Quality Assurance', description: 'Ensuring your products meet the highest standards of quality and performance.', image: 'img/services-5.png', mainImage: 'img/qa.jpeg' },
-    { id: 'Web-development', title: 'Web development', description: 'Crafting exceptional websites that are not only visually appealing but also highly functional.', image: 'img/services-2.png', mainImage: 'img/web.jpeg' },
-    { id: 'Software-Development', title: 'Software Development', description: 'Delivering excellence in software that empowers your vision and drives your business forward.', image: 'img/services-4.png', mainImage: 'img/software.jpeg' },
-    { id: 'App-development', title: 'App development', description: 'Crafting exceptional websites that are not only visually appealing but also highly functional.', image: 'img/services-user.png', mainImage: 'img/app.jpeg' },
-    { id: 'IT-Consulting', title: 'IT Consulting', description: 'Providing expert guidance to help you navigate the complexities of the IT landscape.', image: 'img/services-6.png', mainImage: 'img/it.png' }
+    { id: 'UI/UX-Design', title: 'UI/UX Design', description: 'Designing intuitive and engaging interfaces that enhance user satisfaction and drive engagement.', image: getCloudinaryUrl('img/services-3.png'), mainImage: 'img/ui.jpeg' },
+    { id: 'Quality-Assurance', title: 'Quality Assurance', description: 'Ensuring your products meet the highest standards of quality and performance.', image: getCloudinaryUrl('img/services-5.png'), mainImage: 'img/qa.jpeg' },
+    { id: 'Web-development', title: 'Web development', description: 'Crafting exceptional websites that are not only visually appealing but also highly functional.', image: getCloudinaryUrl('img/services-2.png'), mainImage: 'img/web.jpeg' },
+    { id: 'Software-Development', title: 'Software Development', description: 'Delivering excellence in software that empowers your vision and drives your business forward.', image: getCloudinaryUrl('img/services-4.png'), mainImage: 'img/software.jpeg' },
+    { id: 'App-development', title: 'App development', description: 'Crafting exceptional websites that are not only visually appealing but also highly functional.', image: getCloudinaryUrl('img/services-user.png'), mainImage: 'img/app.jpeg' },
+    { id: 'IT-Consulting', title: 'IT Consulting', description: 'Providing expert guidance to help you navigate the complexities of the IT landscape.', image: getCloudinaryUrl('img/services-6.png'), mainImage: 'img/it.png' }
   ]
 
   const industries = [
-    { title: 'Professional services', description: 'Enhancing business operations with tailored IT solutions', image: 'img/industries_1.png' },
-    { title: 'Healthcare services', description: 'Improving patient care and operational efficiency through innovative technology.', image: 'img/cloud.png' },
-    { title: 'Real estate services', description: 'Revolutionizing property management and customer engagement with custom software.', image: 'img/computer.png', height: '482px' },
+    { title: 'Professional services', description: 'Enhancing business operations with tailored IT solutions', image: getCloudinaryUrl('img/industries_1.png') },
+    { title: 'Healthcare services', description: 'Improving patient care and operational efficiency through innovative technology.', image: getCloudinaryUrl('img/cloud.png') },
+    { title: 'Real estate services', description: 'Revolutionizing property management and customer engagement with custom software.', image: getCloudinaryUrl('img/computer.png'), height: '482px' },
     { title: 'IT services', description: 'Providing cutting-edge solutions to drive IT innovation and performance.' },
-    { title: 'Education', description: 'Transforming learning experiences with state-of-the-art educational technology solutions.', image: 'img/industries_3.png' },
-    { title: 'Construction services', description: 'Streamlining project management and collaboration with advanced IT tools.', image: 'img/industries_2.png' }
+    { title: 'Education', description: 'Transforming learning experiences with state-of-the-art educational technology solutions.', image: getCloudinaryUrl('img/industries_3.png') },
+    { title: 'Construction services', description: 'Streamlining project management and collaboration with advanced IT tools.', image: getCloudinaryUrl('img/industries_2.png') }
   ]
 
   const clientLogos = [
-    'img/vodafone.png',
-    'img/ebay.png',
-    'img/hero.png',
-    'img/amazon.png',
-    'img/asianpaints.png',
-    'img/itc-hotels.png',
-    'img/flipkart.png',
-    'img/muthoot-fincorp.png'
+    getCloudinaryUrl('img/vodafone.png'),
+    getCloudinaryUrl('img/ebay.png'),
+    getCloudinaryUrl('img/hero.png'),
+    getCloudinaryUrl('img/amazon.png'),
+    getCloudinaryUrl('img/asianpaints.png'),
+    getCloudinaryUrl('img/itc-hotels.png'),
+    getCloudinaryUrl('img/flipkart.png'),
+    getCloudinaryUrl('img/muthoot-fincorp.png')
   ]
 
   const achievements = [
@@ -189,8 +190,8 @@ function Services() {
       <section className="servicesbg">
         <div className="container-fluid pb-5">
           <div>
-            <img src={`/img/services_icon_2.png`} alt="icon" className="img-fluid" />
-            <img src={`/img/Ellipse 1.png`} alt="icon" className="services-one__shape-2 img-fluid" />
+            <img src={getCloudinaryUrl('/img/services_icon_2.png')} alt="icon" className="img-fluid" />
+            <img src={getCloudinaryUrl('/img/Ellipse 1.png')} alt="icon" className="services-one__shape-2 img-fluid" />
           </div>
 
           <h2 className="services_banner_title">
@@ -201,12 +202,12 @@ function Services() {
           <h3 className="services-wt">Take control of your business. Begin your journey with us!</h3>
 
           <div>
-            <img src={`/img/services_icon.png`} alt="icon" className="img-fluid services-one__shape-2" />
+            <img src={getCloudinaryUrl('/img/services_icon.png')} alt="icon" className="img-fluid services-one__shape-2" />
           </div>
         </div>
 
         <div className="container pb-5">
-          <img src={`/img/services_icon_1.png`} alt="img" className="services-one__shape-4" />
+          <img src={getCloudinaryUrl('/img/services_icon_1.png')} alt="img" className="services-one__shape-4" />
 
           <div className="mt-5 services_contact_bg">
             <h3 className="services_contact_title">Let's take your requirement</h3>
@@ -271,7 +272,7 @@ function Services() {
                 >
                   <div className="services-one__single">
                     <div className="services-one__icon">
-                      <img src={`/${service.image}`} alt="img" className="img-fluid" />
+                      <img src={service.image} alt="img" className="img-fluid" />
                     </div>
                     <div className="services-one__content-box">
                       <h3 className="services-one__title">{service.title}</h3>
@@ -304,14 +305,14 @@ function Services() {
                 <h3 className="services-one__title">{industries[0].title}</h3>
                 <p className="industries-one__text">{industries[0].description}</p>
               </div>
-              <img src={`/${industries[0].image}`} alt="img" className="img-fluid services-one" />
+              <img src={industries[0]?.image} alt="img" className="img-fluid services-one" />
             </div>
 
             <div className="industries-one__single">
               <div className="industries-one__single-inner">
                 <h3 className="services-one__title">{industries[1].title}</h3>
                 <p className="industries-one__text">{industries[1].description}</p>
-                <img src={`/${industries[1].image}`} alt="img" className="img-fluid services-one" />
+                <img src={industries[1]?.image} alt="img" className="img-fluid services-one" />
               </div>
             </div>
           </div>
@@ -321,7 +322,7 @@ function Services() {
               <div className="industries-one__single-inner">
                 <h3 className="services-one__title">{industries[2].title}</h3>
                 <p className="industries-one__text">{industries[2].description}</p>
-                <img src={`/${industries[2].image}`} alt="img" className="img-fluid pt-5" />
+                <img src={industries[2]?.image} alt="img" className="img-fluid pt-5" />
               </div>
             </div>
           </div>
@@ -331,8 +332,8 @@ function Services() {
               <div className="col-xl-6 col-lg-6 col-md-6">
                 <div className="industries-one__single">
                   <div className="industries-one__single-inner">
-                    <h3 className="services-one__title">{industries[3].title}</h3>
-                    <p className="industries-one__text">{industries[3].description}</p>
+                    <h3 className="services-one__title">{industries[3]?.title}</h3>
+                    <p className="industries-one__text">{industries[3]?.description}</p>
                   </div>
                 </div>
               </div>
@@ -340,11 +341,11 @@ function Services() {
               <div className="col-xl-6 col-lg-6 col-md-6">
                 <div className="industries-one__single">
                   <div className="industries-one__single-inner">
-                    <h3 className="services-one__title">{industries[4].title}</h3>
-                    <p className="industries-one__text">{industries[4].description}</p>
+                    <h3 className="services-one__title">{industries[4]?.title}</h3>
+                    <p className="industries-one__text">{industries[4]?.description}</p>
                   </div>
                   <img
-                    src={`/${industries[4].image}`}
+                    src={industries[4]?.image}
                     alt="img"
                     className="img-fluid industries-one__imgt"
                     style={{ float: 'right' }}
@@ -358,7 +359,7 @@ function Services() {
                 <h3 className="services-one__title">{industries[5].title}</h3>
                 <p className="industries-one__text">{industries[5].description}</p>
               </div>
-              <img src={`/${industries[5].image}`} alt="img" className="img-fluid industires_img_wt" />
+              <img src={industries[5]?.image} alt="img" className="img-fluid industires_img_wt" />
             </div>
           </div>
         </div>
@@ -393,7 +394,7 @@ function Services() {
           We make it easy to get started investing with our platforms to get you on the right track
         </p>
         <div className="pt-5">
-          <img src={`/img/assets.png`} className="img-fluid" alt="img" />
+          <img src={getCloudinaryUrl('/img/assets.png')} className="img-fluid" alt="img" />
         </div>
       </div>
 
@@ -408,7 +409,7 @@ function Services() {
             <div key={index} className="col-xl-3 col-lg-3 col-md-3">
               <div className="clientlogo-one__single">
                 <div className="clientlogo-one__single-inner">
-                  <img src={`/${logo}`} alt="img" />
+                  <img src={logo} alt="img" />
                 </div>
               </div>
             </div>
@@ -428,7 +429,7 @@ function Services() {
             {achievements.map((achievement, index) => (
               <div key={index} className="col-sm-3 col-md-3 pb-4">
                 <div className="archieve-img">
-                  <img src={`/img/archieve.png`} alt={`Achievement ${index + 1}`} />
+                  <img src={getCloudinaryUrl('/img/archieve.png')} alt={`Achievement ${index + 1}`} />
                 </div>
                 <div className="archieve-text">
                   <h5>{achievement.number}</h5>
@@ -436,7 +437,7 @@ function Services() {
                   <p>{achievement.description}</p>
                 </div>
                 <div className="archieve-img-right">
-                  <img src={`/img/archive_b.png`} alt="Achievement Icon" />
+                  <img src={getCloudinaryUrl('/img/archive_b.png')} alt="Achievement Icon" />
                 </div>
               </div>
             ))}

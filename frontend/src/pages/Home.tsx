@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useScrollToTop from '../hooks/useScrollToTop'
+import { getCloudinaryUrl } from '../utils/imageUrl'
 
 interface Product {
   image: string
@@ -38,32 +39,32 @@ declare global {
 }
 
 function Home() {
-  const [selectedProduct, setSelectedProduct] = useState<string>('img/chnage_a.png')
+  const [selectedProduct, setSelectedProduct] = useState<string>(getCloudinaryUrl('img/chnage_a.png'))
   const [currentTestimonial, setCurrentTestimonial] = useState<number>(0)
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null)
 
   const products: Product[] = [
     {
-      image: 'img/product_a.png',
-      changeImage: 'img/chnage_a.png',
+      image: getCloudinaryUrl('img/product_a.png'),
+      changeImage: getCloudinaryUrl('img/chnage_a.png'),
       title: 'Banking and Financial Services',
       description: 'Enhance operational efficiency and customer satisfaction with cutting-edge technology tailored for banking and finance.'
     },
     {
-      image: 'img/product_b.png',
-      changeImage: 'img/chnage_b.png',
+      image: getCloudinaryUrl('img/product_b.png'),
+      changeImage: getCloudinaryUrl('img/chnage_b.png'),
       title: 'Business Led Solution',
       description: 'Drive growth and efficiency with solutions designed to align with your strategic objectives and deliver measurable results.'
     },
     {
-      image: 'img/product_c.png',
-      changeImage: 'img/chnage_c.png',
+      image: getCloudinaryUrl('img/product_c.png'),
+      changeImage: getCloudinaryUrl('img/chnage_c.png'),
       title: 'UX UI Design solutions',
       description: 'Our UX/UI design solutions ensure seamless interactions and visually stunning designs tailored to your users\' needs.'
     },
     {
-      image: 'img/product_d.png',
-      changeImage: 'img/chnage_e.png',
+      image: getCloudinaryUrl('img/product_d.png'),
+      changeImage: getCloudinaryUrl('img/chnage_e.png'),
       title: 'Digital Solutions',
       description: 'Transform operations, boost efficiency, and drive growth with our innovative digital tools and strategies.'
     }
@@ -74,25 +75,25 @@ function Home() {
       name: "Harshvardhan Upadhaya",
       title: "Long Term Investor",
       text: "Great work!!! The team was solid, efficient and knowledgeable. They did an amazing job on my very challenging app",
-      image: "img/testimonials.jpg"
+      image: getCloudinaryUrl("img/testimonials.jpg")
     },
     {
       name: "Supriya Sharma",
       title: "Startup Founder",
       text: "Great work!!! The team was solid, efficient and knowledgeable. They did an amazing job on my very challenging app. I will be using them again. Thank you for doing such a great job!",
-      image: "img/testimonials-1.jpg"
+      image: getCloudinaryUrl("img/testimonials-1.jpg")
     },
     {
       name: "neha shukla",
       title: "Entrepreneur",
       text: "Fantastic service! The team provided excellent support and delivered a top-notch product. I highly recommend them.",
-      image: "img/testimonials-2.jpg"
+      image: getCloudinaryUrl("img/testimonials-2.jpg")
     },
     {
       name: "Michael Johnson",
       title: "Startup Founder",
       text: "A pleasure to work with! Their expertise and professionalism exceeded my expectations. I'm very happy with the results.",
-      image: "img/testimonials-3.jpg"
+      image: getCloudinaryUrl("img/testimonials-3.jpg")
     }
   ]
 
@@ -177,15 +178,15 @@ function Home() {
                 <h1 className="heading1">Expanding Horizons with Design Tech & Analytics</h1>
                 <div className="cards">
                   <div className="card">
-                    <img src={`/img/star_a.png`} alt="Legacy" />
+                    <img src={getCloudinaryUrl('/img/star_a.png')} alt="Legacy" />
                     <p className="spans">30 Years of <br /><span>Legacy</span></p>
                   </div>
                   <div className="card">
-                    <img src={`/img/Group.png`} alt="Clients" />
+                    <img src={getCloudinaryUrl('/img/Group.png')} alt="Clients" />
                     <p className="spans">2700 <br /><span>Satisfied Clients</span></p>
                   </div>
                   <div className="card">
-                    <img src={`/img/list-check-solid 1.png`} alt="Projects" />
+                    <img src={getCloudinaryUrl('/img/list-check-solid 1.png')} alt="Projects" />
                     <p className="spans">200 <br /><span>Projects</span></p>
                   </div>
                 </div>
@@ -194,7 +195,7 @@ function Home() {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
               <div className="img">
-                <img src={`/img/human1.png`} alt="Hero" />
+                <img src={getCloudinaryUrl('/img/human1.png')} alt="Hero" />
               </div>
             </div>
           </div>
@@ -251,31 +252,31 @@ function Home() {
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`/img/why.png`} alt="Quality Assurance" />
+                <img src={getCloudinaryUrl('/img/why.png')} alt="Quality Assurance" />
                 <p>Quality Assurance<span>As ISO 9001 certified, our commitment to quality management ensures that every solution we deliver meets rigorous standards of reliability, security, and performance.</span></p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`/img/why_a.png`} alt="Strong reputation" />
+                <img src={getCloudinaryUrl('/img/why_a.png')} alt="Strong reputation" />
                 <p>Strong reputation<span>Our portfolio showcases our ability to turn complex challenges into success stories, delivering measurable results and tangible business value.</span></p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`/img/why_g.png`} alt="Customized solutions" />
+                <img src={getCloudinaryUrl('/img/why_g.png')} alt="Customized solutions" />
                 <p>Customized solutions<span>Our agile methodology ensures flexibility and responsiveness to your evolving needs.</span></p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`/img/why_d.png`} alt="Innovative & powerful platforms" />
+                <img src={getCloudinaryUrl('/img/why_d.png')} alt="Innovative & powerful platforms" />
                 <p>Innovative & powerful platforms<span>We specialize in harnessing the latest technologies like AI, blockchain, and IoT to develop cutting-edge solutions that propel your business forward.</span></p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="cark mx-auto">
-                <img src={`/img/why_e.png`} alt="Reliable & dependable support" />
+                <img src={getCloudinaryUrl('/img/why_e.png')} alt="Reliable & dependable support" />
                 <p>Reliable & dependable support<span>Our portfolio showcases our ability to turn complex challenges into success stories, delivering measurable results and tangible business value.</span></p>
               </div>
             </div>
@@ -300,10 +301,10 @@ function Home() {
                     onClick={() => handleProductClick(product.changeImage)}
                     style={{ backgroundColor: selectedProduct === product.changeImage ? 'rgb(245 249 255)' : 'white' }}
                   >
-                    <img src={`/${product.image}`} alt={product.title} />
+                    <img src={product?.image} alt={product?.title} />
                     <p>
-                      {product.title}
-                      <span>{product.description}</span>
+                      {product?.title}
+                      <span>{product?.description}</span>
                     </p>
                   </div>
                 ))}
@@ -311,7 +312,7 @@ function Home() {
             </div>
             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
               <div className="product-image-container">
-                <img src={`/${selectedProduct}`} className="productimage" id="mainProductImage" alt="Product" />
+                <img src={selectedProduct} className="productimage" id="mainProductImage" alt="Product" />
               </div>
             </div>
           </div>
@@ -321,7 +322,7 @@ function Home() {
       {/* Branches Section */}
       <div className="brances">
         <div className="brances-img">
-          <img src={`/img/place.png`} className="img-fluid" alt="Branches" />
+          <img src={getCloudinaryUrl('/img/place.png')} className="img-fluid" alt="Branches" />
         </div>
         <div className="text-branches">
           <h5>Explore our prime location</h5>
@@ -343,17 +344,17 @@ function Home() {
                 <ul className="d-flex justify-content-end">
                   <li>
                     <a href="https://wa.me/918146511568" target="_blank" rel="noopener noreferrer">
-                      <img src={`/img/contact-a.png`} alt="WhatsApp" className="img-fluid" />
+                      <img src={getCloudinaryUrl('/img/contact-a.png')} alt="WhatsApp" className="img-fluid" />
                     </a>
                   </li>
                   <li>
                     <a href="tel:+918146511568">
-                      <img src={`/img/contact-b.png`} alt="Phone" className="img-fluid" />
+                      <img src={getCloudinaryUrl('/img/contact-b.png')} alt="Phone" className="img-fluid" />
                     </a>
                   </li>
                   <li>
                     <a href="mailto:support@centennialinfotech.com">
-                      <img src={`/img/contact_c.png`} alt="Mail" className="img-fluid" />
+                      <img src={getCloudinaryUrl('/img/contact_c.png')} alt="Mail" className="img-fluid" />
                     </a>
                   </li>
                 </ul>
@@ -375,7 +376,7 @@ function Home() {
             {achievements.map((achievement, index) => (
               <div key={index} className="col-sm-3 col-md-3 pb-4">
                 <div className="archieve-img">
-                  <img src={`/img/archieve.png`} alt={`Achievement ${index + 1}`} />
+                  <img src={getCloudinaryUrl('/img/archieve.png')} alt={`Achievement ${index + 1}`} />
                 </div>
                 <div className="archieve-text">
                   <h5>{achievement.num}</h5>
@@ -383,7 +384,7 @@ function Home() {
                   <p>{achievement.desc}</p>
                 </div>
                 <div className="archieve-img-right">
-                  <img src={`/img/archive_b.png`} alt="Achievement Icon" />
+                  <img src={getCloudinaryUrl('/img/archive_b.png')} alt="Achievement Icon" />
                 </div>
               </div>
             ))}
@@ -403,7 +404,7 @@ function Home() {
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
               <div className="blog_section">
                 <div className="img-blog">
-                  <img src={`/img/blog_img.jpg`} alt="Blog" />
+                  <img src={getCloudinaryUrl('/img/blog_img.jpg')} alt="Blog" />
                 </div>
                 <div className="img-blog-text">
                   <span>Positive</span>
@@ -454,7 +455,7 @@ function Home() {
                     <h3>{title}</h3>
                     <div className="icons-right">
                       <Link to="/blogs">
-                        <img src={`/img/ArrowLeft.png`} alt="Arrow" />
+                        <img src={getCloudinaryUrl('/img/ArrowLeft.png')} alt="Arrow" />
                       </Link>
                     </div>
                   </div>
@@ -473,7 +474,7 @@ function Home() {
         <div className="container">
           <div className="testimonials-item">
             <div className="item">
-              <h5 className="customer">We <img src={`/img/heart.png`} alt="love" /> our clients</h5>
+              <h5 className="customer">We <img src={getCloudinaryUrl('/img/heart.png')} alt="love" /> our clients</h5>
               <h2 className="customer1">What do people praise about centennial?</h2>
               <p className="customer2">our client testimonials</p>
             </div>
@@ -482,7 +483,7 @@ function Home() {
                 {testimonials.map((testimonial, index) => (
                   <img
                     key={index}
-                    src={`/${testimonial.image}`}
+                    src={testimonial?.image}
                     alt={`Testimonial ${index + 1}`}
                     className="imgt"
                     style={{ display: index === currentTestimonial ? 'none' : 'inline-block' }}
@@ -491,7 +492,7 @@ function Home() {
               </div>
               <div className="right-item-testi">
                 <div className="large-img">
-                  <img src={`/${testimonials[currentTestimonial].image}`} alt="Testimonial" className="imgt1" />
+                  <img src={testimonials[currentTestimonial].image} alt="Testimonial" className="imgt1" />
                 </div>
                 <div className="text-content">
                   <div className="testimonials-item">
@@ -501,10 +502,10 @@ function Home() {
                   </div>
                   <div className="buttons">
                     <button type="button" className="btnn1" onClick={handleTestimonialNext}>
-                      <img src={`/img/arrow_new_left.png`} alt="Previous" />
+                      <img src={getCloudinaryUrl('/img/arrow_new_left.png')} alt="Previous" />
                     </button>
                     <button type="button" className="btnn2" onClick={handleTestimonialPrev}>
-                      <img src={`/img/arrow_new.png`} alt="Next" />
+                      <img src={getCloudinaryUrl('/img/arrow_new.png')} alt="Next" />
                     </button>
                   </div>
                 </div>
@@ -532,7 +533,7 @@ function Home() {
                     className={`accordion ${activeAccordion === index ? 'active' : ''}`}
                     onClick={() => toggleAccordion(index)}
                   >
-                    <img className="arrow-accordian" src={`/img/arrow.png`} alt="Arrow" />
+                    <img className="arrow-accordian" src={getCloudinaryUrl('/img/arrow.png')} alt="Arrow" />
                     {faq.question}
                   </button>
                   <div className="panel" style={{ display: activeAccordion === index ? 'block' : 'none' }}>

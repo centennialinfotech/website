@@ -1,5 +1,6 @@
 import Breadcrumb from '../components/Breadcrumb'
 import useScrollToTop from '../hooks/useScrollToTop'
+import { getCloudinaryUrl } from '../utils/imageUrl'
 
 interface MissionItem {
   img: string
@@ -35,17 +36,17 @@ function About() {
   useScrollToTop()
 
   const missionItems: MissionItem[] = [
-    { img: 'img/why_a.png', title: 'Innovation-Driven', text: 'We leverage the latest technologies to create innovative solutions that drive success.' },
-    { img: 'img/why_g.png', title: 'Client-Centric', text: 'Your satisfaction is our priority, and we strive to exceed your expectations in every project.' },
-    { img: 'img/why_d.png', title: 'Quality Focus', text: 'We are committed to delivering high-quality services that meet the highest industry standards.' },
-    { img: 'img/why_e.png', title: 'Ethical Practices', text: 'We adhere to the highest ethical standards, ensuring transparency and integrity in all our dealings.' }
+    { img: getCloudinaryUrl('img/why_a.png'), title: 'Innovation-Driven', text: 'We leverage the latest technologies to create innovative solutions that drive success.' },
+    { img: getCloudinaryUrl('img/why_g.png'), title: 'Client-Centric', text: 'Your satisfaction is our priority, and we strive to exceed your expectations in every project.' },
+    { img: getCloudinaryUrl('img/why_d.png'), title: 'Quality Focus', text: 'We are committed to delivering high-quality services that meet the highest industry standards.' },
+    { img: getCloudinaryUrl('img/why_e.png'), title: 'Ethical Practices', text: 'We adhere to the highest ethical standards, ensuring transparency and integrity in all our dealings.' }
   ]
 
   const coreValues: CoreValue[] = [
-    { img: 'img/why_a.png', title: 'Integrity', text: 'We uphold the highest standards of integrity in all our actions, ensuring honesty, transparency, and accountability in every project.' },
-    { img: 'img/why_a.png', title: 'Respect', text: 'We treat everyone with respect, valuing diverse perspectives and fostering an inclusive environment where everyone can thrive.' },
-    { img: 'img/why_a.png', title: 'Responsibility', text: 'We take responsibility for our actions and their impact on our clients, our team, and the wider community. We are committed to making a positive difference.' },
-    { img: 'img/why_a.png', title: 'Adaptability', text: 'We remain flexible and adaptable, ready to embrace change and seize new opportunities in a fast-paced technological landscape.' }
+    { img: getCloudinaryUrl('img/why_a.png'), title: 'Integrity', text: 'We uphold the highest standards of integrity in all our actions, ensuring honesty, transparency, and accountability in every project.' },
+    { img: getCloudinaryUrl('img/why_a.png'), title: 'Respect', text: 'We treat everyone with respect, valuing diverse perspectives and fostering an inclusive environment where everyone can thrive.' },
+    { img: getCloudinaryUrl('img/why_a.png'), title: 'Responsibility', text: 'We take responsibility for our actions and their impact on our clients, our team, and the wider community. We are committed to making a positive difference.' },
+    { img: getCloudinaryUrl('img/why_a.png'), title: 'Adaptability', text: 'We remain flexible and adaptable, ready to embrace change and seize new opportunities in a fast-paced technological landscape.' }
   ]
 
   const counters: Counter[] = [
@@ -55,9 +56,9 @@ function About() {
   ]
 
   const teamMembers: TeamMember[] = [
-    { bg: 'img/Rectangle 40273.png', photo: 'img/team_1.png', title: 'IT Head Team Lead', name: 'Brijesh Srivastava' },
-    { bg: 'img/Rectangle 40274.png', photo: 'img/team_4.png', title: 'Business analyst', name: 'Aaditya sharma' },
-    { bg: 'img/Rectangle 40275.png', photo: 'img/team_5.png', title: 'UX UI lead', name: 'Tunisha sharma' }
+    { bg: getCloudinaryUrl('img/Rectangle 40273.png'), photo: getCloudinaryUrl('img/team_1.png'), title: 'IT Head Team Lead', name: 'Brijesh Srivastava' },
+    { bg: getCloudinaryUrl('img/Rectangle 40274.png'), photo: getCloudinaryUrl('img/team_4.png'), title: 'Business analyst', name: 'Aaditya sharma' },
+    { bg: getCloudinaryUrl('img/Rectangle 40275.png'), photo: getCloudinaryUrl('img/team_5.png'), title: 'UX UI lead', name: 'Tunisha sharma' }
   ]
 
   const timelineSteps: TimelineStep[] = [
@@ -91,17 +92,17 @@ function About() {
               <p className="abouttext_para">
                 At Centennial Infotech, our mission is to transform your ideas into reality with cutting-edge technology and innovative solutions. We strive to deliver satisfactory results that not only meet but exceed your expectations. Our goal is to expand our scope of services continuously and keep up with the evolving technological landscape to provide the best solutions to our clients.
               </p>
-              <img src={`/img/aboutuser.png`} alt="About Us" className="img-fluid pt-4" />
+              <img src={getCloudinaryUrl('/img/aboutuser.png')} alt="About Us" className="img-fluid pt-4" />
             </div>
 
             <div className="col-sm-6 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
               <div className="row pt-5">
-                {missionItems.map((item, index) => (
+                {missionItems?.map((item, index) => (
                   <div key={index} className="col-xl-6 col-lg-6 col-md-6">
                     <div className="aboutpd-one__single">
-                      <img src={`/${item.img}`} alt={item.title} />
-                      <h3 className="aboutpd-one__title">{item.title}</h3>
-                      <p className="aboutpd-one__text">{item.text}</p>
+                      <img src={item?.img} alt={item?.title} />
+                      <h3 className="aboutpd-one__title">{item?.title}</h3>
+                      <p className="aboutpd-one__text">{item?.text}</p>
                     </div>
                   </div>
                 ))}
@@ -122,9 +123,9 @@ function About() {
             {coreValues.map((item, index) => (
               <div key={index} className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <div className="aboutprdocut-one__single">
-                  <img src={`/${item.img}`} alt={item.title} />
-                  <h3 className="aboutprdocut-one__title">{item.title}</h3>
-                  <p className="aboutprdocut-one__text">{item.text}</p>
+                  <img src={item?.img} alt={item?.title} />
+                  <h3 className="aboutprdocut-one__title">{item?.title}</h3>
+                  <p className="aboutprdocut-one__text">{item?.text}</p>
                 </div>
               </div>
             ))}
@@ -147,7 +148,7 @@ function About() {
               </p>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-6 pt-5">
-              <img src={`/img/vision.jpg`} alt="Vision" className="img-fluid" style={{ borderRadius: '32px' }} />
+              <img src={getCloudinaryUrl('/img/vision.jpg')} alt="Vision" className="img-fluid" style={{ borderRadius: '32px' }} />
             </div>
           </div>
         </div>
@@ -179,7 +180,7 @@ function About() {
           <p className="para text-start">Tracing Milestones, Building Legacy</p>
 
           <div className="wavetimeline">
-            <img src={`/img/processgr.png`} alt="Timeline" className="img-fluid" />
+            <img src={getCloudinaryUrl('/img/processgr.png')} alt="Timeline" className="img-fluid" />
             <div className="waverr">
               <div className="ourhistory__single ourhistory__single_two">
                 <h3 className="ourhistory__title">2024 founded</h3>
@@ -220,11 +221,11 @@ function About() {
           <div className="row pt-5">
             {teamMembers.map((member, index) => (
               <div key={index} className="col-xl-4 col-lg-4 col-md-4">
-                <img src={`/${member.bg}`} alt="Team Background" className="img-fluid" />
+                <img src={member?.bg} alt="Team Background" className="img-fluid" />
                 <div className="pt-3">
-                  <img src={`/${member.photo}`} alt={member.name} className="img-fluid team_imgtt" />
-                  <h3 className="team__title">{member.title}</h3>
-                  <p className="team__titletext">{member.name}</p>
+                  <img src={member?.photo} alt={member?.name} className="img-fluid team_imgtt" />
+                  <h3 className="team__title">{member?.title}</h3>
+                  <p className="team__titletext">{member?.name}</p>
                 </div>
               </div>
             ))}

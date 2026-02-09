@@ -3,6 +3,7 @@ import Breadcrumb from "../components/Breadcrumb";
 import DOMPurify from 'dompurify';
 import useScrollToTop from "../hooks/useScrollToTop";
 import { Link } from "react-router-dom";
+import { getCloudinaryUrl } from "../utils/imageUrl";
 
 interface Blog {
   _id: string;
@@ -54,15 +55,15 @@ function Blogs() {
   ];
 
   const instagramPosts = [
-    "img/blogs-4.png",
-    "img/blogs-11.png",
-    "img/blogs-2.png",
-    "img/blogs-3.png",
-    "img/blogs-5.png",
-    "img/blogs-6.png",
-    "img/blogs-7.png",
-    "img/blogs-8.png",
-    "img/blogs.png",
+    getCloudinaryUrl("img/blogs-4.png"),
+    getCloudinaryUrl("img/blogs-11.png"),
+    getCloudinaryUrl("img/blogs-2.png"),
+    getCloudinaryUrl("img/blogs-3.png"),
+    getCloudinaryUrl("img/blogs-5.png"),
+    getCloudinaryUrl("img/blogs-6.png"),
+    getCloudinaryUrl("img/blogs-7.png"),
+    getCloudinaryUrl("img/blogs-8.png"),
+    getCloudinaryUrl("img/blogs.png"),
   ];
 
   return (
@@ -185,7 +186,7 @@ function Blogs() {
                     className={`col-4 ${index >= 3 ? "pt-3" : ""}`}
                   >
                     <img
-                      src={`/${post}`}
+                      src={`${post}`}
                       alt="img"
                       className="img-fluid"
                     />

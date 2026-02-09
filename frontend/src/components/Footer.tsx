@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { getCloudinaryUrl } from '../utils/imageUrl'
 
 function Footer() {
   return (
@@ -8,29 +9,29 @@ function Footer() {
           <div className="col-sm-4 col-md-3 col-lg-4 col-xl-3 col-xxl-3">
             <div className="section-footer">
               <Link to="/">
-                <img src={`/img/logo.png`} alt="Centennial Infotech" />
+                <img src={getCloudinaryUrl('/img/logo.png')} alt="Centennial Infotech" />
               </Link>
             </div>
             <div className="icons_footer">
               <ul>
                 <li>
                   <a href="https://twitter.com/centennialits" target="_blank" rel="noopener noreferrer">
-                    <img src={`/img/twitter.png`} alt="Twitter" />
+                    <img src={getCloudinaryUrl('/img/twitter.png')} alt="Twitter" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.facebook.com/centennialinfotech" target="_blank" rel="noopener noreferrer">
-                    <img src={`/img/facebook.png`} alt="Facebook" />
+                    <img src={getCloudinaryUrl('/img/facebook.png')} alt="Facebook" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.youtube.com/@centennialinfotech" target="_blank" rel="noopener noreferrer">
-                    <img src={`/img/youtube.png`} alt="YouTube" />
+                    <img src={getCloudinaryUrl('/img/youtube.png')} alt="YouTube" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.instagram.com/cententialinfotech" target="_blank" rel="noopener noreferrer">
-                    <img src={`/img/instagram.png`} alt="Instagram" />
+                    <img src={getCloudinaryUrl('/img/instagram.png')} alt="Instagram" />
                   </a>
                 </li>
               </ul>
