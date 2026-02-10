@@ -3,41 +3,32 @@ const nodemailer = require("nodemailer");
 const nodemamailSender = async (email, title, body) => {
   console.log("Sending email to:", email);
   console.log("Subject:", title);
-
+  console.log("Body:", body);
+  
   try {
-    const user = process.env.MAIL_USER;
-    const pass = process.env.MAIL_PASS;
-
-    if (!user || !pass) {
-      console.error("MAIL_USER or MAIL_PASS is not set. Skipping email send.");
-      return null;
-    }
-
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
+    let transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com", // Gmail SMTP server
+      port: 587, // For SSL
+      secure: false, // Use SSL
       auth: {
-        user,
-        pass, // Gmail App Password
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
       },
-      // Looser TLS + timeouts to avoid hanging
-      tls: { rejectUnauthorized: false },
-      connectionTimeout: 20000,
-      socketTimeout: 20000,
     });
 
-    const info = await transporter.sendMail({
-      from: `Centennial <${user}>`,
+    let info = await transporter.sendMail({
+      from: `Centennial <${process.env.MAIL_USER}>`, // Ensure this is a valid email address
       to: email,
       subject: title,
       html: body,
     });
 
-    console.log("Mail sent:", info.response || info);
+    console.log("Mail sent:", info);
     return info;
+
   } catch (err) {
-    console.error("Error sending mail (non‑fatal):", err.message || err);
-    // IMPORTANT: do NOT throw, so API still responds 200 and DB save is not rolled back
-    return null;
+    console.error("Error sending mail:", err);
+    throw err; // Optional: re-throw the error if you want to handle it further up the call stack
   }
 };
 
