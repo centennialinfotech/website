@@ -6,13 +6,11 @@ const nodemamailSender = async (email, title, body) => {
   console.log("Body:", body);
   
   try {
-    let transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com", // Gmail SMTP server
-      port: 587, // For SSL
-      secure: true, // Use SSL
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
       auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS,
+        user: process.env.MAIL_USER, // your gmail
+        pass: process.env.MAIL_PASS, // Gmail App Password
       },
     });
 
