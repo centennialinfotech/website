@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import useScrollToTop from '../hooks/useScrollToTop'
@@ -65,13 +65,9 @@ function Clients() {
   ]
 
   const getCurrentBlogs = () => {
-    if (activeTab === 'menu1') {
-      return allBlogs
-    } else if (activeTab === 'menu2') {
-      return uxUiBlogs
-    } else if (activeTab === 'menu3') {
-      return digitalTransformationBlogs
-    }
+    if (activeTab === 'menu1') return allBlogs
+    if (activeTab === 'menu2') return uxUiBlogs
+    if (activeTab === 'menu3') return digitalTransformationBlogs
     return allBlogs
   }
 
@@ -98,18 +94,10 @@ function Clients() {
           </h2>
 
           <ul className="client_suthead pt-4 pb-4">
-            <li>
-              <span>1000+ Projects</span>
-            </li>
-            <li>
-              <span>16+ Domains</span>
-            </li>
-            <li>
-              <span>125+ Awards</span>
-            </li>
-            <li>
-              <span>500+ Clients</span>
-            </li>
+            <li><span>1000+ Projects</span></li>
+            <li><span>16+ Domains</span></li>
+            <li><span>125+ Awards</span></li>
+            <li><span>500+ Clients</span></li>
           </ul>
 
           <div>
@@ -129,7 +117,7 @@ function Clients() {
               <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className="clientlogo-one__single">
                   <div className="clientlogo-one__single-inner">
-                    <img src={logo} alt="img" />
+                    <img src={logo} alt="client logo" className="img-fluid" />
                   </div>
                 </div>
               </div>
@@ -140,19 +128,17 @@ function Clients() {
         {/* Contact CTA */}
         <div className="container pt-5 pb-4">
           <div className="services__contactbg">
-            <div className="row justify-content-center">
-              <div className="col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9 mr-auto">
+            <div className="row justify-content-center align-items-center">
+              <div className="col-sm-9">
                 <h3 className="services__contacttitle">
                   Still unsure which product is right for you?
-                  <span className="services__contacttitlert">Let the experts help!</span>
+                  <span className="services__contacttitlert"> Let the experts help!</span>
                 </h3>
               </div>
-              <div className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 d-flex justify-content-end">
-                <div className="pt-3">
-                  <Link to="/contact">
-                    <button className="services_cnbtn btn">Contact</button>
-                  </Link>
-                </div>
+              <div className="col-sm-3 d-flex justify-content-end">
+                <Link to="/contact">
+                  <button className="services_cnbtn btn">Contact</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -182,103 +168,47 @@ function Clients() {
           <h2 className="industries-rt">we have transformed website</h2>
           <p className="industries-wt">Stay Updated On IT News, Emerging Technologies, And Market Trends</p>
 
-          <div>
+          <div className="mt-4">
             <ul className="nav nav-tabs">
-              <li title="Tab 1">
-                <a
-                  href="#menu1"
-                  className={activeTab === 'menu1' ? 'active' : ''}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    setActiveTab('menu1')
-                  }}
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${activeTab === 'menu1' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('menu1')}
                 >
                   All
-                </a>
+                </button>
               </li>
-              <li title="Tab 2">
-                <a
-                  href="#menu2"
-                  className={activeTab === 'menu2' ? 'active' : ''}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    setActiveTab('menu2')
-                  }}
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${activeTab === 'menu2' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('menu2')}
                 >
                   UX/UI Design
-                </a>
+                </button>
               </li>
-              <li title="Tab 3">
-                <a
-                  href="#menu3"
-                  className={activeTab === 'menu3' ? 'active' : ''}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    setActiveTab('menu3')
-                  }}
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${activeTab === 'menu3' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('menu3')}
                 >
                   Digital Transformation
-                </a>
+                </button>
               </li>
             </ul>
 
-            <div className="tab-content">
-              <div className={`tab-pane fade ${activeTab === 'menu1' ? 'in active' : ''}`} id="menu1">
-                <div className="row pt-5">
+            <div className="tab-content pt-4">
+              <div className={`tab-pane fade show active`}>
+                <div className="row">
                   {getCurrentBlogs().map((blog, index) => (
-                    <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                    <div key={index} className="col-sm-6 col-md-4 col-lg-3 mb-4">
                       <div className="client_section">
                         <div className="img-blog">
-                          <img src={blog?.image} alt={blog?.title} />
+                          <img src={blog?.image} alt={blog?.title} className="img-fluid" />
                         </div>
                         <div className="client_blog_title">
                           <h3>{blog.title}</h3>
                         </div>
-                        <div className="btn-button">
-                          <Link to="/clientDetails" className="btn-btn">
-                            know more
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className={`tab-pane fade ${activeTab === 'menu2' ? 'in active' : ''}`} id="menu2">
-                <div className="row pt-5">
-                  {getCurrentBlogs().map((blog, index) => (
-                    <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-                      <div className="client_section">
-                        <div className="img-blog">
-                          <img src={blog?.image} alt={blog?.title} />
-                        </div>
-                        <div className="client_blog_title">
-                          <h3>{blog.title}</h3>
-                        </div>
-                        <div className="btn-button">
-                          <Link to="/clientDetails" className="btn-btn">
-                            know more
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className={`tab-pane fade ${activeTab === 'menu3' ? 'in active' : ''}`} id="menu3">
-                <div className="row pt-5">
-                  {getCurrentBlogs().map((blog, index) => (
-                    <div key={index} className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-                      <div className="client_section">
-                        <div className="img-blog">
-                          <img src={blog?.image} alt={blog?.title} />
-                        </div>
-                        <div className="client_blog_title">
-                          <h3>{blog.title}</h3>
-                        </div>
-                        <div className="btn-button">
+                        <div className="btn-button mt-3">
                           <Link to="/clientDetails" className="btn-btn">
                             know more
                           </Link>
@@ -305,14 +235,14 @@ function Clients() {
               </div>
               <div className="slider">
                 <div className="imgtt">
-                  <img src={getCloudinaryUrl('/img/testimonials.jpg')} alt="img" className="imgt" />
-                  <img src={getCloudinaryUrl('/img/testimonials-1.jpg')} alt="img" className="imgt" />
-                  <img src={getCloudinaryUrl('/img/testimonials-2.jpg')} alt="img" className="imgt" />
-                  <img src={getCloudinaryUrl('/img/testimonials-3.jpg')} alt="img" className="imgt" />
+                  <img src={getCloudinaryUrl('/img/testimonials.jpg')} alt="testimonial" className="imgt" />
+                  <img src={getCloudinaryUrl('/img/testimonials-1.jpg')} alt="testimonial" className="imgt" />
+                  <img src={getCloudinaryUrl('/img/testimonials-2.jpg')} alt="testimonial" className="imgt" />
+                  <img src={getCloudinaryUrl('/img/testimonials-3.jpg')} alt="testimonial" className="imgt" />
                 </div>
                 <div className="right-item-testi">
                   <div className="large-img">
-                    <img src={getCloudinaryUrl('/img/testimonials.jpg')} alt="img" className="imgt1" />
+                    <img src={getCloudinaryUrl('/img/testimonials.jpg')} alt="featured testimonial" className="imgt1" />
                   </div>
                   <div className="text-content">
                     <div className="testimonials-item">
@@ -325,10 +255,10 @@ function Clients() {
                     </div>
                     <div className="buttons">
                       <button type="button" className="btnn1">
-                        <img src={getCloudinaryUrl('/img/arrow_new_left.png')} alt="left arrow" />
+                        <img src={getCloudinaryUrl('/img/arrow_new_left.png')} alt="left" />
                       </button>
                       <button type="button" className="btnn2">
-                        <img src={getCloudinaryUrl('/img/arrow_new.png')} alt="right arrow" />
+                        <img src={getCloudinaryUrl('/img/arrow_new.png')} alt="right" />
                       </button>
                     </div>
                   </div>

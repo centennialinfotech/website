@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import Blogs from "./pages/Blogs";
 import Clients from "./pages/Clients";
 import BlogDetails from "./pages/BlogDetails";
+import ClientDetails from "./pages/clientDetails";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/client" element={<Clients />} />
         <Route path="/blog-details/:id?" element={<BlogDetails />} />
+        <Route path="/clientDetails" element={<ClientDetails />} />
       </Routes>
 
       <Footer />
