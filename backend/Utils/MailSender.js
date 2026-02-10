@@ -8,7 +8,7 @@ const nodemamailSender = async (email, title, body) => {
   try {
     let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com", // Gmail SMTP server
-      port: 465, // For SSL
+      port: 587, // For SSL
       secure: true, // Use SSL
       auth: {
         user: process.env.MAIL_USER,
