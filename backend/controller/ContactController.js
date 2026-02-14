@@ -136,23 +136,52 @@ exports.contactUs = async (req, res) => {
       query: trimmedQuery,
     });
     await newContact.save();
-    console.log('Contact data saved to database');
+    console.log('✅ Contact data saved to database');
 
-    await nodemamailSender(
-      trimmedEmail,
-      'Contact Form Confirmation',
-      contactUsTemplate(trimmedName, trimmedEmail, trimmedQuery, trimmedPhone)
-    );
+    // Send emails (non-fatal - form still succeeds even if emails fail)
+    let userEmailSent = false;
+    let adminEmailSent = false;
 
-    await nodemamailSender(
-      'centennialinfotech@gmail.com',
-      'New Contact Us Message',
-      collaborationInvitationTemplate(trimmedName, trimmedEmail, trimmedQuery, trimmedPhone)
-    );
+    // Send confirmation email to user
+    try {
+      await nodemamailSender(
+        trimmedEmail,
+        'Contact Form Confirmation',
+        contactUsTemplate(trimmedName, trimmedEmail, trimmedQuery, trimmedPhone)
+      );
+      userEmailSent = true;
+      console.log('✅ User confirmation email sent');
+    } catch (emailError) {
+      console.error('❌ Error sending confirmation email to user:', emailError.message);
+      // Don't throw - continue to send admin email
+    }
 
-    res.status(200).send({ message: 'Contact form submitted successfully' });
+    // Send notification email to admin
+    try {
+      await nodemamailSender(
+        'centennialinfotech@gmail.com',
+        'New Contact Us Message',
+        collaborationInvitationTemplate(trimmedName, trimmedEmail, trimmedQuery, trimmedPhone)
+      );
+      adminEmailSent = true;
+      console.log('✅ Admin notification email sent');
+    } catch (emailError) {
+      console.error('❌ Error sending notification email to admin:', emailError.message);
+      // Don't throw - form submission still succeeds
+    }
+
+    // Always return success if DB save worked, even if emails failed
+    res.status(200).json({
+      message: 'Contact form submitted successfully',
+      userEmailSent,
+      adminEmailSent,
+    });
   } catch (error) {
-    console.error('Error processing contact form:', error.message);
-    res.status(500).send({ message: 'Error processing contact form', error: error.message });
+    // Only fail if DB save failed (not email failures)
+    console.error('❌ Error processing contact form:', error.message);
+    res.status(500).json({
+      message: 'Error processing contact form',
+      error: error.message,
+    });
   }
 };
