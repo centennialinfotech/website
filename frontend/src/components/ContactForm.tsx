@@ -175,6 +175,8 @@ function ContactForm() {
         email: data.email,
         query: data.query,
         recaptchaToken: recaptchaToken
+      }, {
+        timeout: 30000 // 30 seconds timeout
       })
 
       if (response.status === 200 || response.status === 201) {
