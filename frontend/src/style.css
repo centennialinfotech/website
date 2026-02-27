@@ -2664,7 +2664,7 @@ padding: 20px;
 .about__countbg:after {
     content: "";
     position: absolute;
-    background: url(../img/bg_stats.png);
+    background: url(https://res.cloudinary.com/drutr9why/image/upload/img/bg_stats.png);
     z-index: 0;
     width: 100%;
     height: 1000%;
