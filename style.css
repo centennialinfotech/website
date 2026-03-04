@@ -5423,3 +5423,53 @@ border-radius: 32px ;
 }
 
 }
+/* ==================== NAVBAR STYLING ==================== */
+
+.main-navbar{
+    background:#ffffff;
+    box-shadow:0 2px 15px rgba(0,0,0,0.05);
+}
+
+.main-navbar .nav-link{
+    color:#333 !important;
+    font-weight:500;
+    margin-left:12px;
+}
+
+.main-navbar .nav-link:hover{
+    color:#1177BD !important;
+}
+
+/* CTA Buttons */
+
+.nav-cta-btn{
+    padding:8px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:500;
+    transition:all 0.3s ease;
+}
+
+/* Careers Button */
+
+.careers-btn{
+    background:#1177BD;
+    color:#fff !important;
+}
+
+.careers-btn:hover{
+    background:#0d5f96;
+    color:#fff !important;
+}
+
+/* Contact Button */
+
+.contact-btn{
+    border:2px solid #1177BD;
+    color:#1177BD !important;
+}
+
+.contact-btn:hover{
+    background:#1177BD;
+    color:#fff !important;
+}
