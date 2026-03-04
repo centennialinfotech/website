@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Centennial Infotech - Innovative Solutions">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/	"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="icon" sizes="180x180" type="image/x-icon" href="img/favicon.png">
   <!-- google fonts-->
@@ -788,36 +788,32 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-
-  const container = document.querySelector(".slider-container");
-  const slideRow = document.getElementById("slide-row");
   const btns = document.querySelectorAll(".btn");
-
-  if (!container || !slideRow) return;
+  const slideRow = document.getElementById("slide-row");
+  const main = document.querySelector("main");
 
   let currentIndex = 0;
 
   function updateSlide() {
-    const width = container.offsetWidth;
-    slideRow.style.transform = `translateX(${-currentIndex * width}px)`;
+    const mainWidth = main.offsetWidth;
+    const translateValue = currentIndex * -mainWidth;
+    slideRow.style.transform = `translateX(${translateValue}px)`;
 
-    btns.forEach((btn, i) => {
-      btn.classList.toggle("active", i === currentIndex);
+    btns.forEach((btn, index) => {
+      btn.classList.toggle("active", index === currentIndex);
     });
   }
 
-  btns.forEach((btn, i) => {
+  btns.forEach((btn, index) => {
     btn.addEventListener("click", () => {
-      currentIndex = i;
+      currentIndex = index;
       updateSlide();
     });
   });
 
-  window.addEventListener("resize", updateSlide);
-
-  updateSlide();
-});
+  window.addEventListener("resize", () => {
+    updateSlide();
+  });
 </script>
 
 
