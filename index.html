@@ -788,9 +788,16 @@
 
 
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
   const btns = document.querySelectorAll(".btn");
   const slideRow = document.getElementById("slide-row");
   const main = document.querySelector("main");
+
+  if (!main || !slideRow) {
+    console.log("Slider elements not found");
+    return;
+  }
 
   let currentIndex = 0;
 
@@ -811,9 +818,10 @@
     });
   });
 
-  window.addEventListener("resize", () => {
-    updateSlide();
-  });
+  window.addEventListener("resize", updateSlide);
+
+  updateSlide();
+});
 </script>
 
 
