@@ -25,7 +25,7 @@ $formatted_phone = preg_replace("/^\+1(\d{3})(\d{3})(\d{4})$/", "$1 $2 $3", $pho
             
             // Use Clipboard API
             navigator.clipboard.writeText(textToCopy).then(function() {
-                document.getElementById("statusMessage").innerHTML = "Text copied to clipboard!";
+                document.getElementById("statusMessage").inne = "Text copied to clipboard!";
             }).catch(function(err) {
                 console.error('Could not copy text: ', err);
             });

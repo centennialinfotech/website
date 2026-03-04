@@ -263,7 +263,7 @@
 			video = this._videos[item.attr('data-video')],
 			width = video.width || '100%',
 			height = video.height || this._core.$stage.height(),
-			html,
+		,
 			iframe;
 
 		if (this._playing) {
@@ -277,18 +277,18 @@
 
 		this._core.reset(item.index());
 
-		html = $( '<iframe frameborder="0" allowfullscreen mozallowfullscreen webkitAllowFullScreen ></iframe>' );
-		html.attr( 'height', height );
-		html.attr( 'width', width );
+	 = $( '<iframe frameborder="0" allowfullscreen mozallowfullscreen webkitAllowFullScreen ></iframe>' );
+	.attr( 'height', height );
+	.attr( 'width', width );
 		if (video.type === 'youtube') {
-			html.attr( 'src', '//www.youtube.com/embed/' + video.id + '?autoplay=1&rel=0&v=' + video.id );
+		.attr( 'src', '//www.youtube.com/embed/' + video.id + '?autoplay=1&rel=0&v=' + video.id );
 		} else if (video.type === 'vimeo') {
-			html.attr( 'src', '//player.vimeo.com/video/' + video.id + '?autoplay=1' );
+		.attr( 'src', '//player.vimeo.com/video/' + video.id + '?autoplay=1' );
 		} else if (video.type === 'vzaar') {
-			html.attr( 'src', '//view.vzaar.com/' + video.id + '/player?autoplay=true' );
+		.attr( 'src', '//view.vzaar.com/' + video.id + '/player?autoplay=true' );
 		}
 
-		iframe = $(html).wrap( '<div class="owl-video-frame" />' ).insertAfter(item.find('.owl-video'));
+		iframe = $).wrap( '<div class="owl-video-frame" />' ).insertAfter(item.find('.owl-video'));
 
 		this._playing = item.addClass('owl-video-playing');
 	};

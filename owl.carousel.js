@@ -21,7 +21,7 @@
 	 * Creates a carousel.
 	 * @class The Owl Carousel.
 	 * @public
-	 * @param {HTMLElement|jQuery} element - The element to create the carousel for.
+	 * @param Element|jQuery} element - The element to create the carousel for.
 	 * @param {Object} [options] - The options
 	 */
 	function Owl(element, options) {
@@ -340,9 +340,9 @@
 			while (repeat > 0) {
 				// Switch to only using appended clones
 				clones.push(this.normalize(clones.length / 2, true));
-				append = append + items[clones[clones.length - 1]][0].outerHTML;
+				append = append + items[clones[clones.length - 1]][0].oute;
 				clones.push(this.normalize(items.length - 1 - (clones.length - 1) / 2, true));
-				prepend = items[clones[clones.length - 1]][0].outerHTML + prepend;
+				prepend = items[clones[clones.length - 1]][0].oute + prepend;
 				repeat -= 1;
 			}
 
@@ -606,7 +606,7 @@
 	 * Prepares an item before add.
 	 * @todo Rename event parameter `content` to `item`.
 	 * @protected
-	 * @returns {jQuery|HTMLElement} - The item container.
+	 * @returns {jQueryElement} - The item container.
 	 */
 	Owl.prototype.prepare = function(item) {
 		var event = this.trigger('prepare', { content: item });
@@ -1342,7 +1342,7 @@
 	/**
 	 * Replaces the current content.
 	 * @public
-	 * @param {HTMLElement|jQuery|String} content - The new content.
+	 * @param Element|jQuery|String} content - The new content.
 	 */
 	Owl.prototype.replace = function(content) {
 		this.$stage.empty();
@@ -1374,7 +1374,7 @@
 	 * Adds an item.
 	 * @todo Use `item` instead of `content` for the event arguments.
 	 * @public
-	 * @param {HTMLElement|jQuery|String} content - The item content to add.
+	 * @param Element|jQuery|String} content - The item content to add.
 	 * @param {Number} [position] - The relative position at which to insert the item otherwise the item will be added to the end.
 	 */
 	Owl.prototype.add = function(content, position) {
@@ -1509,7 +1509,7 @@
 	/**
 	 * Attaches to an internal event.
 	 * @protected
-	 * @param {HTMLElement} element - The event source.
+	 * @param Element} element - The event source.
 	 * @param {String} event - The event name.
 	 * @param {Function} listener - The event handler to attach.
 	 * @param {Boolean} capture - Wether the event should be handled at the capturing phase or not.
@@ -1525,7 +1525,7 @@
 	/**
 	 * Detaches from an internal event.
 	 * @protected
-	 * @param {HTMLElement} element - The event source.
+	 * @param Element} element - The event source.
 	 * @param {String} event - The event name.
 	 * @param {Function} listener - The attached event handler to detach.
 	 * @param {Boolean} capture - Wether the attached event handler was registered as a capturing listener or not.
@@ -2414,7 +2414,7 @@
 			video = this._videos[item.attr('data-video')],
 			width = video.width || '100%',
 			height = video.height || this._core.$stage.height(),
-			html,
+		,
 			iframe;
 
 		if (this._playing) {
@@ -2428,18 +2428,18 @@
 
 		this._core.reset(item.index());
 
-		html = $( '<iframe frameborder="0" allowfullscreen mozallowfullscreen webkitAllowFullScreen ></iframe>' );
-		html.attr( 'height', height );
-		html.attr( 'width', width );
+	 = $( '<iframe frameborder="0" allowfullscreen mozallowfullscreen webkitAllowFullScreen ></iframe>' );
+	.attr( 'height', height );
+	.attr( 'width', width );
 		if (video.type === 'youtube') {
-			html.attr( 'src', '//www.youtube.com/embed/' + video.id + '?autoplay=1&rel=0&v=' + video.id );
+		.attr( 'src', '//www.youtube.com/embed/' + video.id + '?autoplay=1&rel=0&v=' + video.id );
 		} else if (video.type === 'vimeo') {
-			html.attr( 'src', '//player.vimeo.com/video/' + video.id + '?autoplay=1' );
+		.attr( 'src', '//player.vimeo.com/video/' + video.id + '?autoplay=1' );
 		} else if (video.type === 'vzaar') {
-			html.attr( 'src', '//view.vzaar.com/' + video.id + '/player?autoplay=true' );
+		.attr( 'src', '//view.vzaar.com/' + video.id + '/player?autoplay=true' );
 		}
 
-		iframe = $(html).wrap( '<div class="owl-video-frame" />' ).insertAfter(item.find('.owl-video'));
+		iframe = $).wrap( '<div class="owl-video-frame" />' ).insertAfter(item.find('.owl-video'));
 
 		this._playing = item.addClass('owl-video-playing');
 	};
@@ -2998,14 +2998,14 @@
 
 		this._controls.$previous = $('<' + settings.navElement + '>')
 			.addClass(settings.navClass[0])
-			.html(settings.navText[0])
+			(settings.navText[0])
 			.prependTo(this._controls.$relative)
 			.on('click', $.proxy(function(e) {
 				this.prev(settings.navSpeed);
 			}, this));
 		this._controls.$next = $('<' + settings.navElement + '>')
 			.addClass(settings.navClass[1])
-			.html(settings.navText[1])
+			(settings.navText[1])
 			.appendTo(this._controls.$relative)
 			.on('click', $.proxy(function(e) {
 				this.next(settings.navSpeed);
@@ -3016,7 +3016,7 @@
 			this._templates = [ $('<button role="button">')
 				.addClass(settings.dotClass)
 				.append($('<span>'))
-				.prop('outerHTML') ];
+				.prop('oute') ];
 		}
 
 		this._controls.$absolute = (settings.dotsContainer ? $(settings.dotsContainer)
@@ -3063,7 +3063,7 @@
 		}
 		for (control in this._controls) {
 			if (control === '$relative' && settings.navContainer) {
-				this._controls[control].html('');
+				this._controls[control]('');
 			} else {
 				this._controls[control].remove();
 			}
@@ -3137,7 +3137,7 @@
 			difference = this._pages.length - this._controls.$absolute.children().length;
 
 			if (settings.dotsData && difference !== 0) {
-				this._controls.$absolute.html(this._templates.join(''));
+				this._controls.$absolute(this._templates.join(''));
 			} else if (difference > 0) {
 				this._controls.$absolute.append(new Array(difference + 1).join(this._templates[0]));
 			} else if (difference < 0) {
