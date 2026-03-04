@@ -788,39 +788,36 @@
 
 
 <script>
-  const btns = document.querySelectorAll(".btn");
+  document.addEventListener("DOMContentLoaded", () => {
+
+  const container = document.querySelector(".slider-container");
   const slideRow = document.getElementById("slide-row");
-  const main = document.querySelector("main");
+  const btns = document.querySelectorAll(".btn");
+
+  if (!container || !slideRow) return;
 
   let currentIndex = 0;
 
   function updateSlide() {
+    const width = container.offsetWidth;
+    slideRow.style.transform = `translateX(${-currentIndex * width}px)`;
 
-    if (!main || !slideRow || !btns.length) {
-        console.log("Slider elements not found");
-        return;
-    }
-
-    const mainWidth = main.offsetWidth;
-    const translateValue = currentIndex * -mainWidth;
-
-    slideRow.style.transform = `translateX(${translateValue}px)`;
-
-    btns.forEach((btn, index) => {
-        btn.classList.toggle("active", index === currentIndex);
+    btns.forEach((btn, i) => {
+      btn.classList.toggle("active", i === currentIndex);
     });
-}
+  }
 
-  btns.forEach((btn, index) => {
+  btns.forEach((btn, i) => {
     btn.addEventListener("click", () => {
-      currentIndex = index;
+      currentIndex = i;
       updateSlide();
     });
   });
 
-  window.addEventListener("resize", () => {
-    updateSlide();
-  });
+  window.addEventListener("resize", updateSlide);
+
+  updateSlide();
+});
 </script>
 
 
