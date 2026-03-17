@@ -7,21 +7,35 @@ const { dbConnect } = require('../config/DbConnection');
 const { collaborationInvitationTemplate } = require('../Template/collaborationInvitationTemplate');
 const { contactUsTemplate } = require('../Template/MailVerification');
 const nodemamailSender = require('../Utils/MailSender'); // Adjust the path as necessary
-const {subscribeTemplate, adminSubscribeTemplate} = require('../Template/subscribe')
-const {serviceTemplate, adminServiceTemplate} = require("../Template/service")
+const { subscribeTemplate, adminSubscribeTemplate } = require('../Template/subscribe')
+const { serviceTemplate, adminServiceTemplate } = require("../Template/service")
 const Blog = require("../routes/Blog")
+
+const path = require('path'); // 👈 ADD THIS
+
+
+
+const serviceRoutes = require('../routes/serviceRoutes');
+
+
 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // For parsing application/json
 
 
 
 app.use(cors({
-  origin: "*",
-  credentials: true
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'http://127.0.0.1:5500',      // 👈 ADD THIS (your Live Server port)
+    'http://127.0.0.1:5501',      // 👈 ADD THIS (your current port)
+    'https://centennialinfotech.com',
+    'https://www.centennialinfotech.com'
+  ], credentials: true
 }));
 
 // // Connect to MongoDB
@@ -89,6 +103,35 @@ app.post('/contact-us', async (req, res) => {
   }
 });
 
+
+
+
+// 👇 ADD THESE LINES - Serve static files from public directory
+app.use(express.static(path.join(__dirname, '../public')));
+
+// 👇 ADD THIS ROUTE - Serve the service2Money.html page
+app.get('/services-admin', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/service2Money.html'));
+});
+
+
+app.use('/api/services', serviceRoutes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Define email schema and model
 const EmailSchema = new mongoose.Schema({
   name: String,
@@ -147,7 +190,7 @@ app.get('/comments', async (req, res) => {
 // };
 
 // Handle newsletter subscription
-app.post('/subscribe', async (req, res) => { 
+app.post('/subscribe', async (req, res) => {
   const { email } = req.body;
   console.log("emails", email);
 
@@ -219,7 +262,7 @@ app.get('/unsubscribe', async (req, res) => {
 
 
 
-app.post('/service-submit', async(req, res) => {
+app.post('/service-submit', async (req, res) => {
   console.log("hii")
 
   const { fullName, email, phone } = req.body;

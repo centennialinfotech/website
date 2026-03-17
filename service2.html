@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service2Money - Admin Panel</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      .nav-tabs {
+        display: flex;
+        background: #f8f9fa;
+        border-bottom: 2px solid #dee2e6;
+      }
+
+      .nav-tab {
+        flex: 1;
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #495057;
+        transition: all 0.3s;
+      }
+
+      .nav-tab:hover {
+        background: #e9ecef;
+      }
+
+      .nav-tab.active {
+        color: #667eea;
+        border-bottom: 3px solid #667eea;
+        background: white;
+      }
+
+      .content {
+        padding: 30px;
+        min-height: 500px;
+      }
+
+      .section {
+        display: none;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .btn-primary {
+        background: #667eea;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn-success {
+        background: #28a745;
+        color: white;
+      }
+
+      .btn-danger {
+        background: #dc3545;
+        color: white;
+      }
+
+      .btn-warning {
+        background: #ffc107;
+        color: black;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .service-card {
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-card h3 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .service-card .price {
+        font-size: 24px;
+        color: #667eea;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .service-card .actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .service-card .actions button {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .service-card .actions button:hover {
+        opacity: 0.8;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #495057;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #dee2e6;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .tier-group {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #dee2e6;
+      }
+
+      .tier-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .remove-tier {
+        background: #dc3545;
+        color: white;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .remove-tier:hover {
+        background: #c82333;
+      }
+
+      .add-tier {
+        background: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .add-tier:hover {
+        background: #218838;
+      }
+
+      .public-services {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .public-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .public-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .public-card .card-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .public-card .card-header h3 {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+
+      .public-card .card-body {
+        padding: 20px;
+      }
+
+      .tier-pricing {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+
+      .tier-item {
+        text-align: center;
+      }
+
+      .tier-price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #28a745;
+      }
+
+      .buy-btn {
+        width: 100%;
+        padding: 12px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .buy-btn:hover {
+        background: #218838;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        max-width: 800px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #666;
+      }
+
+      .close:hover {
+        color: #333;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 50px;
+        font-size: 18px;
+        color: #666;
+      }
+
+      .error {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .success {
+        background: #d4edda;
+        color: #155724;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .categories-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0;
+      }
+
+      .category-tag {
+        background: #e9ecef;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        color: #495057;
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .detail-section {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .detail-section h4 {
+        margin-bottom: 10px;
+        color: #667eea;
+      }
+
+      .tiers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .tier-detail-card {
+        border: 2px solid #dee2e6;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .tier-detail-card h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .tier-detail-price {
+        font-size: 28px;
+        font-weight: bold;
+        color: #28a745;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>💰 Service2Money</h1>
+        <p>Manage Your Services & Accept Payments</p>
+      </div>
+
+      <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showSection('public', event)">
+          🏠 Public View
+        </button>
+        <button class="nav-tab" onclick="showSection('admin', event)">
+          ⚙️ Admin Panel
+        </button>
+        <button class="nav-tab" onclick="showSection('add', event)">
+          ➕ Add Service
+        </button>
+      </div>
+
+      <div class="content">
+        <!-- Public View Section -->
+        <div id="public-section" class="section active">
+          <h2>📋 Our Services</h2>
+          <div id="public-services" class="public-services">
+            <div class="loading">Loading services...</div>
+          </div>
+        </div>
+
+        <!-- Admin Panel Section -->
+        <div id="admin-section" class="section">
+          <div class="admin-header">
+            <h2>📊 Manage Services</h2>
+            <button class="btn btn-primary" onclick="showSection('add', event)">
+              ➕ Add New Service
+            </button>
+          </div>
+          <div id="admin-services-list">
+            <div class="loading">Loading services...</div>
+          </div>
+        </div>
+
+        <!-- Add Service Section -->
+        <div id="add-section" class="section">
+          <h2>➕ Add New Service</h2>
+          <form id="service-form" onsubmit="saveService(event)">
+            <div class="form-group">
+              <label>Service Title *</label>
+              <input
+                type="text"
+                id="title"
+                required
+                placeholder="e.g., Web Design & Development"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Description *</label>
+              <textarea
+                id="description"
+                required
+                rows="4"
+                placeholder="Describe your service..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Categories (comma separated)</label>
+              <input
+                type="text"
+                id="categories"
+                placeholder="E-commerce, Business, Portfolio"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Industries (comma separated)</label>
+              <input
+                type="text"
+                id="industries"
+                placeholder="Healthcare, Finance, Education"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Sources (comma separated)</label>
+              <input
+                type="text"
+                id="sources"
+                placeholder="Google Ads, LinkedIn, Facebook"
+              />
+            </div>
+
+            <h3>💰 Pricing Tiers</h3>
+            <div id="tiers-container"></div>
+
+            <button type="button" class="add-tier" onclick="addTier()">
+              + Add Another Tier
+            </button>
+
+            <div style="margin-top: 30px">
+              <button
+                type="submit"
+                class="btn btn-success"
+                style="width: 100%; padding: 15px"
+              >
+                💾 Save Service
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <h2>✏️ Edit Service</h2>
+        <form id="edit-form" onsubmit="updateService(event)">
+          <input type="hidden" id="edit-id" />
+          <div class="form-group">
+            <label>Title *</label>
+            <input type="text" id="edit-title" required />
+          </div>
+
+          <div class="form-group">
+            <label>Description *</label>
+            <textarea id="edit-description" required rows="4"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Categories (comma separated)</label>
+            <input type="text" id="edit-categories" />
+          </div>
+
+          <div class="form-group">
+            <label>Industries (comma separated)</label>
+            <input type="text" id="edit-industries" />
+          </div>
+
+          <div class="form-group">
+            <label>Sources (comma separated)</label>
+            <input type="text" id="edit-sources" />
+          </div>
+
+          <h3>Pricing Tiers</h3>
+          <div id="edit-tiers-container"></div>
+
+          <button type="button" class="add-tier" onclick="addEditTier()">
+            + Add Another Tier
+          </button>
+
+          <div style="margin-top: 30px; display: flex; gap: 10px">
+            <button
+              type="button"
+              class="btn btn-danger"
+              onclick="closeEditModal()"
+              style="flex: 1"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-success" style="flex: 1">
+              💾 Update
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Details Modal -->
+    <div id="details-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeDetailsModal()">&times;</span>
+        <div id="details-content"></div>
+      </div>
+    </div>
+
+    <!-- ALL JAVASCRIPT IN ONE PLACE AT THE BOTTOM -->
+    <script>
+      // ==================== CONFIGURATION ====================
+      const API_URL = "http://localhost:3000/api"; // Change this to your backend URL
+
+      // ==================== GLOBAL VARIABLES ====================
+      let tierCount = 0;
+
+      // ==================== SECTION NAVIGATION ====================
+      function showSection(section, event) {
+        document
+          .querySelectorAll(".section")
+          .forEach((s) => s.classList.remove("active"));
+        document
+          .querySelectorAll(".nav-tab")
+          .forEach((t) => t.classList.remove("active"));
+        document.getElementById(section + "-section").classList.add("active");
+        event.target.classList.add("active");
+        if (section === "public") loadPublicServices();
+        if (section === "admin") loadAdminServices();
+      }
+
+      // ==================== LOAD SERVICES ====================
+      async function loadPublicServices() {
+        const container = document.getElementById("public-services");
+        container.innerHTML = '<div class="loading">Loading services...</div>';
+        try {
+          const response = await fetch(`${API_URL}/services`);
+          const data = await response.json();
+          if (data.success && data.data.length > 0) {
+            container.innerHTML = data.data
+              .map(
+                (service) => `
+                        <div class="public-card" onclick="showServiceDetails('${service._id}')">
+                            <div class="card-header">
+                                <h3>${service.title}</h3>
+                                <p>${service.description.substring(0, 100)}...</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="tier-pricing">
+                                    ${service.tiers
+                                      .map(
+                                        (tier) => `
+                                        <div class="tier-item">
+                                            <div><strong>${tier.title}</strong></div>
+                                            <div class="tier-price">$${tier.price}</div>
+                                        </div>
+                                    `,
+                                      )
+                                      .join("")}
+                                </div>
+                                <button class="buy-btn" onclick="event.stopPropagation(); buyService('${service._id}')">💳 Buy Now</button>
+                            </div>
+                        </div>
+                    `,
+              )
+              .join("");
+          } else {
+            container.innerHTML =
+              "<p>No services available yet. Use Admin Panel to add services.</p>";
+          }
+        } catch (error) {
+          container.innerHTML =
+            '<div class="error">Failed to load services. Make sure backend is running.</div>';
+        }
+      }
+
+      async function loadAdminServices() {
+        const container = document.getElementById("admin-services-list");
+        container.innerHTML = '<div class="loading">Loading services...</div>';
+        try {
+          const response = await fetch(`${API_URL}/services`);
+          const data = await response.json();
+          if (data.success && data.data.length > 0) {
+            container.innerHTML = `
+                        <div class="services-grid">
+                            ${data.data
+                              .map((service) => {
+                                const prices = service.tiers.map(
+                                  (t) => t.price,
+                                );
+                                const minPrice = Math.min(...prices);
+                                const maxPrice = Math.max(...prices);
+                                return `
+                                    <div class="service-card" onclick="showServiceDetails('${service._id}')">
+                                        <h3>${service.title}</h3>
+                                        <p>${service.description.substring(0, 100)}...</p>
+                                        <div class="price">$${minPrice} - $${maxPrice}</div>
+                                        <div class="actions" onclick="event.stopPropagation()">
+                                            <button class="btn-warning" onclick="editService('${service._id}')">✏️ Edit</button>
+                                            <button class="btn-danger" onclick="deleteService('${service._id}', '${service.title}')">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                `;
+                              })
+                              .join("")}
+                        </div>
+                    `;
+          } else {
+            container.innerHTML =
+              '<p>No services yet. Click "Add New Service" to create one.</p>';
+          }
+        } catch (error) {
+          container.innerHTML =
+            '<div class="error">Failed to load services. Make sure backend is running.</div>';
+        }
+      }
+
+      // ==================== SERVICE DETAILS ====================
+      async function showServiceDetails(id) {
+        try {
+          const response = await fetch(`${API_URL}/services/${id}`);
+          const result = await response.json();
+          if (result.success) {
+            const service = result.data;
+            const detailsHTML = `
+                        <h2>${service.title}</h2>
+                        <p style="margin: 20px 0; line-height: 1.6;">${service.description}</p>
+                        <div class="details-grid">
+                            ${
+                              service.categories?.length
+                                ? `
+                                <div class="detail-section">
+                                    <h4>📌 Categories</h4>
+                                    <div class="categories-grid">
+                                        ${service.categories.map((cat) => `<span class="category-tag">${cat}</span>`).join("")}
+                                    </div>
+                                </div>
+                            `
+                                : ""
+                            }
+                            ${
+                              service.industries?.length
+                                ? `
+                                <div class="detail-section">
+                                    <h4>🏢 Industries</h4>
+                                    <div class="categories-grid">
+                                        ${service.industries.map((ind) => `<span class="category-tag">${ind}</span>`).join("")}
+                                    </div>
+                                </div>
+                            `
+                                : ""
+                            }
+                            ${
+                              service.sources?.length
+                                ? `
+                                <div class="detail-section">
+                                    <h4>📢 Sources</h4>
+                                    <div class="categories-grid">
+                                        ${service.sources.map((src) => `<span class="category-tag">${src}</span>`).join("")}
+                                    </div>
+                                </div>
+                            `
+                                : ""
+                            }
+                        </div>
+                        <h3>💰 Pricing Plans</h3>
+                        <div class="tiers-grid">
+                            ${service.tiers
+                              .map(
+                                (tier) => `
+                                <div class="tier-detail-card">
+                                    <h4>${tier.title}</h4>
+                                    <div class="tier-detail-price">$${tier.price}</div>
+                                    <p>${tier.description}</p>
+                                    <button class="btn btn-success" style="width:100%; margin-top:15px;" onclick="buyService('${service._id}')">Buy Now</button>
+                                </div>
+                            `,
+                              )
+                              .join("")}
+                        </div>
+                    `;
+            document.getElementById("details-content").innerHTML = detailsHTML;
+            document.getElementById("details-modal").classList.add("active");
+          }
+        } catch (error) {
+          alert("❌ Failed to load service details");
+        }
+      }
+
+      function closeDetailsModal() {
+        document.getElementById("details-modal").classList.remove("active");
+      }
+
+      // ==================== TIER MANAGEMENT ====================
+      function addTier() {
+        const container = document.getElementById("tiers-container");
+        if (!container) return;
+        tierCount++;
+        const currentTier = tierCount;
+        const tierHtml = `
+                <div class="tier-group" id="tier-${currentTier}">
+                    <div class="tier-header">
+                        <h4>Tier ${currentTier}</h4>
+                        <button type="button" class="remove-tier" onclick="removeTier(${currentTier})">×</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="tier-title" placeholder="e.g., Basic" value="Basic" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="tier-desc" placeholder="e.g., 5 pages website" value="Basic package" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Price ($)</label>
+                        <input type="number" class="tier-price" placeholder="199" value="0" required>
+                    </div>
+                </div>
+            `;
+        container.insertAdjacentHTML("beforeend", tierHtml);
+      }
+
+      function removeTier(id) {
+        const element = document.getElementById(`tier-${id}`);
+        if (element) element.remove();
+      }
+
+      // ==================== SAVE SERVICE ====================
+      async function saveService(event) {
+        event.preventDefault();
+        const tiers = [];
+        const tierGroups = document.querySelectorAll(
+          "#tiers-container .tier-group",
+        );
+
+        if (tierGroups.length === 0) {
+          alert("❌ Please add at least one pricing tier!");
+          return;
+        }
+
+        for (let i = 0; i < tierGroups.length; i++) {
+          const tier = tierGroups[i];
+          const titleInput = tier.querySelector(".tier-title");
+          const descInput = tier.querySelector(".tier-desc");
+          const priceInput = tier.querySelector(".tier-price");
+
+          if (
+            !titleInput.value ||
+            !descInput.value ||
+            !priceInput.value ||
+            parseFloat(priceInput.value) <= 0
+          ) {
+            alert(
+              `❌ Tier ${i + 1}: All fields are required and price must be greater than 0`,
+            );
+            return;
+          }
+
+          tiers.push({
+            title: titleInput.value,
+            description: descInput.value,
+            price: parseFloat(priceInput.value),
+          });
+        }
+
+        const serviceData = {
+          title: document.getElementById("title").value,
+          description: document.getElementById("description").value,
+          categories: document
+            .getElementById("categories")
+            .value.split(",")
+            .map((s) => s.trim())
+            .filter((s) => s),
+          industries: document
+            .getElementById("industries")
+            .value.split(",")
+            .map((s) => s.trim())
+            .filter((s) => s),
+          sources: document
+            .getElementById("sources")
+            .value.split(",")
+            .map((s) => s.trim())
+            .filter((s) => s),
+          tiers: tiers,
+        };
+
+        if (!serviceData.title || !serviceData.description) {
+          alert("❌ Title and Description are required!");
+          return;
+        }
+
+        try {
+          const response = await fetch(`${API_URL}/services/create`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(serviceData),
+          });
+          const result = await response.json();
+          if (result.success) {
+            alert("✅ Service added successfully!");
+            document.getElementById("service-form").reset();
+            document.getElementById("tiers-container").innerHTML = "";
+            tierCount = 0;
+            addTier();
+            const adminTab = document.querySelector('[onclick*="admin"]');
+            if (adminTab) showSection("admin", { target: adminTab });
+            await loadAdminServices();
+            await loadPublicServices();
+          } else {
+            alert(
+              "❌ Failed to add service: " +
+                (result.message || "Unknown error"),
+            );
+          }
+        } catch (error) {
+          alert("❌ Error adding service. Make sure backend is running.");
+        }
+      }
+
+      // ==================== EDIT SERVICE ====================
+      async function editService(id) {
+        try {
+          const response = await fetch(`${API_URL}/services/${id}`);
+          const result = await response.json();
+          if (result.success) {
+            const service = result.data;
+            document.getElementById("edit-id").value = service._id;
+            document.getElementById("edit-title").value = service.title || "";
+            document.getElementById("edit-description").value =
+              service.description || "";
+            document.getElementById("edit-categories").value = (
+              service.categories || []
+            ).join(", ");
+            document.getElementById("edit-industries").value = (
+              service.industries || []
+            ).join(", ");
+            document.getElementById("edit-sources").value = (
+              service.sources || []
+            ).join(", ");
+
+            const container = document.getElementById("edit-tiers-container");
+            container.innerHTML = "";
+
+            if (service.tiers && service.tiers.length > 0) {
+              service.tiers.forEach((tier, index) => {
+                const tierHtml = `
+                                <div class="tier-group" id="edit-tier-${index}">
+                                    <div class="tier-header">
+                                        <h4>Tier ${index + 1}</h4>
+                                        ${service.tiers.length > 1 ? `<button type="button" class="remove-tier" onclick="removeEditTier(${index})">×</button>` : ""}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="edit-tier-title" value="${tier.title || ""}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input type="text" class="edit-tier-desc" value="${tier.description || ""}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Price ($)</label>
+                                        <input type="number" class="edit-tier-price" value="${tier.price || 0}" required>
+                                    </div>
+                                </div>
+                            `;
+                container.insertAdjacentHTML("beforeend", tierHtml);
+              });
+            } else {
+              addEditTier();
+            }
+            document.getElementById("edit-modal").classList.add("active");
+          } else {
+            alert("❌ Failed to load service");
+          }
+        } catch (error) {
+          alert("❌ Error loading service");
+        }
+      }
+
+      // ==================== EDIT TIER FUNCTIONS ====================
+      function addEditTier() {
+        const container = document.getElementById("edit-tiers-container");
+        const index = container.children.length;
+        const tierHtml = `
+                <div class="tier-group" id="edit-tier-${index}">
+                    <div class="tier-header">
+                        <h4>Tier ${index + 1}</h4>
+                        <button type="button" class="remove-tier" onclick="removeEditTier(${index})">×</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="edit-tier-title" placeholder="e.g., Basic" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="edit-tier-desc" placeholder="e.g., Basic package" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Price ($)</label>
+                        <input type="number" class="edit-tier-price" placeholder="199" required>
+                    </div>
+                </div>
+            `;
+        container.insertAdjacentHTML("beforeend", tierHtml);
+      }
+
+      function removeEditTier(index) {
+        const element = document.getElementById(`edit-tier-${index}`);
+        if (element) {
+          element.remove();
+          const container = document.getElementById("edit-tiers-container");
+          Array.from(container.children).forEach((child, i) => {
+            child.id = `edit-tier-${i}`;
+            child.querySelector("h4").textContent = `Tier ${i + 1}`;
+            child
+              .querySelector(".remove-tier")
+              .setAttribute("onclick", `removeEditTier(${i})`);
+          });
+        }
+      }
+
+      // ==================== UPDATE SERVICE ====================
+      async function updateService(event) {
+        event.preventDefault();
+        const id = document.getElementById("edit-id").value;
+        const tiers = [];
+        const tierGroups = document.querySelectorAll(
+          "#edit-tiers-container .tier-group",
+        );
+
+        if (tierGroups.length === 0) {
+          alert("❌ Please add at least one pricing tier!");
+          return;
+        }
+
+        for (let i = 0; i < tierGroups.length; i++) {
+          const tier = tierGroups[i];
+          const titleInput = tier.querySelector(".edit-tier-title");
+          const descInput = tier.querySelector(".edit-tier-desc");
+          const priceInput = tier.querySelector(".edit-tier-price");
+
+          if (
+            !titleInput.value ||
+            !descInput.value ||
+            !priceInput.value ||
+            parseFloat(priceInput.value) <= 0
+          ) {
+            alert(
+              `❌ Tier ${i + 1}: All fields are required and price must be greater than 0`,
+            );
+            return;
+          }
+
+          tiers.push({
+            title: titleInput.value,
+            description: descInput.value,
+            price: parseFloat(priceInput.value),
+          });
+        }
+
+        const serviceData = {
+          title: document.getElementById("edit-title").value,
+          description: document.getElementById("edit-description").value,
+          categories: document
+            .getElementById("edit-categories")
+            .value.split(",")
+            .map((s) => s.trim())
+            .filter((s) => s),
+          industries: document
+            .getElementById("edit-industries")
+            .value.split(",")
+            .map((s) => s.trim())
+            .filter((s) => s),
+          sources: document
+            .getElementById("edit-sources")
+            .value.split(",")
+            .map((s) => s.trim())
+            .filter((s) => s),
+          tiers: tiers,
+        };
+
+        if (!serviceData.title || !serviceData.description) {
+          alert("❌ Title and Description are required!");
+          return;
+        }
+
+        try {
+          const response = await fetch(`${API_URL}/services/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(serviceData),
+          });
+          const result = await response.json();
+          if (result.success) {
+            alert("✅ Service updated successfully!");
+            closeEditModal();
+            await loadAdminServices();
+            await loadPublicServices();
+          } else {
+            alert(
+              "❌ Failed to update service: " +
+                (result.message || "Unknown error"),
+            );
+          }
+        } catch (error) {
+          alert("❌ Error updating service");
+        }
+      }
+
+      function closeEditModal() {
+        document.getElementById("edit-modal").classList.remove("active");
+      }
+
+      // ==================== DELETE SERVICE ====================
+      async function deleteService(id, title) {
+        if (!confirm(`Are you sure you want to delete "${title}"?`)) return;
+        try {
+          const response = await fetch(`${API_URL}/services/${id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+          });
+          const result = await response.json();
+          if (result.success) {
+            alert("✅ Service deleted successfully!");
+            await loadAdminServices();
+            await loadPublicServices();
+          } else {
+            alert(
+              "❌ Failed to delete service: " +
+                (result.message || "Unknown error"),
+            );
+          }
+        } catch (error) {
+          alert("❌ Error deleting service. Make sure backend is running.");
+        }
+      }
+
+      // ==================== BUY SERVICE ====================
+      function buyService(id) {
+        alert("🛒 Payment integration will go here for service: " + id);
+      }
+
+      // ==================== INITIALIZATION ====================
+      document.addEventListener("DOMContentLoaded", () => {
+        loadPublicServices();
+        setTimeout(() => {
+          if (
+            document.getElementById("tiers-container")?.children.length === 0
+          ) {
+            addTier();
+          }
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
