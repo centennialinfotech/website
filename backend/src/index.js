@@ -17,6 +17,8 @@ const path = require('path'); // 👈 ADD THIS
 
 const serviceRoutes = require('../routes/serviceRoutes');
 
+///login part
+const adminRoutes = require('../routes/adminroutes');
 
 
 
@@ -119,7 +121,8 @@ app.use('/api/services', serviceRoutes);
 
 
 
-
+//login ting 
+app.use('/api/admin', adminRoutes);
 
 
 
