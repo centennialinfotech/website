@@ -35,8 +35,9 @@ app.use(cors({
     'http://localhost:3001',
     'http://127.0.0.1:5500',      // 👈 ADD THIS (your Live Server port)
     'http://127.0.0.1:5501',      // 👈 ADD THIS (your current port)
-    'https://centennialinfotech.com',
-    'https://www.centennialinfotech.com'
+    // 'https://centennialinfotech.com',
+    // 'https://www.centennialinfotech.com'
+    'https://website-11-w4uy.onrender.com'
   ], credentials: true
 }));
 
