@@ -1,25 +1,26 @@
 const express = require('express');
 const router = express.Router();
 const {
-  createService,
-  getServices,
+  getAllServices,
   getServiceById,
+  createService,
   updateService,
   deleteService
 } = require('../controller/serviceController');
 
-// Public Routes (no auth required)
-router.get('/', getServices);
+// GET all services
+router.get('/', getAllServices);
+
+// GET single service
 router.get('/:id', getServiceById);
 
-// Admin Routes (will add authentication later)
-router.post('/create', createService);
-router.put('/:id', updateService);
-router.delete('/:id', deleteService);
+// POST create service
+router.post('/', createService);
 
-// Test route to check if routes are working
-router.get('/test', (req, res) => {
-  res.json({ message: 'Services routes are working!' });
-});
+// PUT update service
+router.put('/:id', updateService);
+
+// DELETE service
+router.delete('/:id', deleteService);
 
 module.exports = router;

@@ -26,7 +26,7 @@ const tierSchema = new mongoose.Schema({
   }
 });
 
-const serviceSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -50,9 +50,9 @@ const serviceSchema = new mongoose.Schema({
   }
 });
 
-serviceSchema.pre('save', function (next) {
+productSchema.pre('save', function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
-module.exports = mongoose.model('Service', serviceSchema);
+module.exports = mongoose.model('Product', productSchema);

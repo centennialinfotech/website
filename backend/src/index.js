@@ -11,11 +11,14 @@ const { subscribeTemplate, adminSubscribeTemplate } = require('../Template/subsc
 const { serviceTemplate, adminServiceTemplate } = require("../Template/service")
 const Blog = require("../routes/Blog")
 
-const path = require('path'); // 👈 ADD THIS
-
-
 
 const serviceRoutes = require('../routes/serviceRoutes');
+const productRoutes = require('../routes/productRoutes');
+const { authenticate } = require('../middleware/authMiddleware');
+
+const path = require("path")
+
+
 
 ///login part
 const adminRoutes = require('../routes/adminroutes');
@@ -23,22 +26,15 @@ const adminRoutes = require('../routes/adminroutes');
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json()); // For parsing application/json
 
 
 
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'http://127.0.0.1:5500',      // 👈 ADD THIS (your Live Server port)
-    'http://127.0.0.1:5501',      // 👈 ADD THIS (your current port)
-    // 'https://centennialinfotech.com',
-    // 'https://www.centennialinfotech.com'
-    'https://website-11-w4uy.onrender.com'
-  ], credentials: true
+  origin: true,
+  credentials: true
 }));
 
 // // Connect to MongoDB
@@ -110,20 +106,40 @@ app.post('/contact-us', async (req, res) => {
 
 
 // 👇 ADD THESE LINES - Serve static files from public directory
-app.use(express.static(path.join(__dirname, '../public')));
+// app.use(express.static(path.join(__dirname, '../public')));
 
-// 👇 ADD THIS ROUTE - Serve the service2Money.html page
-app.get('/services-admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/service2Money.html'));
+
+
+
+// Serve static files from frontend
+app.use(express.static(path.join(__dirname, '../../')));
+
+// API Routes
+app.use('/api/services', authenticate, serviceRoutes);
+app.use('/api/products', authenticate, productRoutes);
+
+// Simple route for public access (no auth)
+app.get('/api/public/services', async (req, res) => {
+  try {
+    const Service = require('../model/Service');  // ✅ FIXED
+    const services = await Service.find().sort({ createdAt: -1 });
+    res.json(services);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.get('/api/public/products', async (req, res) => {
+  try {
+    const Product = require('../model/Product');  // ✅ FIXED
+    const products = await Product.find().sort({ createdAt: -1 });
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
 
-app.use('/api/services', serviceRoutes);
-
-
-
-//login ting 
-app.use('/api/admin', adminRoutes);
 
 
 
