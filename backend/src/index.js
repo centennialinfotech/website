@@ -47,22 +47,29 @@ app.use("/v1", Blog);
 
 const verifyRecaptcha = async (token) => {
   const secretKey = "6LddG4ktAAAAAIb3aJAfw9nt9wdlGbL3r3xHiDCO";
-  const url = "https://www.google.com/recaptcha/api/siteverify";
 
   try {
-    const response = await axios.post(url, null, {
-      params: {
-        secret: secretKey,
-        response: token,
+    const response = await axios.post(
+      "https://www.google.com/recaptcha/api/siteverify",
+      null,
+      {
+        params: {
+          secret: secretKey,
+          response: token,
+        },
       },
-    });
-    console.log("reCAPTCHA verification response:", response.data);
-    return response.data.success;
-  } catch (error) {
-    console.error(
-      "Error verifying reCAPTCHA:",
-      error.response ? error.response.data : error.message,
     );
+
+    console.log("========== GOOGLE RESPONSE ==========");
+    console.log(response.data);
+    console.log("=====================================");
+
+    return response.data.success === true;
+  } catch (error) {
+    console.error("========== GOOGLE ERROR ==========");
+    console.error(error.response?.data || error.message);
+    console.error("==================================");
+
     return false;
   }
 };
