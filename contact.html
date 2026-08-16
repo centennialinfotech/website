@@ -557,7 +557,7 @@ overflow-x: hidden;
             const formattedPhone = dialCode + phone;
     
             try {
-                const response = await fetch('http://localhost:5000/contact-us', {
+                const response = await fetch('https://cc-5vhm.onrender.com/contact-us', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
