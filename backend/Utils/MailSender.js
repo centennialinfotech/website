@@ -3,13 +3,12 @@ const nodemailer = require("nodemailer");
 const nodemamailSender = async (email, title, body) => {
   console.log("Sending email to:", email);
   console.log("Subject:", title);
-  console.log("Body:", body);
 
   try {
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
+      host: process.env.MAIL_HOST || "smtp.gmail.com",
       port: 587,
-      secure: false, // STARTTLS
+      secure: false,
       requireTLS: true,
 
       auth: {
@@ -17,18 +16,17 @@ const nodemamailSender = async (email, title, body) => {
         pass: process.env.MAIL_PASS,
       },
 
-      // LOCAL DEVELOPMENT ONLY
       tls: {
         rejectUnauthorized: false,
       },
     });
 
-    // Test SMTP connection before sending
     await transporter.verify();
+
     console.log("SMTP connection successful");
 
     const info = await transporter.sendMail({
-      from: `Centennial <${process.env.MAIL_USER}>`,
+      from: `"Centennial Infotech" <${process.env.MAIL_USER}>`,
       to: email,
       subject: title,
       html: body,
