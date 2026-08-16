@@ -1,41 +1,44 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const axios = require('axios');
-const { dbConnect } = require('../config/DbConnection');
-const { collaborationInvitationTemplate } = require('../Template/collaborationInvitationTemplate');
-const { contactUsTemplate } = require('../Template/MailVerification');
-const nodemamailSender = require('../Utils/MailSender'); // Adjust the path as necessary
-const { subscribeTemplate, adminSubscribeTemplate } = require('../Template/subscribe')
-const { serviceTemplate, adminServiceTemplate } = require("../Template/service")
-const Blog = require("../routes/Blog")
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const axios = require("axios");
+const { dbConnect } = require("../config/DbConnection");
+const {
+  collaborationInvitationTemplate,
+} = require("../Template/collaborationInvitationTemplate");
+const { contactUsTemplate } = require("../Template/MailVerification");
+const nodemamailSender = require("../Utils/MailSender"); // Adjust the path as necessary
+const {
+  subscribeTemplate,
+  adminSubscribeTemplate,
+} = require("../Template/subscribe");
+const {
+  serviceTemplate,
+  adminServiceTemplate,
+} = require("../Template/service");
+const Blog = require("../routes/Blog");
 
+const serviceRoutes = require("../routes/serviceRoutes");
+const productRoutes = require("../routes/productRoutes");
+const { authenticate } = require("../middleware/authMiddleware");
 
-const serviceRoutes = require('../routes/serviceRoutes');
-const productRoutes = require('../routes/productRoutes');
-const { authenticate } = require('../middleware/authMiddleware');
-
-const path = require("path")
-
-
+const path = require("path");
 
 ///login part
-const adminRoutes = require('../routes/adminroutes');
-
-
+const adminRoutes = require("../routes/adminroutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json()); // For parsing application/json
 
-
-
-app.use(cors({
-  origin: true,
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  }),
+);
 
 // // Connect to MongoDB
 dbConnect();
@@ -43,8 +46,8 @@ dbConnect();
 app.use("/v1", Blog);
 
 const verifyRecaptcha = async (token) => {
-  const secretKey = '6LceVxcqAAAAAKcxf25aF4RSXWOFdloY1Zc-FYlx';
-  const url = 'https://www.google.com/recaptcha/api/siteverify';
+  const secretKey = "6LddG4ktAAAAAIb3aJAfw9nt9wdlGbL3r3xHiDCO";
+  const url = "https://www.google.com/recaptcha/api/siteverify";
 
   try {
     const response = await axios.post(url, null, {
@@ -53,15 +56,18 @@ const verifyRecaptcha = async (token) => {
         response: token,
       },
     });
-    console.log('reCAPTCHA verification response:', response.data);
+    console.log("reCAPTCHA verification response:", response.data);
     return response.data.success;
   } catch (error) {
-    console.error('Error verifying reCAPTCHA:', error.response ? error.response.data : error.message);
+    console.error(
+      "Error verifying reCAPTCHA:",
+      error.response ? error.response.data : error.message,
+    );
     return false;
   }
 };
 
-app.post('/contact-us', async (req, res) => {
+app.post("/contact-us", async (req, res) => {
   const { name, phone, email, query, recaptchaToken } = req.body;
 
   console.log("Received contact form submission");
@@ -72,56 +78,52 @@ app.post('/contact-us', async (req, res) => {
   console.log("reCAPTCHA Token:", recaptchaToken);
 
   if (!name || !phone || !email || !query || !recaptchaToken) {
-    console.error('Missing required fields');
-    return res.status(400).send('Missing required fields');
+    console.error("Missing required fields");
+    return res.status(400).send("Missing required fields");
   }
 
   try {
     const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
     if (!isRecaptchaValid) {
-      console.error('reCAPTCHA verification failed');
-      return res.status(400).send('reCAPTCHA verification failed');
+      console.error("reCAPTCHA verification failed");
+      return res.status(400).send("reCAPTCHA verification failed");
     }
 
     await nodemamailSender(
       email,
-      'Contact Form Confirmation',
-      contactUsTemplate(name, email, query, phone)
+      "Contact Form Confirmation",
+      contactUsTemplate(name, email, query, phone),
     );
 
     await nodemamailSender(
-      'centennialinfotech@gmail.com',
-      'New Contact Us Message',
-      collaborationInvitationTemplate(name, email, query, phone)
+      "centennialinfotech@gmail.com",
+      "New Contact Us Message",
+      collaborationInvitationTemplate(name, email, query, phone),
     );
 
-    res.status(200).send({ message: 'Emails sent successfully' });
+    res.status(200).send({ message: "Emails sent successfully" });
   } catch (error) {
-    console.error('Error sending emails:', error.message);
-    res.status(500).send({ message: 'Error sending emails', error: error.message });
+    console.error("Error sending emails:", error.message);
+    res
+      .status(500)
+      .send({ message: "Error sending emails", error: error.message });
   }
 });
-
-
-
 
 // 👇 ADD THESE LINES - Serve static files from public directory
 // app.use(express.static(path.join(__dirname, '../public')));
 
-
-
-
 // Serve static files from frontend
-app.use(express.static(path.join(__dirname, '../../')));
+app.use(express.static(path.join(__dirname, "../../")));
 
 // API Routes
-app.use('/api/services', authenticate, serviceRoutes);
-app.use('/api/products', authenticate, productRoutes);
+app.use("/api/services", authenticate, serviceRoutes);
+app.use("/api/products", authenticate, productRoutes);
 
 // Simple route for public access (no auth)
-app.get('/api/public/services', async (req, res) => {
+app.get("/api/public/services", async (req, res) => {
   try {
-    const Service = require('../model/Service');  // ✅ FIXED
+    const Service = require("../model/Service"); // ✅ FIXED
     const services = await Service.find().sort({ createdAt: -1 });
     res.json(services);
   } catch (error) {
@@ -129,28 +131,15 @@ app.get('/api/public/services', async (req, res) => {
   }
 });
 
-app.get('/api/public/products', async (req, res) => {
+app.get("/api/public/products", async (req, res) => {
   try {
-    const Product = require('../model/Product');  // ✅ FIXED
+    const Product = require("../model/Product"); // ✅ FIXED
     const products = await Product.find().sort({ createdAt: -1 });
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Define email schema and model
 const EmailSchema = new mongoose.Schema({
@@ -160,46 +149,42 @@ const EmailSchema = new mongoose.Schema({
   query: String,
 });
 
-const Email = mongoose.model('Email', EmailSchema);
+const Email = mongoose.model("Email", EmailSchema);
 
 // Define newsletter subscription schema and model
 const NewsletterSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
 });
 
-const Newsletter = mongoose.model('Newsletter', NewsletterSchema);
+const Newsletter = mongoose.model("Newsletter", NewsletterSchema);
 
 // Define comment schema and model
 const CommentSchema = new mongoose.Schema({
   text: String,
 });
 
-const Comment = mongoose.model('Comment', CommentSchema);
+const Comment = mongoose.model("Comment", CommentSchema);
 
 // Handle comment submission
-app.post('/comments', async (req, res) => {
+app.post("/comments", async (req, res) => {
   const { text } = req.body;
 
   try {
     const newComment = new Comment({ text });
     await newComment.save();
-    res.status(201).send('Comment added!');
+    res.status(201).send("Comment added!");
   } catch (error) {
-    res.status(500).send('Error adding comment');
+    res.status(500).send("Error adding comment");
   }
 });
 
-
-
-
-
 // Handle retrieving comments
-app.get('/comments', async (req, res) => {
+app.get("/comments", async (req, res) => {
   try {
     const comments = await Comment.find();
     res.status(200).json(comments);
   } catch (error) {
-    res.status(500).send('Error retrieving comments');
+    res.status(500).send("Error retrieving comments");
   }
 });
 
@@ -210,19 +195,19 @@ app.get('/comments', async (req, res) => {
 // };
 
 // Handle newsletter subscription
-app.post('/subscribe', async (req, res) => {
+app.post("/subscribe", async (req, res) => {
   const { email } = req.body;
   console.log("emails", email);
 
   if (!isValidEmail(email)) {
-    return res.status(400).send('Please enter a valid email address.');
+    return res.status(400).send("Please enter a valid email address.");
   }
 
   try {
     const existingEmail = await Newsletter.findOne({ email });
 
     if (existingEmail) {
-      return res.status(400).send('Email is already subscribed.');
+      return res.status(400).send("Email is already subscribed.");
     }
 
     console.log("email", email);
@@ -230,11 +215,19 @@ app.post('/subscribe', async (req, res) => {
     // Function to send emails
     const sendEmails = async (email) => {
       try {
-        await nodemamailSender(email, 'Newsletter Subscription Confirmation', subscribeTemplate(email));
-        await nodemamailSender(email, 'Newsletter Subscription Confirmation', adminSubscribeTemplate(email));
+        await nodemamailSender(
+          email,
+          "Newsletter Subscription Confirmation",
+          subscribeTemplate(email),
+        );
+        await nodemamailSender(
+          email,
+          "Newsletter Subscription Confirmation",
+          adminSubscribeTemplate(email),
+        );
       } catch (error) {
-        console.error('Error sending email:', error);
-        throw new Error('Failed to send email');
+        console.error("Error sending email:", error);
+        throw new Error("Failed to send email");
       }
     };
 
@@ -244,65 +237,60 @@ app.post('/subscribe', async (req, res) => {
     const newSubscription = new Newsletter({ email });
     await newSubscription.save();
 
-    res.status(201).send('Subscription successful!');
+    res.status(201).send("Subscription successful!");
   } catch (error) {
-    console.error('Error subscribing:', error);
-    res.status(500).send('Error subscribing');
+    console.error("Error subscribing:", error);
+    res.status(500).send("Error subscribing");
   }
 });
 
-
-app.get('/unsubscribe', async (req, res) => {
+app.get("/unsubscribe", async (req, res) => {
   const { token } = req.query;
 
   if (!token) {
-    return res.status(400).send('Invalid request');
+    return res.status(400).send("Invalid request");
   }
 
   try {
     // Decode token to get email
-    const decipher = crypto.createDecipher('aes256', 'your-secret-key');
-    let email = decipher.update(token, 'hex', 'utf8');
-    email += decipher.final('utf8');
+    const decipher = crypto.createDecipher("aes256", "your-secret-key");
+    let email = decipher.update(token, "hex", "utf8");
+    email += decipher.final("utf8");
 
     // Remove subscriber from the database
     const result = await Newsletter.deleteOne({ email: email });
 
     if (result.deletedCount > 0) {
-      res.send('You have been successfully unsubscribed.');
+      res.send("You have been successfully unsubscribed.");
     } else {
-      res.status(404).send('Email not found.');
+      res.status(404).send("Email not found.");
     }
   } catch (error) {
-    res.status(500).send('An error occurred.');
+    res.status(500).send("An error occurred.");
   }
 });
 
-
-
-
-
-app.post('/service-submit', async (req, res) => {
-  console.log("hii")
+app.post("/service-submit", async (req, res) => {
+  console.log("hii");
 
   const { fullName, email, phone } = req.body;
 
-  console.log("service", req.body)
+  console.log("service", req.body);
 
   // Server-side validation
   if (!fullName || !isValidEmail(email) || !isValidPhone(phone)) {
-    return res.status(400).json({ success: false, message: 'Invalid input' });
+    return res.status(400).json({ success: false, message: "Invalid input" });
   }
 
   // Process the contact data (e.g., save to database, send email notification, etc.)
 
   await nodemamailSender(
     email,
-    'Contact Form Confirmation',
-    serviceTemplate(email)
+    "Contact Form Confirmation",
+    serviceTemplate(email),
   );
 
-  res.json({ success: true, message: 'Request submitted successfully' });
+  res.json({ success: true, message: "Request submitted successfully" });
 });
 
 function isValidEmail(email) {
