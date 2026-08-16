@@ -46,23 +46,34 @@ dbConnect();
 app.use("/v1", Blog);
 
 const verifyRecaptcha = async (token) => {
-  const secretKey = "6LddG4ktAAAAAIb3aJAfw9nt9wdlGbL3r3xHiDCO";
-  const url = "https://www.google.com/recaptcha/api/siteverify";
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+
+  if (!secretKey) {
+    console.error("RECAPTCHA_SECRET_KEY is missing");
+    return false;
+  }
 
   try {
-    const response = await axios.post(url, null, {
-      params: {
-        secret: secretKey,
-        response: token,
+    const response = await axios.post(
+      "https://www.google.com/recaptcha/api/siteverify",
+      null,
+      {
+        params: {
+          secret: secretKey,
+          response: token,
+        },
       },
-    });
+    );
+
     console.log("reCAPTCHA verification response:", response.data);
-    return response.data.success;
+
+    return response.data.success === true;
   } catch (error) {
     console.error(
-      "Error verifying reCAPTCHA:",
-      error.response ? error.response.data : error.message,
+      "reCAPTCHA verification error:",
+      error.response?.data || error.message,
     );
+
     return false;
   }
 };
