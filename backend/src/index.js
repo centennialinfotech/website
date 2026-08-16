@@ -75,19 +75,30 @@ app.post("/contact-us", async (req, res) => {
   console.log("Phone:", phone);
   console.log("Email:", email);
   console.log("Query:", query);
-  console.log("reCAPTCHA Token:", recaptchaToken);
+  console.log("Has reCAPTCHA:", !!recaptchaToken);
 
   if (!name || !phone || !email || !query || !recaptchaToken) {
     console.error("Missing required fields");
-    return res.status(400).send("Missing required fields");
+
+    return res.status(400).json({
+      success: false,
+      error: "Missing required fields",
+    });
   }
 
   try {
     const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
+
     if (!isRecaptchaValid) {
       console.error("reCAPTCHA verification failed");
-      return res.status(400).send("reCAPTCHA verification failed");
+
+      return res.status(400).json({
+        success: false,
+        error: "reCAPTCHA verification failed",
+      });
     }
+
+    console.log("reCAPTCHA verified successfully");
 
     await nodemamailSender(
       email,
@@ -95,18 +106,27 @@ app.post("/contact-us", async (req, res) => {
       contactUsTemplate(name, email, query, phone),
     );
 
+    console.log("Customer confirmation email sent");
+
     await nodemamailSender(
       "centennialinfotech@gmail.com",
       "New Contact Us Message",
       collaborationInvitationTemplate(name, email, query, phone),
     );
 
-    res.status(200).send({ message: "Emails sent successfully" });
+    console.log("Admin notification email sent");
+
+    return res.status(200).json({
+      success: true,
+      message: "Emails sent successfully",
+    });
   } catch (error) {
-    console.error("Error sending emails:", error.message);
-    res
-      .status(500)
-      .send({ message: "Error sending emails", error: error.message });
+    console.error("Error sending emails:", error);
+
+    return res.status(500).json({
+      success: false,
+      error: error.message || "Error sending emails",
+    });
   }
 });
 
