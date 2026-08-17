@@ -8,7 +8,7 @@ const nodemamailSender = async (email, title, body) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "Centennial Infotech <onboarding@resend.dev>",
+      from: "Centennial Infotech <no-reply@centennialinfotech.com>",
       to: email,
       subject: title,
       html: body,
