@@ -2,8 +2,8 @@ const crypto = require('crypto');
 
 // Use environment variables for key and IV
 const algorithm = 'aes-256-cbc';
-const key = Buffer.from(process.env.ENCRYPTION_KEY, 'hex');
-const iv = Buffer.from(process.env.ENCRYPTION_IV, 'hex');
+const key = Buffer.from(process.env.ENCRYPTION_KEY || '9c03c3d26c8a3fcb32fcf6e4c63d94c15d12f5d5f12e5b7c87a6a2379f1f5709', 'hex');
+const iv = Buffer.from(process.env.ENCRYPTION_IV || '56b1e4c62c7d1e223c11a4a1428e874d', 'hex');
 
 // Function to generate an unsubscribe token
 const generateUnsubscribeToken = (email) => {
