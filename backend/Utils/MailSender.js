@@ -21,7 +21,7 @@ const nodemamailSender = async (email, title, body) => {
       const response = await axios.post(
         "https://api.resend.com/emails",
         {
-          from: `${fromName} <${fromEmail}>`,
+          from: `${fromName} <onboarding@resend.dev>`,
           to: [email],
           subject: title,
           html: body,
