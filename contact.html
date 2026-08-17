@@ -558,26 +558,47 @@ overflow-x: hidden;
     
             try {
                 const response = await fetch('https://cc-5vhm.onrender.com/contact-us', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: name,
-                        phone: formattedPhone,
-                        email: email,
-                        query: query,
-                        recaptchaToken: recaptchaResponse
-                    })
-                });
-    
-                if (response.ok) {
-                    const responseData = await response.json();
-                    showToast('Form submitted successfully!', 'success');
-                    document.getElementById('contactForm').reset();
-                    grecaptcha.reset();
-                } else {
-                    const responseData = await response.json();
-                    showToast(`Submission Error: ${responseData.error || 'Unknown error'}`, 'error');
-                }
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: name,
+        phone: formattedPhone,
+        email: email,
+        query: query,
+        recaptchaToken: recaptchaResponse
+    })
+});
+
+const contentType = response.headers.get("content-type") || "";
+
+let responseData;
+
+if (contentType.includes("application/json")) {
+    responseData = await response.json();
+} else {
+    responseData = await response.text();
+}
+
+console.log("Server response:", responseData);
+
+if (response.ok) {
+    showToast('Form submitted successfully!', 'success');
+
+    document.getElementById('contactForm').reset();
+
+    if (typeof grecaptcha !== "undefined") {
+        grecaptcha.reset();
+    }
+} else {
+    const errorMessage =
+        typeof responseData === "object"
+            ? responseData.error || responseData.message || "Unknown error"
+            : responseData || "Unknown error";
+
+    showToast(`Submission Error: ${errorMessage}`, 'error');
+}
             } catch (error) {
                 showToast('Error submitting form: ' + error.message, 'error');
             }
