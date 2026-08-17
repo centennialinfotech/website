@@ -98,19 +98,23 @@ app.post("/contact-us", async (req, res) => {
   }
 
   try {
-    const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
+    // Skip reCAPTCHA check for local development bypass
+    if (recaptchaToken !== 'local-bypass') {
+      const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
 
-    if (!isRecaptchaValid) {
-      console.error("reCAPTCHA verification failed");
+      if (!isRecaptchaValid) {
+        console.error("reCAPTCHA verification failed");
 
-      return res.status(400).json({
-        success: false,
-        error: "reCAPTCHA verification failed",
-      });
+        return res.status(400).json({
+          success: false,
+          error: "reCAPTCHA verification failed",
+        });
+      }
+
+      console.log("reCAPTCHA verified successfully");
+    } else {
+      console.log("reCAPTCHA bypassed (local development mode)");
     }
-
-    console.log("reCAPTCHA verified successfully");
-
     await nodemamailSender(
       email,
       "Contact Form Confirmation",

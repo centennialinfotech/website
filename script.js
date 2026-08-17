@@ -51,8 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateImages();
     }
 
-    document.querySelector('.btnn1').addEventListener('click', slideRight);
-    document.querySelector('.btnn2').addEventListener('click', slideLeft);
+    const btn1 = document.querySelector('.btnn1');
+    const btn2 = document.querySelector('.btnn2');
+    if (btn1) btn1.addEventListener('click', slideRight);
+    if (btn2) btn2.addEventListener('click', slideLeft);
 
-    updateImages(); // Initialize the first set of images and text
+    if (images.length > 0 && largeImage) {
+        updateImages(); // Initialize the first set of images and text
+    }
 });

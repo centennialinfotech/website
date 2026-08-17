@@ -2808,88 +2808,39 @@ padding: 20px;
 }
 
 
-.timeline ul  .timelinenume_one:before {
-  content: '';
+/* Timeline number circles - pure CSS, no images needed */
+.timeline ul li:before {
+    content: attr(data-num);
     position: absolute;
-    width: 34px;
-    height: 35px;
-    top: 24px;
-    right: 1px;
-    background: url(img/timeline-1.png);
-    z-index: 0;
-    background-repeat: no-repeat;
-    background-size: 38px;
-   
+    width: 38px;
+    height: 38px;
+    top: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    z-index: 2;
+    line-height: 38px;
+    text-align: center;
 }
 
-.timeline ul  .timelinenume_two:before {
-  content: '';
-    position: absolute;
-    width: 37px;
-    height: 37px;
-    top: 24px;
-    left: -36px;
-    background: url(img/timeline-2.png);
-    z-index: 0;
-    background-repeat: no-repeat;
-    background-size: 38px;
-   
-}
-.timeline ul  .timelinenume_thiree:before {
-  content: '';
-    position: absolute;
-    width: 34px;
-    height: 35px;
-    top: 24px;
-    right: 1px;
-    background: url(img/timeline-3.png);
-    z-index: 0;
-    background-repeat: no-repeat;
-    background-size: 33px;
-   
+/* Odd items (left side) - dark blue filled */
+.timeline ul li:nth-child(odd):before {
+    right: -19px;
+    background: #004770;
+    color: #ffffff;
+    box-shadow: 0 0 0 3px #004770;
 }
 
-
-.timeline ul  .timelinenume_four:before {
-  content: '';
-    position: absolute;
-   width: 37px;
-    height: 37px;
-    top: 24px;
-    left: -36px;
-    background: url(img/timeline4.png);
-    z-index: 0;
-    background-repeat: no-repeat;
-    background-size: 38px;
-   
-}
-
-.timeline ul  .timelinenume_fifth:before {
-  content: '';
-    position: absolute;
-    width: 34px;
-    height: 35px;
-    top: 24px;
-    right: 1px;
-    background: url(img/timeline-5.png);
-    z-index: 0;
-    background-repeat: no-repeat;
-    background-size: 34px;
-   
-}
-
-.timeline ul  .timelinenume_sex:before {
-  content: '';
-    position: absolute;
-   width: 37px;
-    height: 37px;
-    top: 24px;
-    left: -36px;
-    background: url(img/timeline-6.png);
-    z-index: 0;
-    background-repeat: no-repeat;
-    background-size: 38px;
-   
+/* Even items (right side) - light grey outlined */
+.timeline ul li:nth-child(even):before {
+    left: -19px;
+    background: #F3F3F3;
+    color: #004770;
+    box-shadow: 0px 1px 4px 4px rgba(115,115,115,0.09);
 }
 
 
