@@ -493,9 +493,10 @@ overflow-x: hidden;
                     showToast('Subscription successful!', 'success');
                     emailInput.value = ''; // Reset email input
                 } else {
-                    const errorText = await response.text();
-                    showToast(`Subscription Error: ${errorText}`, 'error');
-                }
+                const errorData = await response.json().catch(() => ({ error: 'Submission failed' }));
+                console.error("Server error details:", errorData.details);
+                throw new Error(errorData.error || 'Server error occurred');
+            }    
             } catch (error) {
                 showToast(`Subscription Error: ${error.message}`, 'error');
             }
