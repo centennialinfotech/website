@@ -47,6 +47,8 @@ app.use("/v1", Blog);
 
 const verifyRecaptcha = async (token) => {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  console.log("DEBUG verifyRecaptcha - Token received:", token);
+  console.log("DEBUG verifyRecaptcha - Secret Key loaded:", secretKey ? "Yes, length: " + secretKey.length : "NO");
 
   if (!secretKey) {
     console.error("RECAPTCHA_SECRET_KEY is missing");
@@ -54,27 +56,30 @@ const verifyRecaptcha = async (token) => {
   }
 
   try {
+    const params = new URLSearchParams();
+    params.append('secret', secretKey);
+    params.append('response', token);
+
     const response = await axios.post(
       "https://www.google.com/recaptcha/api/siteverify",
-      null,
+      params,
       {
-        params: {
-          secret: secretKey,
-          response: token,
-        },
-      },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }
     );
 
     console.log("reCAPTCHA verification response:", response.data);
 
-    return response.data.success === true;
+    return response.data;
   } catch (error) {
     console.error(
       "reCAPTCHA verification error:",
       error.response?.data || error.message,
     );
 
-    return false;
+    return { success: false, 'error-codes': [error.message] };
   }
 };
 
@@ -100,14 +105,15 @@ app.post("/contact-us", async (req, res) => {
   try {
     // Skip reCAPTCHA check for local development bypass
     if (recaptchaToken !== 'local-bypass') {
-      const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
+      const recaptchaData = await verifyRecaptcha(recaptchaToken);
 
-      if (!isRecaptchaValid) {
-        console.error("reCAPTCHA verification failed");
+      if (!recaptchaData.success) {
+        console.error("reCAPTCHA verification failed:", recaptchaData['error-codes']);
 
         return res.status(400).json({
           success: false,
           error: "reCAPTCHA verification failed",
+          details: recaptchaData['error-codes']
         });
       }
 

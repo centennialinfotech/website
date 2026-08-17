@@ -283,7 +283,7 @@ overflow-x: hidden;
                     <textarea name="query" placeholder="Drop your query here" class="cr-query" id="query" required></textarea>
     
                         <!-- reCAPTCHA Widget -->
-                        <div class="g-recaptcha" data-sitekey="6LddG4ktAAAAAPU2d3xLXuLJka-exyTs2U8GMzXC"></div>
+                        <div class="g-recaptcha" data-sitekey="6LfL34otAAAAABMjLLJ0hQZzttfqzos6NgMX-uK2"></div>
                              
                              <div class="pt-4">
                         <button type="submit" class="cr-button ">Send</button>
@@ -510,11 +510,8 @@ overflow-x: hidden;
         document.getElementById('contactForm').addEventListener('submit', async function(event) {
             event.preventDefault();
     
-            // Use bypass token on localhost (reCAPTCHA site key is for production domain only)
-            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-            const recaptchaResponse = isLocalhost ? 'local-bypass' : (typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '');
-
-            if (!isLocalhost && !recaptchaResponse) {
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
                 showToast('Please complete the reCAPTCHA.', 'error');
                 return;
             }
