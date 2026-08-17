@@ -557,8 +557,12 @@ overflow-x: hidden;
     
             const formattedPhone = dialCode + phone;
     
+            const backendUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+                ? 'http://localhost:5000'
+                : 'https://cc-5vhm.onrender.com';
+
             try {
-                const response = await fetch('http://localhost:5000/contact-us', {
+                const response = await fetch(`${backendUrl}/contact-us`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'

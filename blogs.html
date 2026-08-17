@@ -466,7 +466,10 @@
         // Function to fetch blogs from the server
          async function fetchBlogs() {
              try {
-                const response = await fetch('http://localhost:5000/v1/getBlog');
+                const backendUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+                    ? 'http://localhost:5000'
+                    : 'https://cc-5vhm.onrender.com';
+                const response = await fetch(`${backendUrl}/v1/getBlog`);
                 const result = await response.json();
 
                 if (response.ok) {
