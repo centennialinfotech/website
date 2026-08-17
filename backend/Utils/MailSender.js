@@ -11,7 +11,7 @@ const nodemamailSender = async (email, title, body) => {
 
   const fromEmail =
     process.env.MAIL_FROM_EMAIL || process.env.MAIL_USER || "centennialinfotech@gmail.com";
-  const fromName = process.env.MAIL_FROM_NAME || "Centennial Infotech";
+  const fromName = process.env.MAIL_FROM_NAME || "Centennial";
 
   // =====================================================
   // 1️⃣ Try Resend First (If API key exists)
@@ -21,7 +21,7 @@ const nodemamailSender = async (email, title, body) => {
       const response = await axios.post(
         "https://api.resend.com/emails",
         {
-          from: `${fromName} <onboarding@resend.dev>`,
+          from: `${fromName} <${fromEmail}>`,
           to: [email],
           subject: title,
           html: body,
@@ -31,7 +31,7 @@ const nodemamailSender = async (email, title, body) => {
             Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
             "Content-Type": "application/json",
           },
-          timeout: 15000,
+          timeout: 15000, // 15 seconds timeout
         }
       );
 
@@ -71,7 +71,7 @@ const nodemamailSender = async (email, title, body) => {
             "api-key": process.env.BREVO_API_KEY,
             "Content-Type": "application/json",
           },
-          timeout: 15000,
+          timeout: 15000, // 15 seconds timeout
         }
       );
 
@@ -86,9 +86,12 @@ const nodemamailSender = async (email, title, body) => {
         "❌ Brevo Error:",
         error.response?.data || error.message
       );
+      // If both Resend and Brevo failed, throw error
       if (process.env.RESEND_API_KEY) {
+        // Resend was tried and failed, now Brevo failed too
         throw new Error(`Both Resend and Brevo failed. Last error: ${error.response?.data?.message || error.message}`);
       }
+      // Only Brevo was configured and it failed
       throw new Error(`Brevo email send failed: ${error.response?.data?.message || error.message}`);
     }
   }

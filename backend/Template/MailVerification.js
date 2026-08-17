@@ -7,7 +7,7 @@ const contactUsTemplate = (name, email, query, phone) => {
         <div style="text-align: center;">
              <img src="https://res.cloudinary.com/dvfmw4c9f/image/upload/v1722234617/logo_c_nv0icd.png" style="max-width: 150px; margin-bottom: 10px;" />
         </div>
-        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Contact Us Confirmation</h2>
+        <h2 style="color: black; text-align: center; margin-bottom: 20px;">Contact Us Confirmation</h2>
         
         <p style="font-size: 16px;">Dear <strong>${name}</strong>,</p>
 
