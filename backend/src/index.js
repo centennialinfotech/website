@@ -10,6 +10,12 @@ const {serviceTemplate} = require("../Template/service")
 const Blog = require("../routes/Blog")
 const Contact = require("../routes/Contact")
 const Upload = require("../routes/Upload")
+const serviceRoutes = require("../routes/serviceRoutes");
+const productRoutes = require("../routes/productRoutes");
+const { authenticate } = require("../middleware/authMiddleware");
+const adminRoutes = require("../routes/adminroutes");
+const path = require("path");
+
 
 
 const app = express();
@@ -30,6 +36,56 @@ dbConnect();
 app.use("/v1", Blog);
 app.use("/v1", Contact);
 app.use("/v1", Upload);
+
+app.use('/api/services', authenticate, serviceRoutes);
+app.use('/api/products', authenticate, productRoutes);
+app.use('/api/admin', adminRoutes);
+
+// Serve static files from frontend
+app.use(express.static(path.join(__dirname, "../../")));
+
+// Simple route for public access (no auth)
+app.get('/api/public/services', async (req, res) => {
+  try {
+    const Service = require('../model/Service');
+    const services = await Service.find().sort({ createdAt: -1 });
+    res.json({ success: true, data: services });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+app.get('/api/public/services/:id', async (req, res) => {
+  try {
+    const Service = require('../model/Service');
+    const service = await Service.findById(req.params.id);
+    if (!service) return res.status(404).json({ success: false, message: 'Service not found' });
+    res.json({ success: true, data: service });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+app.get('/api/public/products', async (req, res) => {
+  try {
+    const Product = require('../model/Product');
+    const products = await Product.find().sort({ createdAt: -1 });
+    res.json({ success: true, data: products });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+app.get('/api/public/products/:id', async (req, res) => {
+  try {
+    const Product = require('../model/Product');
+    const product = await Product.findById(req.params.id);
+    if (!product) return res.status(404).json({ success: false, message: 'Product not found' });
+    res.json({ success: true, data: product });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
 
 // Define email schema and model
 const EmailSchema = new mongoose.Schema({
