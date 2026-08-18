@@ -62,17 +62,7 @@ a.navbar-brand img {
 }
 
 section.countbg:after {
-    content: "";
-    position: absolute;
-    background: url(img/bg_stats.png);
-    z-index: 0;
-    width: 100%;
-    height: 1000%;
-    background-repeat: no-repeat;
-    top: 0%;
-    left: 0%;
-    right: 0;
-    background-size: contain;
+    display: none;
 }
 
 nav.navbar.navbar-expand-sm.navbar-dark a.nav-link {
@@ -623,7 +613,11 @@ section.processbg .row.pt-4 {
 }
 
 .countbg {
-    background-color: #004770;
+    background-image: url(img/bg_stats.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0d2137;
 }
 
 .counter_boxnumber h2 {
