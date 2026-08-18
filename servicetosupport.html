@@ -3,65 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Services - Centennial Infotech</title>
+    <title>Services & Support - Centennial Infotech</title>
+    <meta name="description" content="Centennial Infotech Services & Support - Browse all available services and support packages." />
+    <link rel="icon" sizes="180x180" type="image/x-icon" href="img/logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="owl.carousel.min.css" />
+    <link rel="stylesheet" href="style.css?v=2" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #f5f5f5;
-      }
-      .header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      .page-hero {
+        background: linear-gradient(135deg, #004770 0%, #002a45 100%);
         color: white;
-        padding: 60px 20px;
+        padding: 100px 20px 70px;
         text-align: center;
+        position: relative;
+        overflow: hidden;
       }
-      .header h1 {
+      .page-hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(0,130,200,0.15) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 50%, rgba(0,100,160,0.1) 0%, transparent 60%);
+      }
+      .page-hero h1 {
         font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        position: relative;
+      }
+      .page-hero p {
+        font-size: 18px;
+        opacity: 0.85;
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .page-section {
+        padding: 70px 0;
+        background: #f8f9fa;
+      }
+      .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1a1a2e;
         margin-bottom: 10px;
       }
-      .header p {
-        font-size: 18px;
-        opacity: 0.9;
-      }
-      .services-container {
-        max-width: 1400px;
-        margin: 50px auto;
-        padding: 0 20px;
+      .section-subtitle {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 50px;
       }
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
         gap: 30px;
       }
       .service-card {
         background: white;
-        border-radius: 10px;
+        border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
-        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
       }
       .service-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 40px rgba(0,71,112,0.18);
+      }
+      .card-accent {
+        height: 5px;
+        background: linear-gradient(90deg, #004770, #0082c8);
       }
       .card-content {
-        padding: 25px;
+        padding: 28px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
       }
       .service-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 15px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 12px;
       }
       .service-description {
         color: #666;
-        line-height: 1.6;
+        line-height: 1.7;
         margin-bottom: 20px;
+        font-size: 15px;
+        flex: 1;
       }
       .tiers-list {
         margin-bottom: 20px;
@@ -69,212 +104,316 @@
       .tier-item {
         display: flex;
         justify-content: space-between;
-        padding: 8px 0;
+        align-items: center;
+        padding: 10px 0;
         border-bottom: 1px solid #f0f0f0;
       }
+      .tier-item:last-child { border-bottom: none; }
       .tier-name {
-        font-weight: 500;
-        color: #667eea;
+        font-weight: 600;
+        color: #004770;
+        font-size: 14px;
       }
       .tier-price {
-        font-weight: bold;
-        color: #333;
+        font-weight: 700;
+        color: #1a1a2e;
+        font-size: 15px;
       }
-      .buy-btn {
+      .action-btn {
         width: 100%;
-        padding: 12px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 13px;
+        background: linear-gradient(135deg, #004770 0%, #0082c8 100%);
         color: white;
         border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: bold;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
         cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 0.3px;
       }
-      .modal {
+      .action-btn:hover {
+        background: linear-gradient(135deg, #003558 0%, #006fab 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(0,71,112,0.3);
+      }
+      .empty-state {
+        text-align: center;
+        padding: 80px 20px;
+        color: #999;
+        grid-column: 1 / -1;
+      }
+      .empty-state i { font-size: 48px; margin-bottom: 16px; color: #ccc; display: block; }
+      /* Modal */
+      .modal-overlay {
         display: none;
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 1000;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 2000;
         overflow-y: auto;
+        backdrop-filter: blur(4px);
       }
-      .modal-content {
+      .modal-box {
         background: white;
-        max-width: 900px;
-        margin: 50px auto;
-        border-radius: 10px;
+        max-width: 860px;
+        margin: 60px auto;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.3);
       }
-      .modal-header {
-        padding: 20px 30px;
-        border-bottom: 2px solid #f0f0f0;
+      .modal-top {
+        background: linear-gradient(135deg, #004770 0%, #0082c8 100%);
+        padding: 28px 32px;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      .modal-header h2 {
-        color: #333;
+      .modal-top h2 { color: white; font-size: 26px; font-weight: 700; margin: 0; }
+      .modal-close {
         font-size: 28px;
-      }
-      .close-modal {
-        font-size: 32px;
         cursor: pointer;
-        color: #999;
+        color: rgba(255,255,255,0.8);
+        line-height: 1;
+        transition: color 0.2s;
       }
-      .modal-body {
-        padding: 30px;
-      }
-      .detail-section {
-        margin-bottom: 30px;
-      }
-      .detail-section h3 {
-        color: #667eea;
-        margin-bottom: 15px;
-      }
+      .modal-close:hover { color: white; }
+      .modal-inner { padding: 32px; }
+      .detail-section { margin-bottom: 28px; }
+      .detail-section h3 { color: #004770; margin-bottom: 14px; font-size: 18px; font-weight: 700; }
+      .detail-section p { color: #555; line-height: 1.7; }
       .detail-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 14px;
       }
       .detail-card {
-        background: #f9f9f9;
-        padding: 15px;
-        border-radius: 8px;
-        border-left: 4px solid #667eea;
+        background: #f4f8fb;
+        padding: 16px;
+        border-radius: 10px;
+        border-left: 4px solid #004770;
       }
-      .detail-card h4 {
-        color: #333;
-        margin-bottom: 8px;
-      }
-      .detail-card p {
-        color: #666;
-        font-size: 14px;
-      }
+      .detail-card h4 { color: #1a1a2e; margin-bottom: 6px; font-size: 15px; }
+      .detail-card p { color: #666; font-size: 13px; margin: 0; }
       .tier-detail {
-        background: #f9f9f9;
+        background: #f4f8fb;
         padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 15px;
+        border-radius: 10px;
+        margin-bottom: 14px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        gap: 12px;
       }
-      .tier-info h4 {
-        color: #667eea;
-        font-size: 20px;
-      }
-      .tier-price-large {
-        font-size: 28px;
-        font-weight: bold;
-        color: #333;
-      }
-      .select-plan-btn {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      .tier-info h4 { color: #004770; font-size: 18px; margin-bottom: 4px; }
+      .tier-info p { color: #666; font-size: 14px; margin: 0; }
+      .tier-price-lg { font-size: 26px; font-weight: 800; color: #1a1a2e; }
+      .select-btn {
+        background: linear-gradient(135deg, #004770, #0082c8);
         color: white;
         border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
+        padding: 10px 22px;
+        border-radius: 8px;
         cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
       }
-      .empty-state {
-        text-align: center;
-        padding: 60px;
-        color: #999;
-      }
+      .select-btn:hover { opacity: 0.9; transform: translateY(-1px); }
       @media (max-width: 768px) {
-        .services-grid {
-          grid-template-columns: 1fr;
-        }
+        .services-grid { grid-template-columns: 1fr; }
+        .page-hero h1 { font-size: 32px; }
       }
     </style>
   </head>
   <body>
-    <div class="header">
-      <h1>Our Services</h1>
-      <p>Choose the perfect service for your business needs</p>
-    </div>
-    <div class="services-container">
-      <div class="services-grid" id="servicesGrid">
-        <div class="empty-state">Loading services...</div>
-      </div>
-    </div>
-    <div id="detailModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 id="modalTitle"></h2>
-          <span class="close-modal" onclick="closeDetailModal()">&times;</span>
+    <!-- ==================== NAVBAR START ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="home">
+          <img src="img/logo.png" alt="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="services">Solutions</a></li>
+            <li class="nav-item"><a class="nav-link" href="blogs">Blogs</a></li>
+            <li class="nav-item"><a class="nav-link" href="client">Clients</a></li>
+            <li class="nav-item"><a class="nav-link active" href="servicetosupport">ServiceToSupport</a></li>
+            <li class="nav-item"><a class="nav-link" href="productData">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="aboutus">About Us</a></li>
+            <li class="nav-item ms-3">
+              <a href="https://centennial-infotech-hiring.netlify.app/jobs" class="nav-cta-btn careers-btn">Careers</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a href="contact" class="nav-cta-btn contact-btn">Contact</a>
+            </li>
+          </ul>
         </div>
-        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </nav>
+    <!-- ==================== NAVBAR END ==================== -->
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <h1>Services &amp; Support</h1>
+      <p>Explore our full range of services and support packages tailored to your business needs.</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-subtitle">Click on any service to view full details and pricing plans.</p>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+          <div class="empty-state">
+            <i class="fas fa-spinner fa-spin"></i>
+            Loading services...
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div id="detailModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-top">
+          <h2 id="modalTitle"></h2>
+          <span class="modal-close" onclick="closeDetailModal()">&times;</span>
+        </div>
+        <div class="modal-inner" id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER START ==================== -->
+    <div class="footer pt-72 pb-72">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-3 col-lg-4 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <a href="#"><img src="img/logo.png" /></a>
+            </div>
+            <div class="icons_footer">
+              <ul>
+                <li><a href="https://twitter.com/centennialits" target="_blank" rel="noopener noreferrer"><img src="img/twitter.png" alt="Twitter" /></a></li>
+                <li><a href="https://www.facebook.com/centennialinfotech" target="_blank" rel="noopener noreferrer"><img src="img/facebook.png" alt="Facebook" /></a></li>
+                <li><a href="https://www.youtube.com/@centennialinfotech" target="_blank" rel="noopener noreferrer"><img src="img/youtube.png" alt="YouTube" /></a></li>
+                <li><a href="https://www.instagram.com/cententialinfotech" target="_blank" rel="noopener noreferrer"><img src="img/instagram.png" alt="Instagram" /></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-2 col-lg-2 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <ul>
+                <b><a href="#">Quick links</a></b>
+                <li><a href="services">Solutions</a></li>
+                <li><a href="servicetosupport">Services &amp; Support</a></li>
+                <li><a href="productData">Products</a></li>
+                <li><a href="blogs">Blogs</a></li>
+                <li><a href="client">Clients</a></li>
+                <li><a href="aboutus">About Us</a></li>
+                <li><a href="contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3 col-lg-2 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <ul>
+                <b><a href="services">Our Services</a></b>
+                <li><a href="services">UI/UX Design</a></li>
+                <li><a href="services">Web Development</a></li>
+                <li><a href="services">App Development</a></li>
+                <li><a href="services">Quality Assurance</a></li>
+                <li><a href="services">Software Development</a></li>
+                <li><a href="services">IT Consulting</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <ul>
+                <b><a href="#">Office address</a></b>
+                <li>C-124, VIII, Phase-8, Industrial Area, Sector 73, Sahibzada Ajit Singh Nagar, Punjab 140308</li>
+                <span class="email-ft"><b>sales@centennialinfotech.com</b></span><br />
+                <span><b>+91-81465 11568</b></span>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== FOOTER END ==================== -->
+
     <script>
-      // const API_URL = "http://localhost:5000/api/public";
       const API_URL = "https://website-backend-zl1c.onrender.com/api/public";
+
       async function loadServices() {
+        let services = [];
         try {
           const response = await fetch(`${API_URL}/services`);
-          const services = await response.json();
-          if (services && services.length > 0) renderServices(services);
-          else
-            document.getElementById("servicesGrid").innerHTML =
-              '<div class="empty-state">No services available</div>';
-        } catch (error) {
-          document.getElementById("servicesGrid").innerHTML =
-            '<div class="empty-state">Error loading services</div>';
-        }
+          if (response.ok) {
+            const data = await response.json();
+            if (Array.isArray(data)) services = data;
+          }
+        } catch (e) { console.error("Error loading services:", e); }
+        renderServices(services);
       }
+
       function renderServices(services) {
         const container = document.getElementById("servicesGrid");
-        container.innerHTML = services
-          .map(
-            (service) => `
-                <div class="service-card" onclick="showDetails('${service._id}')">
-                    <div class="card-content">
-                        <div class="service-title">${escapeHtml(service.title)}</div>
-                        <div class="service-description">${escapeHtml(service.description.substring(0, 120))}...</div>
-                        <div class="tiers-list">
-                            ${
-                              service.tiers &&
-                              service.tiers
-                                .slice(0, 3)
-                                .map(
-                                  (tier) =>
-                                    `<div class="tier-item"><span class="tier-name">${escapeHtml(tier.title)}</span><span class="tier-price">$${tier.price}</span></div>`,
-                                )
-                                .join("")
-                            }
-                        </div>
-                        <button class="buy-btn" onclick="event.stopPropagation(); alert('Ready to Pay for ${escapeHtml(service.title)}')">Buy Now</button>
-                    </div>
-                </div>
-            `,
-          )
-          .join("");
+        if (!services || services.length === 0) {
+          container.innerHTML = '<div class="empty-state"><i class="fas fa-box-open"></i>No services available at the moment.</div>';
+          return;
+        }
+        container.innerHTML = services.map(service => `
+          <div class="service-card" onclick="showDetails('${service._id}')">
+            <div class="card-accent"></div>
+            <div class="card-content">
+              <div class="service-title">${escapeHtml(service.title)}</div>
+              <div class="service-description">${escapeHtml(service.description.substring(0, 130))}...</div>
+              <div class="tiers-list">
+                ${service.tiers ? service.tiers.slice(0,3).map(tier =>
+                  `<div class="tier-item">
+                    <span class="tier-name">${escapeHtml(tier.title)}</span>
+                    <span class="tier-price">$${tier.price}</span>
+                  </div>`).join("") : ""}
+              </div>
+              <button class="action-btn" onclick="event.stopPropagation(); showDetails('${service._id}')">View Details &rarr;</button>
+            </div>
+          </div>`).join("");
       }
+
       async function showDetails(serviceId) {
         try {
           const response = await fetch(`${API_URL}/services`);
           const services = await response.json();
-          const service = services.find((s) => s._id === serviceId);
+          const service = services.find(s => s._id === serviceId);
           if (service) {
             document.getElementById("modalTitle").textContent = service.title;
             document.getElementById("modalBody").innerHTML = `
-                        <div class="detail-section"><h3>Description</h3><p>${escapeHtml(service.description)}</p></div>
-                        ${service.categories?.length ? `<div class="detail-section"><h3>Categories</h3><div class="detail-grid">${service.categories.map((c) => `<div class="detail-card"><h4>${escapeHtml(c.title)}</h4><p>${escapeHtml(c.description)}</p></div>`).join("")}</div></div>` : ""}
-                        ${service.industries?.length ? `<div class="detail-section"><h3>Industries</h3><div class="detail-grid">${service.industries.map((i) => `<div class="detail-card"><h4>${escapeHtml(i.title)}</h4><p>${escapeHtml(i.description)}</p></div>`).join("")}</div></div>` : ""}
-                        ${service.sources?.length ? `<div class="detail-section"><h3>Sources</h3><div class="detail-grid">${service.sources.map((s) => `<div class="detail-card"><h4>${escapeHtml(s.title)}</h4><p>${escapeHtml(s.description)}</p></div>`).join("")}</div></div>` : ""}
-                        <div class="detail-section"><h3>Pricing Plans</h3>${service.tiers.map((tier) => `<div class="tier-detail"><div class="tier-info"><h4>${escapeHtml(tier.title)}</h4><p>${escapeHtml(tier.description)}</p></div><div class="tier-price-large">$${tier.price}</div><button class="select-plan-btn" onclick="alert('Ready to Pay for ${escapeHtml(service.title)} - ${escapeHtml(tier.title)} Plan')">Select Plan</button></div>`).join("")}</div>
-                    `;
+              <div class="detail-section"><h3>Description</h3><p>${escapeHtml(service.description)}</p></div>
+              ${service.categories?.length ? `<div class="detail-section"><h3>Categories</h3><div class="detail-grid">${service.categories.map(c => `<div class="detail-card"><h4>${escapeHtml(c.title)}</h4><p>${escapeHtml(c.description)}</p></div>`).join("")}</div></div>` : ""}
+              ${service.industries?.length ? `<div class="detail-section"><h3>Industries</h3><div class="detail-grid">${service.industries.map(i => `<div class="detail-card"><h4>${escapeHtml(i.title)}</h4><p>${escapeHtml(i.description)}</p></div>`).join("")}</div></div>` : ""}
+              ${service.sources?.length ? `<div class="detail-section"><h3>Sources</h3><div class="detail-grid">${service.sources.map(s => `<div class="detail-card"><h4>${escapeHtml(s.title)}</h4><p>${escapeHtml(s.description)}</p></div>`).join("")}</div></div>` : ""}
+              <div class="detail-section"><h3>Pricing Plans</h3>${service.tiers.map(tier => `
+                <div class="tier-detail">
+                  <div class="tier-info"><h4>${escapeHtml(tier.title)}</h4><p>${escapeHtml(tier.description)}</p></div>
+                  <div class="tier-price-lg">$${tier.price}</div>
+                  <button class="select-btn">Select Plan</button>
+                </div>`).join("")}
+              </div>`;
             document.getElementById("detailModal").style.display = "block";
           }
-        } catch (error) {
-          alert("Error loading details");
-        }
+        } catch (e) { alert("Error loading details"); }
       }
+
       function closeDetailModal() {
         document.getElementById("detailModal").style.display = "none";
       }
@@ -285,9 +424,8 @@
         return div.innerHTML;
       }
       document.addEventListener("DOMContentLoaded", loadServices);
-      window.onclick = function (event) {
-        if (event.target === document.getElementById("detailModal"))
-          closeDetailModal();
+      window.onclick = function(e) {
+        if (e.target === document.getElementById("detailModal")) closeDetailModal();
       };
     </script>
   </body>

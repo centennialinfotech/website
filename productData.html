@@ -4,280 +4,407 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Products - Centennial Infotech</title>
+    <meta name="description" content="Centennial Infotech Products - Powerful digital platforms for ATS, AMS, Portfolio and Staffing management." />
+    <link rel="icon" sizes="180x180" type="image/x-icon" href="img/logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="owl.carousel.min.css" />
+    <link rel="stylesheet" href="style.css?v=2" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #f5f5f5;
-      }
-      .header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      .page-hero {
+        background: linear-gradient(135deg, #004770 0%, #002a45 100%);
         color: white;
-        padding: 60px 20px;
+        padding: 100px 20px 70px;
         text-align: center;
+        position: relative;
+        overflow: hidden;
       }
-      .header h1 {
-        font-size: 48px;
-        margin-bottom: 10px;
+      .page-hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(0,130,200,0.15) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 50%, rgba(0,100,160,0.1) 0%, transparent 60%);
       }
-      .header p {
-        font-size: 18px;
-        opacity: 0.9;
-      }
-      .products-container {
-        max-width: 1400px;
-        margin: 50px auto;
-        padding: 0 20px;
-      }
+      .page-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 16px; position: relative; }
+      .page-hero p { font-size: 18px; opacity: 0.85; max-width: 620px; margin: 0 auto; position: relative; }
+      .page-section { padding: 70px 0; background: #f8f9fa; }
+      .section-title { font-size: 32px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+      .section-subtitle { font-size: 16px; color: #666; margin-bottom: 50px; }
       .products-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
         gap: 30px;
       }
       .product-card {
         background: white;
-        border-radius: 10px;
+        border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
-        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
       }
       .product-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 40px rgba(0,71,112,0.18);
       }
-      .card-content {
-        padding: 25px;
-      }
-      .product-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 15px;
-      }
-      .product-description {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
-      .tiers-list {
-        margin-bottom: 20px;
-      }
-      .tier-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px 0;
+      .card-accent { height: 5px; background: linear-gradient(90deg, #004770, #0082c8); }
+      .card-content { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+      .product-title { font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; }
+      .product-subtitle { font-size: 14px; font-weight: 600; color: #0082c8; margin-bottom: 14px; }
+      .product-description { color: #666; line-height: 1.7; margin-bottom: 20px; font-size: 15px; flex: 1; }
+      .key-features { margin-bottom: 22px; }
+      .key-features strong { display: block; margin-bottom: 10px; color: #1a1a2e; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+      .key-features ul { list-style: none; padding: 0; margin: 0; }
+      .key-features ul li {
+        padding: 6px 0;
+        color: #555;
+        font-size: 14px;
         border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
-      .tier-name {
-        font-weight: 500;
-        color: #667eea;
-      }
-      .tier-price {
-        font-weight: bold;
-        color: #333;
-      }
-      .buy-btn {
+      .key-features ul li::before { content: '✓'; color: #004770; font-weight: 700; }
+      .key-features ul li:last-child { border-bottom: none; }
+      .action-btn {
         width: 100%;
-        padding: 12px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 13px;
+        background: linear-gradient(135deg, #004770 0%, #0082c8 100%);
         color: white;
         border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: bold;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
         cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 0.3px;
+        margin-top: auto;
       }
-      .modal {
+      .action-btn:hover {
+        background: linear-gradient(135deg, #003558 0%, #006fab 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(0,71,112,0.3);
+      }
+      .empty-state { text-align: center; padding: 80px 20px; color: #999; grid-column: 1 / -1; }
+      /* Modal */
+      .modal-overlay {
         display: none;
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 1000;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 2000;
         overflow-y: auto;
+        backdrop-filter: blur(4px);
       }
-      .modal-content {
+      .modal-box {
         background: white;
-        max-width: 900px;
-        margin: 50px auto;
-        border-radius: 10px;
+        max-width: 860px;
+        margin: 60px auto;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.3);
       }
-      .modal-header {
-        padding: 20px 30px;
-        border-bottom: 2px solid #f0f0f0;
+      .modal-top {
+        background: linear-gradient(135deg, #004770 0%, #0082c8 100%);
+        padding: 28px 32px;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      .modal-header h2 {
-        color: #333;
-        font-size: 28px;
-      }
-      .close-modal {
-        font-size: 32px;
-        cursor: pointer;
-        color: #999;
-      }
-      .modal-body {
-        padding: 30px;
-      }
-      .detail-section {
-        margin-bottom: 30px;
-      }
-      .detail-section h3 {
-        color: #667eea;
-        margin-bottom: 15px;
-      }
-      .detail-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
-      }
-      .detail-card {
-        background: #f9f9f9;
-        padding: 15px;
-        border-radius: 8px;
-        border-left: 4px solid #667eea;
-      }
-      .detail-card h4 {
-        color: #333;
-        margin-bottom: 8px;
-      }
-      .detail-card p {
-        color: #666;
-        font-size: 14px;
-      }
-      .tier-detail {
-        background: #f9f9f9;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .tier-info h4 {
-        color: #667eea;
-        font-size: 20px;
-      }
-      .tier-price-large {
-        font-size: 28px;
-        font-weight: bold;
-        color: #333;
-      }
-      .select-plan-btn {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .empty-state {
-        text-align: center;
-        padding: 60px;
-        color: #999;
-      }
+      .modal-top h2 { color: white; font-size: 26px; font-weight: 700; margin: 0; }
+      .modal-close { font-size: 28px; cursor: pointer; color: rgba(255,255,255,0.8); line-height: 1; transition: color 0.2s; }
+      .modal-close:hover { color: white; }
+      .modal-inner { padding: 32px; }
+      .detail-section { margin-bottom: 28px; }
+      .detail-section h3 { color: #004770; margin-bottom: 14px; font-size: 18px; font-weight: 700; }
+      .detail-section p { color: #555; line-height: 1.7; }
+      .detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+      .detail-card { background: #f4f8fb; padding: 16px; border-radius: 10px; border-left: 4px solid #004770; }
+      .detail-card h4 { color: #1a1a2e; margin-bottom: 6px; font-size: 15px; }
+      .detail-card p { color: #666; font-size: 13px; margin: 0; }
+      .tier-detail { background: #f4f8fb; padding: 20px; border-radius: 10px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+      .tier-info h4 { color: #004770; font-size: 18px; margin-bottom: 4px; }
+      .tier-info p { color: #666; font-size: 14px; margin: 0; }
+      .tier-price-lg { font-size: 26px; font-weight: 800; color: #1a1a2e; }
+      .select-btn { background: linear-gradient(135deg, #004770, #0082c8); color: white; border: none; padding: 10px 22px; border-radius: 8px; cursor: pointer; font-weight: 600; }
       @media (max-width: 768px) {
-        .products-grid {
-          grid-template-columns: 1fr;
-        }
+        .products-grid { grid-template-columns: 1fr; }
+        .page-hero h1 { font-size: 32px; }
       }
     </style>
   </head>
   <body>
-    <div class="header">
-      <h1>Our Products</h1>
-      <p>Choose the perfect product for your business needs</p>
-    </div>
-    <div class="products-container">
-      <div class="products-grid" id="productsGrid">
-        <div class="empty-state">Loading products...</div>
-      </div>
-    </div>
-    <div id="detailModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 id="modalTitle"></h2>
-          <span class="close-modal" onclick="closeDetailModal()">&times;</span>
+    <!-- ==================== NAVBAR START ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="home">
+          <img src="img/logo.png" alt="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="services">Solutions</a></li>
+            <li class="nav-item"><a class="nav-link" href="blogs">Blogs</a></li>
+            <li class="nav-item"><a class="nav-link" href="client">Clients</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicetosupport">ServiceToSupport</a></li>
+            <li class="nav-item"><a class="nav-link active" href="productData">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="aboutus">About Us</a></li>
+            <li class="nav-item ms-3">
+              <a href="https://centennial-infotech-hiring.netlify.app/jobs" class="nav-cta-btn careers-btn">Careers</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a href="contact" class="nav-cta-btn contact-btn">Contact</a>
+            </li>
+          </ul>
         </div>
-        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </nav>
+    <!-- ==================== NAVBAR END ==================== -->
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <h1>Our Products</h1>
+      <p>Powerful digital platforms designed to simplify operations, manage talent, and accelerate business growth.</p>
+    </div>
+
+    <!-- Products Section -->
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Digital Platforms</h2>
+          <p class="section-subtitle">Click on any product to explore more, or use the button to visit the platform directly.</p>
+        </div>
+        <div class="products-grid" id="productsGrid">
+          <!-- Static portal cards always shown -->
+          <div class="product-card" onclick="window.open('https://ats.centennialinfotech.com/', '_blank')">
+            <div class="card-accent"></div>
+            <div class="card-content">
+              <div class="product-title">ATS — Applicant Tracking System</div>
+              <div class="product-subtitle">Smart Recruitment Management Platform</div>
+              <div class="product-description">A centralized Applicant Tracking System designed to simplify and streamline the recruitment process. Manage applicants, track recruitment progress, organize candidate information, and improve coordination throughout the hiring lifecycle.</div>
+              <div class="key-features">
+                <strong>Key Features</strong>
+                <ul>
+                  <li>Candidate and applicant management</li>
+                  <li>Recruitment workflow tracking</li>
+                  <li>Interview and selection management</li>
+                  <li>Applicant information management</li>
+                  <li>Recruitment status tracking</li>
+                  <li>Centralized hiring records</li>
+                </ul>
+              </div>
+              <button class="action-btn" onclick="event.stopPropagation(); window.open('https://ats.centennialinfotech.com/', '_blank')">Visit ATS &rarr;</button>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="window.open('https://ams.centennialinfotech.com/log', '_blank')">
+            <div class="card-accent"></div>
+            <div class="card-content">
+              <div class="product-title">AMS — Attendance Management System</div>
+              <div class="product-subtitle">Smart Attendance &amp; Workforce Tracking</div>
+              <div class="product-description">A digital attendance management platform designed to simplify employee attendance tracking and workforce records. Provides an organized way to manage attendance information and monitor employee activity through a centralized system.</div>
+              <div class="key-features">
+                <strong>Key Features</strong>
+                <ul>
+                  <li>Employee attendance marking</li>
+                  <li>Daily attendance records</li>
+                  <li>Attendance history</li>
+                  <li>Workforce monitoring</li>
+                  <li>Centralized attendance management</li>
+                  <li>Easy access to attendance information</li>
+                </ul>
+              </div>
+              <button class="action-btn" onclick="event.stopPropagation(); window.open('https://ams.centennialinfotech.com/log', '_blank')">Open AMS &rarr;</button>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="window.open('https://portfolio.centennialinfotech.com/', '_blank')">
+            <div class="card-accent"></div>
+            <div class="card-content">
+              <div class="product-title">Portfolio</div>
+              <div class="product-subtitle">Professional Portfolio Platform for Applicants &amp; Freelancers</div>
+              <div class="product-description">A dedicated portfolio platform that helps applicants and freelancers present their professional profiles, skills, experience, projects, and achievements in a structured digital format.</div>
+              <div class="key-features">
+                <strong>Key Features</strong>
+                <ul>
+                  <li>Professional profile creation</li>
+                  <li>Skills and experience showcase</li>
+                  <li>Project portfolio management</li>
+                  <li>Applicant profile presentation</li>
+                  <li>Freelancer portfolio showcase</li>
+                  <li>Shareable professional presence</li>
+                </ul>
+              </div>
+              <button class="action-btn" onclick="event.stopPropagation(); window.open('https://portfolio.centennialinfotech.com/', '_blank')">Explore Portfolio &rarr;</button>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="window.open('http://staffing.centennialinfotech.com/', '_blank')">
+            <div class="card-accent"></div>
+            <div class="card-content">
+              <div class="product-title">Staffing Portal</div>
+              <div class="product-subtitle">Recruitment &amp; Staffing Management Platform</div>
+              <div class="product-description">A centralized staffing platform designed to help manage completed recruitment activities and organize staffing operations. Provides a structured environment for managing recruitment-related information and improving visibility across staffing processes.</div>
+              <div class="key-features">
+                <strong>Key Features</strong>
+                <ul>
+                  <li>Recruitment management</li>
+                  <li>Staffing records</li>
+                  <li>Completed recruitment tracking</li>
+                  <li>Candidate management</li>
+                  <li>Recruitment workflow organization</li>
+                  <li>Centralized staffing information</li>
+                </ul>
+              </div>
+              <button class="action-btn" onclick="event.stopPropagation(); window.open('http://staffing.centennialinfotech.com/', '_blank')">Open Staffing Portal &rarr;</button>
+            </div>
+          </div>
+          <!-- Dynamic products from DB will be appended here by JS -->
+        </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div id="detailModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-top">
+          <h2 id="modalTitle"></h2>
+          <span class="modal-close" onclick="closeDetailModal()">&times;</span>
+        </div>
+        <div class="modal-inner" id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER START ==================== -->
+    <div class="footer pt-72 pb-72">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-3 col-lg-4 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <a href="#"><img src="img/logo.png" /></a>
+            </div>
+            <div class="icons_footer">
+              <ul>
+                <li><a href="https://twitter.com/centennialits" target="_blank" rel="noopener noreferrer"><img src="img/twitter.png" alt="Twitter" /></a></li>
+                <li><a href="https://www.facebook.com/centennialinfotech" target="_blank" rel="noopener noreferrer"><img src="img/facebook.png" alt="Facebook" /></a></li>
+                <li><a href="https://www.youtube.com/@centennialinfotech" target="_blank" rel="noopener noreferrer"><img src="img/youtube.png" alt="YouTube" /></a></li>
+                <li><a href="https://www.instagram.com/cententialinfotech" target="_blank" rel="noopener noreferrer"><img src="img/instagram.png" alt="Instagram" /></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-2 col-lg-2 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <ul>
+                <b><a href="#">Quick links</a></b>
+                <li><a href="services">Solutions</a></li>
+                <li><a href="servicetosupport">Services &amp; Support</a></li>
+                <li><a href="productData">Products</a></li>
+                <li><a href="blogs">Blogs</a></li>
+                <li><a href="client">Clients</a></li>
+                <li><a href="aboutus">About Us</a></li>
+                <li><a href="contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3 col-lg-2 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <ul>
+                <b><a href="services">Our Services</a></b>
+                <li><a href="services">UI/UX Design</a></li>
+                <li><a href="services">Web Development</a></li>
+                <li><a href="services">App Development</a></li>
+                <li><a href="services">Quality Assurance</a></li>
+                <li><a href="services">Software Development</a></li>
+                <li><a href="services">IT Consulting</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <ul>
+                <b><a href="#">Office address</a></b>
+                <li>C-124, VIII, Phase-8, Industrial Area, Sector 73, Sahibzada Ajit Singh Nagar, Punjab 140308</li>
+                <span class="email-ft"><b>sales@centennialinfotech.com</b></span><br />
+                <span><b>+91-81465 11568</b></span>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== FOOTER END ==================== -->
+
     <script>
-      // const API_URL = "http://localhost:5000/api/public";
       const API_URL = "https://website-backend-zl1c.onrender.com/api/public";
+
       async function loadProducts() {
+        let products = [];
         try {
           const response = await fetch(`${API_URL}/products`);
-          const products = await response.json();
-          if (products && products.length > 0) renderProducts(products);
-          else
-            document.getElementById("productsGrid").innerHTML =
-              '<div class="empty-state">No products available</div>';
-        } catch (error) {
-          document.getElementById("productsGrid").innerHTML =
-            '<div class="empty-state">Error loading products</div>';
-        }
+          if (response.ok) {
+            const data = await response.json();
+            if (Array.isArray(data)) products = data;
+          }
+        } catch (e) { console.error("Error loading products:", e); }
+        appendDynamicProducts(products);
       }
-      function renderProducts(products) {
+
+      function appendDynamicProducts(products) {
         const container = document.getElementById("productsGrid");
-        container.innerHTML = products
-          .map(
-            (product) => `
-                <div class="product-card" onclick="showDetails('${product._id}')">
-                    <div class="card-content">
-                        <div class="product-title">${escapeHtml(product.title)}</div>
-                        <div class="product-description">${escapeHtml(product.description.substring(0, 120))}...</div>
-                        <div class="tiers-list">
-                            ${
-                              product.tiers &&
-                              product.tiers
-                                .slice(0, 3)
-                                .map(
-                                  (tier) =>
-                                    `<div class="tier-item"><span class="tier-name">${escapeHtml(tier.title)}</span><span class="tier-price">$${tier.price}</span></div>`,
-                                )
-                                .join("")
-                            }
-                        </div>
-                        <button class="buy-btn" onclick="event.stopPropagation(); alert('Ready to Pay for ${escapeHtml(product.title)}')">Buy Now</button>
-                    </div>
-                </div>
-            `,
-          )
-          .join("");
+        if (!products || products.length === 0) return;
+        const extra = products.map(product => `
+          <div class="product-card" onclick="showDetails('${product._id}')">
+            <div class="card-accent"></div>
+            <div class="card-content">
+              <div class="product-title">${escapeHtml(product.title)}</div>
+              <div class="product-description">${escapeHtml(product.description.substring(0, 130))}...</div>
+              <div class="tiers-list" style="margin-bottom:20px;">
+                ${product.tiers ? product.tiers.slice(0,3).map(tier =>
+                  `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                    <span style="color:#004770;font-weight:600;font-size:14px;">${escapeHtml(tier.title)}</span>
+                    <span style="font-weight:700;">$${tier.price}</span>
+                  </div>`).join("") : ""}
+              </div>
+              <button class="action-btn" onclick="event.stopPropagation(); showDetails('${product._id}')">View Details &rarr;</button>
+            </div>
+          </div>`).join("");
+        container.insertAdjacentHTML("beforeend", extra);
       }
+
       async function showDetails(productId) {
         try {
           const response = await fetch(`${API_URL}/products`);
           const products = await response.json();
-          const product = products.find((p) => p._id === productId);
+          const product = products.find(p => p._id === productId);
           if (product) {
             document.getElementById("modalTitle").textContent = product.title;
             document.getElementById("modalBody").innerHTML = `
-                        <div class="detail-section"><h3>Description</h3><p>${escapeHtml(product.description)}</p></div>
-                        ${product.categories?.length ? `<div class="detail-section"><h3>Categories</h3><div class="detail-grid">${product.categories.map((c) => `<div class="detail-card"><h4>${escapeHtml(c.title)}</h4><p>${escapeHtml(c.description)}</p></div>`).join("")}</div></div>` : ""}
-                        ${product.industries?.length ? `<div class="detail-section"><h3>Industries</h3><div class="detail-grid">${product.industries.map((i) => `<div class="detail-card"><h4>${escapeHtml(i.title)}</h4><p>${escapeHtml(i.description)}</p></div>`).join("")}</div></div>` : ""}
-                        ${product.sources?.length ? `<div class="detail-section"><h3>Sources</h3><div class="detail-grid">${product.sources.map((s) => `<div class="detail-card"><h4>${escapeHtml(s.title)}</h4><p>${escapeHtml(s.description)}</p></div>`).join("")}</div></div>` : ""}
-                        <div class="detail-section"><h3>Pricing Plans</h3>${product.tiers.map((tier) => `<div class="tier-detail"><div class="tier-info"><h4>${escapeHtml(tier.title)}</h4><p>${escapeHtml(tier.description)}</p></div><div class="tier-price-large">$${tier.price}</div><button class="select-plan-btn" onclick="alert('Ready to Pay for ${escapeHtml(product.title)} - ${escapeHtml(tier.title)} Plan')">Select Plan</button></div>`).join("")}</div>
-                    `;
+              <div class="detail-section"><h3>Description</h3><p>${escapeHtml(product.description)}</p></div>
+              ${product.categories?.length ? `<div class="detail-section"><h3>Categories</h3><div class="detail-grid">${product.categories.map(c => `<div class="detail-card"><h4>${escapeHtml(c.title)}</h4><p>${escapeHtml(c.description)}</p></div>`).join("")}</div></div>` : ""}
+              ${product.industries?.length ? `<div class="detail-section"><h3>Industries</h3><div class="detail-grid">${product.industries.map(i => `<div class="detail-card"><h4>${escapeHtml(i.title)}</h4><p>${escapeHtml(i.description)}</p></div>`).join("")}</div></div>` : ""}
+              <div class="detail-section"><h3>Pricing Plans</h3>${product.tiers.map(tier => `
+                <div class="tier-detail">
+                  <div class="tier-info"><h4>${escapeHtml(tier.title)}</h4><p>${escapeHtml(tier.description)}</p></div>
+                  <div class="tier-price-lg">$${tier.price}</div>
+                  <button class="select-btn">Select Plan</button>
+                </div>`).join("")}
+              </div>`;
             document.getElementById("detailModal").style.display = "block";
           }
-        } catch (error) {
-          alert("Error loading details");
-        }
+        } catch (e) { alert("Error loading details"); }
       }
-      function closeDetailModal() {
-        document.getElementById("detailModal").style.display = "none";
-      }
+
+      function closeDetailModal() { document.getElementById("detailModal").style.display = "none"; }
       function escapeHtml(text) {
         if (!text) return "";
         const div = document.createElement("div");
@@ -285,9 +412,8 @@
         return div.innerHTML;
       }
       document.addEventListener("DOMContentLoaded", loadProducts);
-      window.onclick = function (event) {
-        if (event.target === document.getElementById("detailModal"))
-          closeDetailModal();
+      window.onclick = function(e) {
+        if (e.target === document.getElementById("detailModal")) closeDetailModal();
       };
     </script>
   </body>
