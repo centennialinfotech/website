@@ -225,6 +225,190 @@
         .services-grid { grid-template-columns: 1fr; }
         .page-hero h1 { font-size: 32px; }
       }
+    
+      /* --- New Redesign CSS --- */
+      .hero-split {
+        display: flex;
+        flex-wrap: wrap;
+        background: #f8f9fa;
+        min-height: 400px;
+      }
+      .hero-split-content {
+        flex: 1 1 50%;
+        padding: 80px 5%;
+        background: linear-gradient(135deg, #004770 0%, #002a45 100%);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hero-split-content h1 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .hero-split-content p {
+        font-size: 18px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+      .hero-split-image {
+        flex: 1 1 50%;
+        background: linear-gradient(135deg, #0a3a5c 0%, #1177bd 100%);
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-split-image::before {
+        content: '';
+        position: absolute;
+        width: 300px; height: 300px;
+        border-radius: 50%;
+        border: 60px solid rgba(255,255,255,0.05);
+        top: -80px; right: -80px;
+      }
+      .hero-split-image::after {
+        content: '';
+        position: absolute;
+        width: 200px; height: 200px;
+        border-radius: 50%;
+        border: 40px solid rgba(255,255,255,0.05);
+        bottom: -50px; left: -50px;
+      }
+      .hero-icon-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 40px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-icon-card {
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 14px;
+        padding: 22px 18px;
+        text-align: center;
+        color: white;
+        transition: transform 0.3s ease;
+      }
+      .hero-icon-card:hover { transform: translateY(-4px); }
+      .hero-icon-card i { font-size: 30px; margin-bottom: 10px; display: block; opacity: 0.9; }
+      .hero-icon-card span { font-size: 13px; font-weight: 600; opacity: 0.85; line-height: 1.3; display: block; }
+
+      .static-services {
+        padding: 80px 0;
+        background: #fff;
+      }
+      .static-service-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      .static-service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-color: #004770;
+      }
+      .static-service-card i {
+        font-size: 40px;
+        color: #0082c8;
+        margin-bottom: 20px;
+      }
+      .static-service-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #1a1a2e;
+      }
+      .static-service-card p {
+        color: #666;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .support-tiers {
+        padding: 80px 0;
+        background: #f4f8fb;
+      }
+      .tier-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 40px 30px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        height: 100%;
+      }
+      .tier-card.premium {
+        border: 2px solid #004770;
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(0,71,112,0.15);
+        z-index: 1;
+      }
+      .tier-badge {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #004770;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .tier-card h3 {
+        font-size: 24px;
+        color: #1a1a2e;
+        margin-bottom: 20px;
+      }
+      .tier-feature {
+        margin: 20px 0;
+        color: #555;
+        font-size: 15px;
+      }
+      .tier-feature strong {
+        display: block;
+        color: #1a1a2e;
+        font-size: 14px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .faq-section {
+        padding: 80px 0;
+        background: #fff;
+      }
+      .accordion-button:not(.collapsed) {
+        background-color: #f4f8fb;
+        color: #004770;
+      }
+      
+      @media (max-width: 991px) {
+        .tier-card.premium {
+          transform: none;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        .hero-split-content {
+          padding: 60px 20px;
+        }
+      }
+      /* --- End New CSS --- */
+    
     </style>
   </head>
   <body>
@@ -260,17 +444,217 @@
     <!-- ==================== NAVBAR END ==================== -->
 
     <!-- Page Hero -->
-    <div class="page-hero">
-      <h1>Services &amp; Support</h1>
-      <p>Explore our full range of services and support packages tailored to your business needs.</p>
+    <div class="hero-split">
+      <div class="hero-split-content">
+        <h1>Services Built for Growth.<br>Support Built for Trust.</h1>
+        <p>From software development to workforce staffing, we support every stage of your business — with responsive help whenever you need it.</p>
+        <div style="margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="contact" style="background:#fff; color:#004770; padding:13px 28px; border-radius:8px; font-weight:700; text-decoration:none; font-size:15px; transition:all 0.3s;">Get in Touch</a>
+          <a href="#service-categories" style="border:2px solid rgba(255,255,255,0.6); color:#fff; padding:13px 28px; border-radius:8px; font-weight:600; text-decoration:none; font-size:15px; transition:all 0.3s;">Explore Services</a>
+        </div>
+      </div>
+      <div class="hero-split-image">
+        <div class="hero-icon-grid">
+          <div class="hero-icon-card">
+            <i class="fas fa-laptop-code"></i>
+            <span>Software Development</span>
+          </div>
+          <div class="hero-icon-card">
+            <i class="fas fa-handshake"></i>
+            <span>Staffing &amp; Recruitment</span>
+          </div>
+          <div class="hero-icon-card">
+            <i class="fas fa-mobile-alt"></i>
+            <span>App Development</span>
+          </div>
+          <div class="hero-icon-card">
+            <i class="fas fa-users-cog"></i>
+            <span>IT Consulting</span>
+          </div>
+        </div>
+      </div>
     </div>
 
+    
+    <!-- Core Service Categories -->
+    <div class="static-services">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Core Service Categories</h2>
+          <p class="section-subtitle">Comprehensive solutions tailored to your industry.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="static-service-card">
+              <i class="fas fa-pencil-ruler"></i>
+              <h3>UI/UX Design</h3>
+              <p>User research, wireframing, and interface design for web and mobile.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="static-service-card">
+              <i class="fas fa-code"></i>
+              <h3>Web Development</h3>
+              <p>Responsive, scalable websites and web applications.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="static-service-card">
+              <i class="fas fa-mobile-alt"></i>
+              <h3>App Development</h3>
+              <p>Native and cross-platform mobile apps.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="static-service-card">
+              <i class="fas fa-bug"></i>
+              <h3>Quality Assurance</h3>
+              <p>Manual and automated testing across the SDLC.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="static-service-card">
+              <i class="fas fa-laptop-code"></i>
+              <h3>Software Development</h3>
+              <p>Custom software aligned to business goals.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="static-service-card">
+              <i class="fas fa-lightbulb"></i>
+              <h3>IT Consulting</h3>
+              <p>Technology strategy, audits, and modernization planning.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mx-auto">
+            <div class="static-service-card">
+              <i class="fas fa-handshake"></i>
+              <h3>Staffing & Recruitment Support</h3>
+              <p>End-to-end hiring support for high-turnover roles, powered by our ATS and staffing portal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Support Packages -->
+    <div class="support-tiers">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Support Packages</h2>
+          <p class="section-subtitle">Flexible support tiers for every stage of your growth.</p>
+        </div>
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-4">
+            <div class="tier-card">
+              <h3>Basic Support</h3>
+              <div class="tier-feature">
+                <strong>Response Time</strong>
+                Next business day
+              </div>
+              <div class="tier-feature">
+                <strong>Coverage</strong>
+                Email support, business hours
+              </div>
+              <div class="tier-feature">
+                <strong>Best For</strong>
+                Small teams, single product
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="tier-card premium">
+              <span class="tier-badge">Most Popular</span>
+              <h3>Standard Support</h3>
+              <div class="tier-feature">
+                <strong>Response Time</strong>
+                Within 8 hours
+              </div>
+              <div class="tier-feature">
+                <strong>Coverage</strong>
+                Email + phone, extended hours
+              </div>
+              <div class="tier-feature">
+                <strong>Best For</strong>
+                Growing businesses with live systems
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="tier-card">
+              <h3>Premium Support</h3>
+              <div class="tier-feature">
+                <strong>Response Time</strong>
+                Within 2 hours, 24/7
+              </div>
+              <div class="tier-feature">
+                <strong>Coverage</strong>
+                Dedicated account manager, priority queue
+              </div>
+              <div class="tier-feature">
+                <strong>Best For</strong>
+                Enterprise clients & staffing operations
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Support & Service FAQs</h2>
+          <p class="section-subtitle">Common questions about our support services.</p>
+        </div>
+        <div class="accordion" id="supportFaqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Do you offer support for hiring and staffing tools, not just software?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#supportFaqAccordion">
+              <div class="accordion-body">
+                Yes, our support team also assists staffing/HR clients using our ATS, AMS, and staffing portal.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Can I combine an IT project with staffing services?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#supportFaqAccordion">
+              <div class="accordion-body">
+                Yes, many clients pair software development with staffing support for the same operational rollout.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                What happens if I need to scale support during peak hiring seasons?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#supportFaqAccordion">
+              <div class="accordion-body">
+                Premium Support clients can temporarily add coverage during high-volume recruitment periods.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- Services Section -->
     <div class="page-section">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="section-title">Our Services</h2>
-          <p class="section-subtitle">Click on any service to view full details and pricing plans.</p>
+          <h2 class="section-title">Explore More Services</h2>
+          <p class="section-subtitle">Browse additional services and detailed pricing plans.</p>
         </div>
         <div class="services-grid" id="servicesGrid">
           <div class="empty-state">

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Products - Centennial Infotech</title>
-    <meta name="description" content="Centennial Infotech Products - Powerful digital platforms for ATS, AMS, Portfolio and Staffing management." />
+    <title>Our Products — Centennial Infotech</title>
+    <meta name="description" content="Purpose-built platforms for every step of hiring and managing your workforce. Explore Centennial Infotech's ATS, AMS, Portfolio, and Staffing Portal." />
     <link rel="icon" sizes="180x180" type="image/x-icon" href="img/logo.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -13,139 +13,255 @@
     <link rel="stylesheet" href="owl.carousel.min.css" />
     <link rel="stylesheet" href="style.css?v=2" />
     <style>
-      .page-hero {
-        background: linear-gradient(135deg, #004770 0%, #002a45 100%);
+      .products-hero {
+        background: linear-gradient(135deg, #002a45 0%, #004770 60%, #0082c8 100%);
         color: white;
-        padding: 100px 20px 70px;
+        padding: 90px 20px 80px;
         text-align: center;
         position: relative;
         overflow: hidden;
       }
-      .page-hero::before {
+      .products-hero::before {
         content: '';
         position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: radial-gradient(circle at 20% 50%, rgba(0,130,200,0.15) 0%, transparent 60%),
-                    radial-gradient(circle at 80% 50%, rgba(0,100,160,0.1) 0%, transparent 60%);
+        top: -120px; left: -120px;
+        width: 400px; height: 400px;
+        border-radius: 50%;
+        border: 70px solid rgba(255,255,255,0.04);
       }
-      .page-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 16px; position: relative; }
-      .page-hero p { font-size: 18px; opacity: 0.85; max-width: 620px; margin: 0 auto; position: relative; }
-      .page-section { padding: 70px 0; background: #f8f9fa; }
-      .section-title { font-size: 32px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
-      .section-subtitle { font-size: 16px; color: #666; margin-bottom: 50px; }
-      .products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 30px;
+      .products-hero::after {
+        content: '';
+        position: absolute;
+        bottom: -100px; right: -100px;
+        width: 350px; height: 350px;
+        border-radius: 50%;
+        border: 60px solid rgba(255,255,255,0.04);
       }
-      .product-card {
-        background: white;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+      .products-hero h1 {
+        font-size: 44px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        position: relative;
+        line-height: 1.2;
+      }
+      .products-hero p {
+        font-size: 19px;
+        opacity: 0.88;
+        max-width: 640px;
+        margin: 0 auto 36px;
+        position: relative;
+        line-height: 1.65;
+      }
+      .hero-cta-row {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .hero-btn-primary {
+        background: #fff;
+        color: #004770;
+        padding: 14px 32px;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s;
+      }
+      .hero-btn-primary:hover { background: #e8f4ff; color: #004770; }
+      .hero-btn-outline {
+        border: 2px solid rgba(255,255,255,0.6);
+        color: #fff;
+        padding: 14px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s;
+      }
+      .hero-btn-outline:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+      .pipeline-section {
+        background: #f4f8fb;
+        padding: 70px 0;
+        text-align: center;
+      }
+      .pipeline-flow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0;
+        margin-top: 40px;
+      }
+      .pipeline-step {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
       }
-      .product-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 40px rgba(0,71,112,0.18);
-      }
-      .card-accent { height: 5px; background: linear-gradient(90deg, #004770, #0082c8); }
-      .card-content { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-      .product-title { font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; }
-      .product-subtitle { font-size: 14px; font-weight: 600; color: #0082c8; margin-bottom: 14px; }
-      .product-description { color: #666; line-height: 1.7; margin-bottom: 20px; font-size: 15px; flex: 1; }
-      .key-features { margin-bottom: 22px; }
-      .key-features strong { display: block; margin-bottom: 10px; color: #1a1a2e; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
-      .key-features ul { list-style: none; padding: 0; margin: 0; }
-      .key-features ul li {
-        padding: 6px 0;
-        color: #555;
-        font-size: 14px;
-        border-bottom: 1px solid #f0f0f0;
+      .pipeline-bubble {
+        width: 90px; height: 90px;
+        background: linear-gradient(135deg, #004770, #0082c8);
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        gap: 8px;
-      }
-      .key-features ul li::before { content: '✓'; color: #004770; font-weight: 700; }
-      .key-features ul li:last-child { border-bottom: none; }
-      .action-btn {
-        width: 100%;
-        padding: 13px;
-        background: linear-gradient(135deg, #004770 0%, #0082c8 100%);
+        justify-content: center;
         color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s;
-        letter-spacing: 0.3px;
-        margin-top: auto;
+        font-size: 28px;
+        margin-bottom: 12px;
+        box-shadow: 0 6px 20px rgba(0,71,112,0.25);
+        transition: transform 0.3s;
       }
-      .action-btn:hover {
-        background: linear-gradient(135deg, #003558 0%, #006fab 100%);
-        transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(0,71,112,0.3);
+      .pipeline-step:hover .pipeline-bubble { transform: scale(1.1); }
+      .pipeline-label {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1a1a2e;
+        text-align: center;
+        max-width: 90px;
+        line-height: 1.4;
       }
-      .empty-state { text-align: center; padding: 80px 20px; color: #999; grid-column: 1 / -1; }
-      /* Modal */
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0,0,0,0.6);
-        z-index: 2000;
-        overflow-y: auto;
-        backdrop-filter: blur(4px);
+      .pipeline-label span { color: #666; font-weight: 400; }
+      .pipeline-arrow {
+        font-size: 26px;
+        color: #0082c8;
+        padding: 0 6px;
+        margin-bottom: 40px;
       }
-      .modal-box {
-        background: white;
-        max-width: 860px;
-        margin: 60px auto;
-        border-radius: 16px;
+
+      .section-label {
+        font-size: 13px; font-weight: 700; letter-spacing: 2px;
+        color: #0082c8; text-transform: uppercase; margin-bottom: 10px;
+      }
+      .section-title { font-size: 34px; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
+      .section-subtitle { font-size: 16px; color: #666; max-width: 600px; margin: 0 auto 60px; line-height: 1.6; }
+
+      .products-section { padding: 80px 0; background: #fff; }
+      .product-block {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 6px 32px rgba(0,0,0,0.07);
         overflow: hidden;
-        box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        margin-bottom: 40px;
+        transition: box-shadow 0.3s, transform 0.3s;
+        border: 1px solid #f0f0f0;
       }
-      .modal-top {
-        background: linear-gradient(135deg, #004770 0%, #0082c8 100%);
-        padding: 28px 32px;
+      .product-block:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 50px rgba(0,71,112,0.12);
+      }
+      .product-block-header {
+        padding: 36px 40px 28px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+        gap: 24px;
+        border-bottom: 1px solid #f0f0f0;
       }
-      .modal-top h2 { color: white; font-size: 26px; font-weight: 700; margin: 0; }
-      .modal-close { font-size: 28px; cursor: pointer; color: rgba(255,255,255,0.8); line-height: 1; transition: color 0.2s; }
-      .modal-close:hover { color: white; }
-      .modal-inner { padding: 32px; }
-      .detail-section { margin-bottom: 28px; }
-      .detail-section h3 { color: #004770; margin-bottom: 14px; font-size: 18px; font-weight: 700; }
-      .detail-section p { color: #555; line-height: 1.7; }
-      .detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
-      .detail-card { background: #f4f8fb; padding: 16px; border-radius: 10px; border-left: 4px solid #004770; }
-      .detail-card h4 { color: #1a1a2e; margin-bottom: 6px; font-size: 15px; }
-      .detail-card p { color: #666; font-size: 13px; margin: 0; }
-      .tier-detail { background: #f4f8fb; padding: 20px; border-radius: 10px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-      .tier-info h4 { color: #004770; font-size: 18px; margin-bottom: 4px; }
-      .tier-info p { color: #666; font-size: 14px; margin: 0; }
-      .tier-price-lg { font-size: 26px; font-weight: 800; color: #1a1a2e; }
-      .select-btn { background: linear-gradient(135deg, #004770, #0082c8); color: white; border: none; padding: 10px 22px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+      .product-icon-wrap {
+        width: 70px; height: 70px; flex-shrink: 0;
+        background: linear-gradient(135deg, #004770, #0082c8);
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+        box-shadow: 0 6px 18px rgba(0,71,112,0.25);
+      }
+      .prod-tag {
+        font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+        text-transform: uppercase; color: #0082c8; margin-bottom: 4px;
+      }
+      .product-block-title h2 {
+        font-size: 24px; font-weight: 800; color: #1a1a2e; margin-bottom: 10px;
+      }
+      .product-block-title p {
+        font-size: 15px; color: #555; line-height: 1.65; margin-bottom: 0;
+      }
+      .product-block-body {
+        padding: 32px 40px 28px;
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .features-col, .benefits-col { flex: 1; min-width: 240px; }
+      .col-heading {
+        font-size: 12px; font-weight: 800; letter-spacing: 1.5px;
+        text-transform: uppercase; margin-bottom: 16px;
+        display: flex; align-items: center; gap: 8px;
+      }
+      .col-heading.features { color: #004770; }
+      .col-heading.benefits { color: #16a34a; }
+      .feat-list, .ben-list { list-style: none; padding: 0; margin: 0; }
+      .feat-list li, .ben-list li {
+        padding: 9px 0;
+        font-size: 14px;
+        color: #444;
+        border-bottom: 1px solid #f4f4f4;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.5;
+      }
+      .feat-list li:last-child, .ben-list li:last-child { border-bottom: none; }
+      .feat-list li::before { content: '\2713'; color: #004770; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+      .ben-list li::before { content: '\2192'; color: #16a34a; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+      .product-block-footer { padding: 0 40px 36px; }
+      .visit-btn {
+        display: inline-block;
+        padding: 13px 28px;
+        background: linear-gradient(135deg, #004770 0%, #0082c8 100%);
+        color: white !important;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 15px;
+        text-decoration: none;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+      .visit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0,71,112,0.3);
+        opacity: 0.92;
+      }
+      /* Modal */
+      .modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:2000; overflow-y:auto; backdrop-filter:blur(4px); }
+      .modal-box { background:white; max-width:860px; margin:60px auto; border-radius:16px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,0.3); }
+      .modal-top { background:linear-gradient(135deg,#004770 0%,#0082c8 100%); padding:28px 32px; display:flex; justify-content:space-between; align-items:center; }
+      .modal-top h2 { color:white; font-size:26px; font-weight:700; margin:0; }
+      .modal-close { font-size:28px; cursor:pointer; color:rgba(255,255,255,0.8); line-height:1; transition:color 0.2s; }
+      .modal-close:hover { color:white; }
+      .modal-inner { padding:32px; }
+      .detail-section { margin-bottom:28px; }
+      .detail-section h3 { color:#004770; margin-bottom:14px; font-size:18px; font-weight:700; }
+      .detail-section p { color:#555; line-height:1.7; }
+      .detail-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; }
+      .detail-card { background:#f4f8fb; padding:16px; border-radius:10px; border-left:4px solid #004770; }
+      .detail-card h4 { color:#1a1a2e; margin-bottom:6px; font-size:15px; }
+      .detail-card p { color:#666; font-size:13px; margin:0; }
+      .tier-detail { background:#f4f8fb; padding:20px; border-radius:10px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+      .tier-info h4 { color:#004770; font-size:18px; margin-bottom:4px; }
+      .tier-info p { color:#666; font-size:14px; margin:0; }
+      .tier-price-lg { font-size:26px; font-weight:800; color:#1a1a2e; }
+      .select-btn { background:linear-gradient(135deg,#004770,#0082c8); color:white; border:none; padding:10px 22px; border-radius:8px; cursor:pointer; font-weight:600; }
       @media (max-width: 768px) {
-        .products-grid { grid-template-columns: 1fr; }
-        .page-hero h1 { font-size: 32px; }
+        .products-hero h1 { font-size: 28px; }
+        .product-block-header { flex-direction: column; gap: 16px; padding: 24px; }
+        .product-block-body { padding: 20px 24px 24px; gap: 24px; }
+        .product-block-footer { padding: 0 24px 24px; }
+        .pipeline-arrow { display: none; }
+        .pipeline-flow { gap: 24px; }
       }
     </style>
   </head>
   <body>
-    <!-- ==================== NAVBAR START ==================== -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
       <div class="container">
-        <a class="navbar-brand" href="home">
-          <img src="img/logo.png" alt="logo" />
-        </a>
+        <a class="navbar-brand" href="home"><img src="img/logo.png" alt="logo" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -159,117 +275,197 @@
             <li class="nav-item"><a class="nav-link active" href="productData">Products</a></li>
             <li class="nav-item"><a class="nav-link" href="pricing">Pricing</a></li>
             <li class="nav-item"><a class="nav-link" href="aboutus">About Us</a></li>
-            <li class="nav-item ms-3">
-              <a href="https://centennial-infotech-hiring.netlify.app/jobs" class="nav-cta-btn careers-btn">Careers</a>
-            </li>
-            <li class="nav-item ms-2">
-              <a href="contact" class="nav-cta-btn contact-btn">Contact</a>
-            </li>
+            <li class="nav-item ms-3"><a href="https://centennial-infotech-hiring.netlify.app/jobs" class="nav-cta-btn careers-btn">Careers</a></li>
+            <li class="nav-item ms-2"><a href="contact" class="nav-cta-btn contact-btn">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- ==================== NAVBAR END ==================== -->
 
-    <!-- Page Hero -->
-    <div class="page-hero">
-      <h1>Our Products</h1>
-      <p>Powerful digital platforms designed to simplify operations, manage talent, and accelerate business growth.</p>
+    <!-- HERO -->
+    <div class="products-hero">
+      <h1>One Platform.<br>Every Step of Hiring and Managing Your Workforce.</h1>
+      <p>Purpose-built tools for teams that hire often — from application to attendance to placement.</p>
+      <div class="hero-cta-row">
+        <a href="#products" class="hero-btn-primary">Explore Products</a>
+        <a href="contact" class="hero-btn-outline">Request a Demo</a>
+      </div>
     </div>
 
-    <!-- Products Section -->
-    <div class="page-section">
+    <!-- PIPELINE FLOW -->
+    <div class="pipeline-section">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="section-title">Digital Platforms</h2>
-          <p class="section-subtitle">Click on any product to explore more, or use the button to visit the platform directly.</p>
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title">From Application to Attendance — In One Ecosystem</h2>
+        <p class="section-subtitle">Our four products connect seamlessly, covering every stage of your workforce journey.</p>
+        <div class="pipeline-flow">
+          <div class="pipeline-step">
+            <div class="pipeline-bubble"><i class="fas fa-filter"></i></div>
+            <div class="pipeline-label">ATS<br><span>Application &amp; Screening</span></div>
+          </div>
+          <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="pipeline-step">
+            <div class="pipeline-bubble" style="background:linear-gradient(135deg,#7c3aed,#a855f7);"><i class="fas fa-id-card"></i></div>
+            <div class="pipeline-label">Portfolio<br><span>Candidate Profiles</span></div>
+          </div>
+          <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="pipeline-step">
+            <div class="pipeline-bubble" style="background:linear-gradient(135deg,#b45309,#f59e0b);"><i class="fas fa-briefcase"></i></div>
+            <div class="pipeline-label">Staffing Portal<br><span>Placement &amp; Tracking</span></div>
+          </div>
+          <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="pipeline-step">
+            <div class="pipeline-bubble" style="background:linear-gradient(135deg,#16a34a,#22c55e);"><i class="fas fa-clock"></i></div>
+            <div class="pipeline-label">AMS<br><span>Attendance &amp; Shifts</span></div>
+          </div>
         </div>
-        <div class="products-grid" id="productsGrid">
-          <!-- Static portal cards always shown -->
-          <div class="product-card" onclick="window.open('https://ats.centennialinfotech.com/', '_blank')">
-            <div class="card-accent"></div>
-            <div class="card-content">
-              <div class="product-title">ATS — Applicant Tracking System</div>
-              <div class="product-subtitle">Smart Recruitment Management Platform</div>
-              <div class="product-description">A centralized Applicant Tracking System designed to simplify and streamline the recruitment process. Manage applicants, track recruitment progress, organize candidate information, and improve coordination throughout the hiring lifecycle.</div>
-              <div class="key-features">
-                <strong>Key Features</strong>
-                <ul>
-                  <li>Candidate and applicant management</li>
-                  <li>Recruitment workflow tracking</li>
-                  <li>Interview and selection management</li>
-                  <li>Applicant information management</li>
-                  <li>Recruitment status tracking</li>
-                  <li>Centralized hiring records</li>
-                </ul>
-              </div>
-              <button class="action-btn" onclick="event.stopPropagation(); window.open('https://ats.centennialinfotech.com/', '_blank')">Visit ATS &rarr;</button>
-            </div>
-          </div>
+      </div>
+    </div>
 
-          <div class="product-card" onclick="window.open('https://ams.centennialinfotech.com/log', '_blank')">
-            <div class="card-accent"></div>
-            <div class="card-content">
-              <div class="product-title">AMS — Attendance Management System</div>
-              <div class="product-subtitle">Smart Attendance &amp; Workforce Tracking</div>
-              <div class="product-description">A digital attendance management platform designed to simplify employee attendance tracking and workforce records. Provides an organized way to manage attendance information and monitor employee activity through a centralized system.</div>
-              <div class="key-features">
-                <strong>Key Features</strong>
-                <ul>
-                  <li>Employee attendance marking</li>
-                  <li>Daily attendance records</li>
-                  <li>Attendance history</li>
-                  <li>Workforce monitoring</li>
-                  <li>Centralized attendance management</li>
-                  <li>Easy access to attendance information</li>
-                </ul>
-              </div>
-              <button class="action-btn" onclick="event.stopPropagation(); window.open('https://ams.centennialinfotech.com/log', '_blank')">Open AMS &rarr;</button>
-            </div>
-          </div>
+    <!-- PRODUCTS -->
+    <div class="products-section" id="products">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Our Platforms</p>
+          <h2 class="section-title">Digital Platforms Built for Hiring Teams</h2>
+          <p class="section-subtitle">Click the platform button on any card to visit the live product, or explore features and benefits below.</p>
+        </div>
 
-          <div class="product-card" onclick="window.open('https://portfolio.centennialinfotech.com/', '_blank')">
-            <div class="card-accent"></div>
-            <div class="card-content">
-              <div class="product-title">Portfolio</div>
-              <div class="product-subtitle">Professional Portfolio Platform for Applicants &amp; Freelancers</div>
-              <div class="product-description">A dedicated portfolio platform that helps applicants and freelancers present their professional profiles, skills, experience, projects, and achievements in a structured digital format.</div>
-              <div class="key-features">
-                <strong>Key Features</strong>
-                <ul>
-                  <li>Professional profile creation</li>
-                  <li>Skills and experience showcase</li>
-                  <li>Project portfolio management</li>
-                  <li>Applicant profile presentation</li>
-                  <li>Freelancer portfolio showcase</li>
-                  <li>Shareable professional presence</li>
-                </ul>
-              </div>
-              <button class="action-btn" onclick="event.stopPropagation(); window.open('https://portfolio.centennialinfotech.com/', '_blank')">Explore Portfolio &rarr;</button>
+        <!-- ATS -->
+        <div class="product-block">
+          <div class="product-block-header">
+            <div class="product-icon-wrap"><i class="fas fa-filter"></i></div>
+            <div class="product-block-title">
+              <div class="prod-tag">Product 1</div>
+              <h2>ATS — Applicant Tracking System</h2>
+              <p>Track every candidate from application to offer in one dashboard. Built for teams that hire at volume and need real-time pipeline visibility without spreadsheets.</p>
             </div>
           </div>
+          <div class="product-block-body">
+            <div class="features-col">
+              <div class="col-heading features"><i class="fas fa-list-check"></i>&nbsp; Key Features</div>
+              <ul class="feat-list">
+                <li>Centralized job postings across multiple channels</li>
+                <li>Resume parsing and keyword-based candidate screening</li>
+                <li>Customizable pipeline stages (Applied &rarr; Screened &rarr; Interview &rarr; Offer)</li>
+                <li>Interview scheduling with calendar sync</li>
+                <li>Collaborative hiring notes and candidate scorecards</li>
+              </ul>
+            </div>
+            <div class="benefits-col">
+              <div class="col-heading benefits"><i class="fas fa-bolt"></i>&nbsp; Benefits</div>
+              <ul class="ben-list">
+                <li>Cuts time-to-hire for high-volume, high-turnover roles</li>
+                <li>Reduces manual spreadsheet tracking for recruiters</li>
+                <li>Gives hiring managers real-time visibility into pipeline status</li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-block-footer">
+            <a href="https://ats.centennialinfotech.com/" target="_blank" class="visit-btn">Visit ATS &rarr;</a>
+          </div>
+        </div>
 
-          <div class="product-card" onclick="window.open('http://staffing.centennialinfotech.com/', '_blank')">
-            <div class="card-accent"></div>
-            <div class="card-content">
-              <div class="product-title">Staffing Portal</div>
-              <div class="product-subtitle">Recruitment &amp; Staffing Management Platform</div>
-              <div class="product-description">A centralized staffing platform designed to help manage completed recruitment activities and organize staffing operations. Provides a structured environment for managing recruitment-related information and improving visibility across staffing processes.</div>
-              <div class="key-features">
-                <strong>Key Features</strong>
-                <ul>
-                  <li>Recruitment management</li>
-                  <li>Staffing records</li>
-                  <li>Completed recruitment tracking</li>
-                  <li>Candidate management</li>
-                  <li>Recruitment workflow organization</li>
-                  <li>Centralized staffing information</li>
-                </ul>
-              </div>
-              <button class="action-btn" onclick="event.stopPropagation(); window.open('http://staffing.centennialinfotech.com/', '_blank')">Open Staffing Portal &rarr;</button>
+        <!-- AMS -->
+        <div class="product-block">
+          <div class="product-block-header">
+            <div class="product-icon-wrap" style="background:linear-gradient(135deg,#16a34a,#22c55e);"><i class="fas fa-clock"></i></div>
+            <div class="product-block-title">
+              <div class="prod-tag">Product 2</div>
+              <h2>AMS — Attendance Management System</h2>
+              <p>Mark, monitor, and report attendance for on-site and field staff in real time. Built for operations teams managing shift-based, high-turnover workforces.</p>
             </div>
           </div>
-          <!-- Dynamic products from DB will be appended here by JS -->
+          <div class="product-block-body">
+            <div class="features-col">
+              <div class="col-heading features"><i class="fas fa-list-check"></i>&nbsp; Key Features</div>
+              <ul class="feat-list">
+                <li>Geo-tagged or QR/biometric-based clock-in and clock-out</li>
+                <li>Shift scheduling for warehouse, logistics, and customer service teams</li>
+                <li>Automated attendance reports and exception flagging (late, absent, overtime)</li>
+                <li>Integration-ready with payroll systems</li>
+              </ul>
+            </div>
+            <div class="benefits-col">
+              <div class="col-heading benefits"><i class="fas fa-bolt"></i>&nbsp; Benefits</div>
+              <ul class="ben-list">
+                <li>Reduces attendance fraud and manual roll-call time</li>
+                <li>Gives operations managers a live view of who is on shift</li>
+                <li>Simplifies payroll reconciliation for high-turnover workforces</li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-block-footer">
+            <a href="https://ams.centennialinfotech.com/log" target="_blank" class="visit-btn" style="background:linear-gradient(135deg,#16a34a,#22c55e);">Open AMS &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="product-block">
+          <div class="product-block-header">
+            <div class="product-icon-wrap" style="background:linear-gradient(135deg,#7c3aed,#a855f7);"><i class="fas fa-id-card"></i></div>
+            <div class="product-block-title">
+              <div class="prod-tag">Product 3</div>
+              <h2>Portfolio — For Applicants &amp; Freelancers</h2>
+              <p>A public-facing profile page where applicants and freelancers showcase skills, work samples, and certifications to connect directly with open roles in Centennial's network.</p>
+            </div>
+          </div>
+          <div class="product-block-body">
+            <div class="features-col">
+              <div class="col-heading features"><i class="fas fa-list-check"></i>&nbsp; Key Features</div>
+              <ul class="feat-list">
+                <li>Shareable profile link with work samples, resume, and certifications</li>
+                <li>Skill tags and endorsements</li>
+                <li>Freelancer availability and rate visibility for project-based hiring</li>
+                <li>Direct connection to open roles matching the applicant's profile</li>
+              </ul>
+            </div>
+            <div class="benefits-col">
+              <div class="col-heading benefits"><i class="fas fa-bolt"></i>&nbsp; Benefits</div>
+              <ul class="ben-list">
+                <li>Helps clients evaluate candidates and freelancers faster</li>
+                <li>Gives applicants a professional presence tied to Centennial's hiring network</li>
+                <li>Supports both full-time staffing and short-term freelance placements</li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-block-footer">
+            <a href="https://portfolio.centennialinfotech.com/" target="_blank" class="visit-btn" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">Explore Portfolio &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Staffing Portal -->
+        <div class="product-block">
+          <div class="product-block-header">
+            <div class="product-icon-wrap" style="background:linear-gradient(135deg,#b45309,#f59e0b);"><i class="fas fa-briefcase"></i></div>
+            <div class="product-block-title">
+              <div class="prod-tag">Product 4</div>
+              <h2>Staffing Portal — Completed Recruitment Management</h2>
+              <p>A management console for tracking roles that have been successfully filled and the staff placed in them. Closes the loop between ATS hiring activity and on-the-job outcomes.</p>
+            </div>
+          </div>
+          <div class="product-block-body">
+            <div class="features-col">
+              <div class="col-heading features"><i class="fas fa-list-check"></i>&nbsp; Key Features</div>
+              <ul class="feat-list">
+                <li>Central record of completed placements by client, role, and start date</li>
+                <li>Placement status tracking (Active, Replaced, Ended) with reasons logged</li>
+                <li>Client-facing reporting on fill rate, retention, and turnover by role</li>
+                <li>Renewal and contract-end alerts for temporary or contract placements</li>
+              </ul>
+            </div>
+            <div class="benefits-col">
+              <div class="col-heading benefits"><i class="fas fa-bolt"></i>&nbsp; Benefits</div>
+              <ul class="ben-list">
+                <li>Gives clients a single source of truth for who is placed where</li>
+                <li>Surfaces turnover trends early so staffing strategy can adjust</li>
+                <li>Closes the loop between ATS hiring activity and on-the-job outcomes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-block-footer">
+            <a href="http://staffing.centennialinfotech.com/" target="_blank" class="visit-btn" style="background:linear-gradient(135deg,#b45309,#f59e0b);">Open Staffing Portal &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
@@ -285,14 +481,12 @@
       </div>
     </div>
 
-    <!-- ==================== FOOTER START ==================== -->
+    <!-- FOOTER -->
     <div class="footer pt-72 pb-72">
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-md-3 col-lg-4 col-xl-3 col-xxl-3">
-            <div class="section-footer">
-              <a href="#"><img src="img/logo.png" /></a>
-            </div>
+            <div class="section-footer"><a href="#"><img src="img/logo.png" /></a></div>
             <div class="icons_footer">
               <ul>
                 <li><a href="https://twitter.com/centennialits" target="_blank" rel="noopener noreferrer"><img src="img/twitter.png" alt="Twitter" /></a></li>
@@ -342,7 +536,6 @@
         </div>
       </div>
     </div>
-    <!-- ==================== FOOTER END ==================== -->
 
     <script>
       const API_URL = "https://website-backend-zl1c.onrender.com/api/public";
@@ -360,25 +553,22 @@
       }
 
       function appendDynamicProducts(products) {
-        const container = document.getElementById("productsGrid");
         if (!products || products.length === 0) return;
+        const wrapper = document.querySelector("#products .container");
         const extra = products.map(product => `
-          <div class="product-card" onclick="showDetails('${product._id}')">
-            <div class="card-accent"></div>
-            <div class="card-content">
-              <div class="product-title">${escapeHtml(product.title)}</div>
-              <div class="product-description">${escapeHtml(product.description.substring(0, 130))}...</div>
-              <div class="tiers-list" style="margin-bottom:20px;">
-                ${product.tiers ? product.tiers.slice(0,3).map(tier =>
-                  `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
-                    <span style="color:#004770;font-weight:600;font-size:14px;">${escapeHtml(tier.title)}</span>
-                    <span style="font-weight:700;">$${tier.price}</span>
-                  </div>`).join("") : ""}
+          <div class="product-block" onclick="showDetails('${product._id}')" style="cursor:pointer;">
+            <div class="product-block-header">
+              <div class="product-icon-wrap"><i class="fas fa-box"></i></div>
+              <div class="product-block-title">
+                <h2>${escapeHtml(product.title)}</h2>
+                <p>${escapeHtml(product.description.substring(0, 200))}...</p>
               </div>
-              <button class="action-btn" onclick="event.stopPropagation(); showDetails('${product._id}')">View Details &rarr;</button>
+            </div>
+            <div class="product-block-footer" style="padding:20px 40px 30px;">
+              <button class="visit-btn" onclick="event.stopPropagation(); showDetails('${product._id}')">View Details &rarr;</button>
             </div>
           </div>`).join("");
-        container.insertAdjacentHTML("beforeend", extra);
+        wrapper.insertAdjacentHTML("beforeend", extra);
       }
 
       async function showDetails(productId) {
@@ -392,13 +582,12 @@
               <div class="detail-section"><h3>Description</h3><p>${escapeHtml(product.description)}</p></div>
               ${product.categories?.length ? `<div class="detail-section"><h3>Categories</h3><div class="detail-grid">${product.categories.map(c => `<div class="detail-card"><h4>${escapeHtml(c.title)}</h4><p>${escapeHtml(c.description)}</p></div>`).join("")}</div></div>` : ""}
               ${product.industries?.length ? `<div class="detail-section"><h3>Industries</h3><div class="detail-grid">${product.industries.map(i => `<div class="detail-card"><h4>${escapeHtml(i.title)}</h4><p>${escapeHtml(i.description)}</p></div>`).join("")}</div></div>` : ""}
-              <div class="detail-section"><h3>Pricing Plans</h3>${product.tiers.map(tier => `
+              ${product.tiers?.length ? `<div class="detail-section"><h3>Pricing Plans</h3>${product.tiers.map(tier => `
                 <div class="tier-detail">
                   <div class="tier-info"><h4>${escapeHtml(tier.title)}</h4><p>${escapeHtml(tier.description)}</p></div>
                   <div class="tier-price-lg">$${tier.price}</div>
                   <button class="select-btn">Select Plan</button>
-                </div>`).join("")}
-              </div>`;
+                </div>`).join("")}</div>` : ""}`;
             document.getElementById("detailModal").style.display = "block";
           }
         } catch (e) { alert("Error loading details"); }

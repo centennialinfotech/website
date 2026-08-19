@@ -41,6 +41,25 @@ app.use('/api/services', authenticate, serviceRoutes);
 app.use('/api/products', authenticate, productRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Clean URLs Middleware (similar to server.py)
+app.use((req, res, next) => {
+  const cleanPath = req.path.split('?')[0];
+  if (cleanPath === '/home') {
+    req.url = req.url.replace('/home', '/index.html');
+    return next();
+  }
+  
+  const hasExt = path.extname(cleanPath) !== "";
+  if (!hasExt && cleanPath !== '/') {
+    const fs = require('fs');
+    const filePath = path.join(__dirname, "../../", `${cleanPath}.html`);
+    if (fs.existsSync(filePath)) {
+      req.url = req.url.replace(cleanPath, `${cleanPath}.html`);
+    }
+  }
+  next();
+});
+
 // Serve static files from frontend
 app.use(express.static(path.join(__dirname, "../../")));
 
