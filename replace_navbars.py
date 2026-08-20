@@ -58,7 +58,7 @@ new_navbar_template = """    <!-- ==================== NAVBAR START ============
             <!-- Careers -->
             <li class="nav-item ms-3">
               <a
-                href="https://centennial-infotech-hiring.netlify.app/jobs"
+                href="https://career.centennialinfotech.com/jobs"
                 class="nav-cta-btn careers-btn"
               >
                 Careers
