@@ -9,7 +9,7 @@ html_files = glob.glob(os.path.join(target_dir, "*.html"))
 new_navbar_template = """    <!-- ==================== NAVBAR START ==================== -->
     <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
       <div class="container">
-        <a class="navbar-brand" href="home">
+        <a class="navbar-brand" href="index">
           <img src="img/logo.png" alt="logo" />
         </a>
 
@@ -25,7 +25,7 @@ new_navbar_template = """    <!-- ==================== NAVBAR START ============
         <div class="collapse navbar-collapse" id="navbarMain">
           <ul class="navbar-nav ms-auto align-items-center">
             <li class="nav-item">
-              <a class="nav-link" href="home">Home</a>
+              <a class="nav-link" href="index">Home</a>
             </li>
 
             <li class="nav-item">

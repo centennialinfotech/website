@@ -1,3 +1,17 @@
+// ── Keep Render backend alive (prevents 50s+ cold-start delay) ──
+(function keepBackendAlive() {
+    const BACKEND_URL = "https://website-backend-wk8l.onrender.com";
+
+    function ping() {
+        fetch(BACKEND_URL + "/health", { method: "GET" })
+            .catch(() => {}); // silently ignore any errors
+    }
+
+    ping(); // ping immediately on page load
+    setInterval(ping, 10 * 60 * 1000); // ping every 10 minutes
+})();
+// ────────────────────────────────────────────────────────────────
+
 document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     const images = document.querySelectorAll('.imgtt .imgt');

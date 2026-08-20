@@ -16,7 +16,7 @@ for filepath in html_files:
     original_content = content
     
     # First, handle the special case for index.html -> home
-    content = content.replace('href="index.html"', 'href="home"')
+    content = content.replace('href="index.html"', 'href="index"')
     content = content.replace('href="index.html#', 'href="home#')
     
     # Next, handle any other .html links
