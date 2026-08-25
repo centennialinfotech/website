@@ -2788,17 +2788,28 @@ padding: 20px;
 /*    padding: 40px 0;*/
     width: auto;
     box-sizing: border-box;
+    overflow: hidden;
 }
+
+/* The ul must have no padding/margin so 50% aligns to true center */
+.timeline ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
 .timeline:before {
     content: '';
     position: absolute;
     left: 50%;
+    margin-left: -1px;
     width: 2px;
     height: 100%;
     top: 57px;
-    /* bottom: 100px; */
     height: 80%;
     background: #004770;
+    z-index: 1;
 }
 
 
@@ -2821,7 +2832,7 @@ padding: 20px;
     text-align: center;
 }
 
-/* Odd items (left side) - dark blue filled */
+/* Odd items (left side) — circle sits at right edge of the 50%-wide li */
 .timeline ul li:nth-child(odd):before {
     right: -19px;
     background: #004770;
@@ -2829,7 +2840,7 @@ padding: 20px;
     box-shadow: 0 0 0 3px #004770;
 }
 
-/* Even items (right side) - light grey outlined */
+/* Even items (right side) — circle sits at left edge of the 50%-wide li */
 .timeline ul li:nth-child(even):before {
     left: -19px;
     background: #F3F3F3;
@@ -2944,13 +2955,15 @@ padding: 20px;
     .timeline ul li:nth-child(odd):before {
         top: -18px;
         left: -30px;
+        right: auto;
+        transform: none;
     }
 
 
     .timeline ul li:nth-child(even):before {
         top: -18px;
-        left: -31px;
-
+        left: -30px;
+        transform: none;
     }
 
 
@@ -5370,6 +5383,9 @@ border-radius: 32px ;
 .main-navbar{
     background:#ffffff;
     box-shadow:0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .main-navbar .nav-link{
@@ -5414,4 +5430,96 @@ border-radius: 32px ;
 .contact-btn:hover{
     background:#1177BD;
     color:#fff !important;
+}
+
+/* ==================== UNIVERSAL PAGE HERO ==================== */
+.page-hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 55%, #0c2d56 100%);
+    padding: 80px 0 64px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -5%;
+    width: 440px;
+    height: 440px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: 5%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.page-hero .breadcrumb__link ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.page-hero .breadcrumb__link ul li {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+}
+
+.page-hero .breadcrumb__link ul li a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.page-hero .breadcrumb__link ul li a:hover { color: #fff; }
+
+.page-hero .breadcrumb__link ul li:not(:last-child)::after {
+    content: '/';
+    margin-left: 8px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.page-hero .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.page-hero .hero-badge i { font-size: 0.78rem; }
+
+.page-hero .hero-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.page-hero .hero-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+    max-width: 560px;
+    line-height: 1.7;
+    margin: 0;
 }

@@ -66,7 +66,7 @@
     <script src="script.js"></script>
     <script src="product.js"></script>
     <!-- css-->
-    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="style.css?v=3" />
   </head>
 
   <body>
@@ -75,7 +75,7 @@
     <!-- top Header-->
     <div class="top-header"></div>
     <!-- Header-->
-    <!-- ==================== NAVBAR START ==================== -->
+            <!-- ==================== NAVBAR START ==================== -->
     <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
       <div class="container">
         <a class="navbar-brand" href="index">
@@ -108,20 +108,25 @@
             <li class="nav-item">
               <a class="nav-link" href="client">Clients</a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="servicetosupport"
-                >ServiceToSupport</a
-              >
+              <a class="nav-link" href="servicetosupport">Services</a>
             </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="productData">Products</a>
             </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="pricing">Pricing</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="aboutus">About Us</a>
+              <a class="nav-link active" href="aboutus">About</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="sms-consent">SMS</a>
             </li>
 
             <!-- Careers -->
@@ -146,26 +151,28 @@
     </nav>
     <!-- ==================== NAVBAR END ==================== -->
 
-    <!-- service bg  -->
-    <section
-      class="breadcrumb-wrapper hero-page overflow-hidden bg-cover bg-blue"
-    >
-      <div class="">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="breadcrumb-content">
-                <div class="breadcrumb__link">
-                  <ul>
-                    <li><a href="/">Home </a></li>
-                    <li>About Us</li>
-                  </ul>
-                </div>
-              </div>
 
-              <h2 class="title">About Us</h2>
-              <!-- <p>Here's a list to help you along your way</p> -->
+
+    <!-- service bg  -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <div class="breadcrumb__link">
+              <ul>
+                <li><a href="index">Home</a></li>
+                <li>About Us</li>
+              </ul>
             </div>
+            <div class="hero-badge">
+              <i class="fas fa-building"></i>
+              Who We Are
+            </div>
+            <h1 class="hero-title">Empowering Growth<br />Through Technology</h1>
+            <p class="hero-subtitle">
+              Discover our story, mission, and the passionate team dedicated to 
+              delivering innovative solutions for modern business problems.
+            </p>
           </div>
         </div>
       </div>
@@ -625,49 +632,430 @@
 
     <!--timeline section end -->
 
-    <!-- footer section-->
+    <!-- ==================== LEGAL POLICIES SECTION START ==================== -->
+    <section class="legal-section">
+      <div class="container">
+        <div class="legal-header">
+          <span class="legal-eyebrow">Transparency &amp; Trust</span>
+          <h2 class="legal-title">Our Legal Policies</h2>
+          <p class="legal-subtitle">
+            We are committed to being transparent about how we handle your data and what governs
+            our services. Read our full policies below.
+          </p>
+        </div>
+
+        <div class="legal-cards">
+
+          <!-- Privacy Policy Card -->
+          <a href="privacy-policy" class="legal-card legal-card--privacy" id="legal-card-privacy">
+            <div class="legal-card__illu" aria-hidden="true">
+              <!-- Isometric-style SVG illustration: Privacy / Lock -->
+              <svg viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illu-svg">
+                <!-- Screen / document -->
+                <rect x="30" y="20" width="130" height="100" rx="10" fill="#dbeafe" />
+                <rect x="30" y="20" width="130" height="22" rx="10" fill="#3b82f6" />
+                <!-- lines -->
+                <rect x="48" y="56" width="94" height="6" rx="3" fill="#93c5fd" />
+                <rect x="48" y="70" width="75" height="6" rx="3" fill="#bfdbfe" />
+                <rect x="48" y="84" width="85" height="6" rx="3" fill="#bfdbfe" />
+                <rect x="48" y="98" width="60" height="6" rx="3" fill="#dbeafe" />
+                <!-- Lock badge -->
+                <circle cx="160" cy="90" r="28" fill="#2563eb" />
+                <rect x="150" y="87" width="20" height="16" rx="4" fill="#fff" />
+                <path d="M155 87v-5a5 5 0 0 1 10 0v5" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="160" cy="95" r="2.5" fill="#2563eb" />
+                <!-- Shield -->
+                <path d="M40 145 l18-10 l18 10 v12 a18 18 0 0 1-36 0z" fill="#60a5fa" opacity="0.7"/>
+                <path d="M50 155 l4 4 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Person 1 -->
+                <circle cx="100" cy="148" r="8" fill="#93c5fd" />
+                <rect x="91" y="157" width="18" height="18" rx="4" fill="#60a5fa" />
+                <!-- Person 2 -->
+                <circle cx="122" cy="148" r="8" fill="#60a5fa" />
+                <rect x="113" y="157" width="18" height="18" rx="4" fill="#3b82f6" />
+                <!-- Handshake line -->
+                <line x1="109" y1="162" x2="113" y2="162" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="legal-card__body">
+              <div class="legal-card__icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="legal-card__title">Privacy Policy</h3>
+              <p class="legal-card__desc">
+                Learn how we collect, use, store, and protect your personal information across
+                our recruitment, staffing, and IT services.
+              </p>
+              <div class="legal-card__badges">
+                <span class="legal-badge">Data Collection</span>
+                <span class="legal-badge">SMS Consent</span>
+                <span class="legal-badge">Your Rights</span>
+              </div>
+              <div class="legal-card__cta">
+                Read Privacy Policy <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </a>
+
+          <!-- Terms & Conditions Card -->
+          <a href="terms-and-conditions" class="legal-card legal-card--terms" id="legal-card-terms">
+            <div class="legal-card__illu" aria-hidden="true">
+              <!-- Isometric-style SVG illustration: Terms / Document & Laptop -->
+              <svg viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illu-svg">
+                <!-- Laptop base -->
+                <rect x="28" y="110" width="140" height="10" rx="4" fill="#0d9488" />
+                <!-- Laptop screen -->
+                <rect x="48" y="28" width="100" height="82" rx="8" fill="#ccfbf1" />
+                <rect x="48" y="28" width="100" height="18" rx="8" fill="#0d9488" />
+                <!-- Document scroll -->
+                <rect x="65" y="52" width="66" height="52" rx="4" fill="#fff" />
+                <rect x="72" y="60" width="52" height="4" rx="2" fill="#0d9488" opacity="0.7"/>
+                <rect x="72" y="69" width="42" height="3" rx="2" fill="#99f6e4"/>
+                <rect x="72" y="76" width="48" height="3" rx="2" fill="#99f6e4"/>
+                <rect x="72" y="83" width="38" height="3" rx="2" fill="#ccfbf1"/>
+                <rect x="72" y="90" width="44" height="3" rx="2" fill="#ccfbf1"/>
+                <!-- Signature line -->
+                <path d="M72 100 q10-6 20 0 q10 6 20 0" stroke="#0d9488" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <!-- Gear icon -->
+                <circle cx="170" cy="115" r="14" fill="#0d9488" opacity="0.15"/>
+                <circle cx="170" cy="115" r="6" fill="#0d9488" opacity="0.5"/>
+                <!-- Magnifier -->
+                <circle cx="38" cy="140" r="12" stroke="#14b8a6" stroke-width="3" fill="none"/>
+                <line x1="47" y1="149" x2="56" y2="158" stroke="#14b8a6" stroke-width="3" stroke-linecap="round"/>
+                <!-- Plant pot -->
+                <rect x="176" y="146" width="20" height="14" rx="3" fill="#d1fae5"/>
+                <path d="M186 146 q-6-8 -6-18" stroke="#10b981" stroke-width="2" fill="none"/>
+                <path d="M186 138 q4-6 12-8" stroke="#10b981" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="legal-card__body">
+              <div class="legal-card__icon legal-card__icon--teal">
+                <i class="fas fa-file-contract"></i>
+              </div>
+              <h3 class="legal-card__title">Terms &amp; Conditions</h3>
+              <p class="legal-card__desc">
+                Understand the rules governing your use of our website, recruitment services,
+                staffing engagements, and intellectual property.
+              </p>
+              <div class="legal-card__badges">
+                <span class="legal-badge legal-badge--teal">Website Use</span>
+                <span class="legal-badge legal-badge--teal">IP Rights</span>
+                <span class="legal-badge legal-badge--teal">Liability</span>
+              </div>
+              <div class="legal-card__cta legal-card__cta--teal">
+                Read Terms &amp; Conditions <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </a>
+
+          <!-- SMS Consent Card -->
+          <a href="sms-consent" class="legal-card legal-card--sms" id="legal-card-sms">
+            <div class="legal-card__illu" aria-hidden="true">
+              <!-- Isometric-style SVG illustration: SMS / Mobile -->
+              <svg viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="illu-svg">
+                <!-- Phone body -->
+                <rect x="75" y="20" width="70" height="130" rx="12" fill="#dcfce7" />
+                <rect x="75" y="20" width="70" height="130" rx="12" fill="#22c55e" opacity="0.1" />
+                <rect x="80" y="25" width="60" height="120" rx="8" fill="#fff" />
+                <!-- Screen content -->
+                <rect x="85" y="32" width="50" height="20" rx="4" fill="#bbf7d0" />
+                <rect x="85" y="56" width="35" height="4" rx="2" fill="#86efac" />
+                <rect x="85" y="64" width="45" height="4" rx="2" fill="#86efac" />
+                <rect x="85" y="72" width="25" height="4" rx="2" fill="#bbf7d0" />
+                <!-- Chat bubbles -->
+                <path d="M40 85 h40 v30 h-30 l-10 10 v-40" fill="#22c55e" />
+                <rect x="48" y="94" width="24" height="4" rx="2" fill="#fff" />
+                <rect x="48" y="102" width="16" height="4" rx="2" fill="#fff" />
+                
+                <path d="M180 125 h-40 v-30 h30 l10 -10 v40" fill="#4ade80" opacity="0.8" />
+                <rect x="148" y="102" width="24" height="4" rx="2" fill="#fff" />
+                <rect x="148" y="110" width="16" height="4" rx="2" fill="#fff" />
+              </svg>
+            </div>
+            <div class="legal-card__body">
+              <div class="legal-card__icon legal-card__icon--green">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+              <h3 class="legal-card__title">SMS Consent</h3>
+              <p class="legal-card__desc">
+                Opt in to receive timely SMS updates about recruitment opportunities and interview schedules.
+              </p>
+              <div class="legal-card__badges">
+                <span class="legal-badge legal-badge--green">Job Alerts</span>
+                <span class="legal-badge legal-badge--green">Interviews</span>
+              </div>
+              <div class="legal-card__cta legal-card__cta--green">
+                Manage SMS Consent <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* =====================================================
+         Legal Policies Section – About Us page
+         ===================================================== */
+      .legal-section {
+        background: linear-gradient(180deg, #f0f4ff 0%, #f8faff 100%);
+        padding: 80px 0 88px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .legal-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #2563eb 0%, #14b8a6 50%, #2563eb 100%);
+        background-size: 200% 100%;
+        animation: shimmer 4s linear infinite;
+      }
+
+      @keyframes shimmer {
+        0%   { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+
+      .legal-header {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+
+      .legal-eyebrow {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #2563eb;
+        background: rgba(37, 99, 235, 0.08);
+        padding: 4px 16px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+      }
+
+      .legal-title {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        font-weight: 700;
+        color: #0f1e3c;
+        margin: 0 0 14px;
+        letter-spacing: -0.4px;
+      }
+
+      .legal-subtitle {
+        font-size: 1rem;
+        color: #6b7a99;
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* ---------- Card grid ---------- */
+      .legal-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      /* ---------- Individual card ---------- */
+      .legal-card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 24px;
+        overflow: hidden;
+        text-decoration: none !important;
+        box-shadow: 0 6px 32px rgba(10, 22, 40, 0.08);
+        border: 1.5px solid transparent;
+        transition: transform 0.28s cubic-bezier(.22,.68,0,1.2),
+                    box-shadow 0.28s ease,
+                    border-color 0.28s ease;
+        position: relative;
+      }
+
+      .legal-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 56px rgba(10, 22, 40, 0.14);
+        text-decoration: none !important;
+      }
+
+      .legal-card--privacy:hover  { border-color: rgba(37, 99, 235, 0.3); }
+      .legal-card--terms:hover    { border-color: rgba(13, 148, 136, 0.3); }
+      .legal-card--sms:hover      { border-color: rgba(34, 197, 94, 0.3); }
+
+      /* ---------- Illustration area ---------- */
+      .legal-card__illu {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        padding: 28px 28px 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-height: 160px;
+      }
+
+      .legal-card--terms .legal-card__illu {
+        background: linear-gradient(135deg, #f0fdf9 0%, #ccfbf1 100%);
+      }
+      .legal-card--sms .legal-card__illu {
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      }
+
+      .illu-svg {
+        width: 100%;
+        max-width: 180px;
+        display: block;
+        filter: drop-shadow(0 8px 20px rgba(10,22,40,0.10));
+      }
+
+      /* ---------- Card body ---------- */
+      .legal-card__body {
+        padding: 24px 24px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex: 1;
+      }
+
+      .legal-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, #2563eb, #4e80ee);
+        color: #fff;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
+      }
+
+      .legal-card__icon--teal {
+        background: linear-gradient(135deg, #0d9488, #14b8a6);
+        box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28);
+      }
+      
+      .legal-card__icon--green {
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+        box-shadow: 0 4px 14px rgba(34, 197, 94, 0.28);
+      }
+
+      .legal-card__title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #0f1e3c;
+        margin: 0;
+      }
+
+      .legal-card__desc {
+        font-size: 0.92rem;
+        color: #6b7a99;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* ---------- Badges ---------- */
+      .legal-card__badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 4px;
+      }
+
+      .legal-badge {
+        font-size: 0.74rem;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 20px;
+        background: rgba(37, 99, 235, 0.08);
+        color: #2563eb;
+        letter-spacing: 0.3px;
+      }
+
+      .legal-badge--teal {
+        background: rgba(13, 148, 136, 0.08);
+        color: #0d9488;
+      }
+      
+      .legal-badge--green {
+        background: rgba(34, 197, 94, 0.08);
+        color: #16a34a;
+      }
+
+      /* ---------- CTA row ---------- */
+      .legal-card__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #2563eb;
+        margin-top: auto;
+        padding-top: 8px;
+        transition: gap 0.2s;
+      }
+
+      .legal-card__cta--teal {
+        color: #0d9488;
+      }
+      
+      .legal-card__cta--green {
+        color: #16a34a;
+      }
+
+      .legal-card:hover .legal-card__cta {
+        gap: 12px;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 900px) {
+        .legal-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        .legal-cards {
+          grid-template-columns: 1fr;
+        }
+        .legal-card__illu {
+          min-height: 140px;
+        }
+      }
+    </style>
+    <!-- ==================== LEGAL POLICIES SECTION END ==================== -->
+
+        <!-- footer section -->
     <div class="footer pt-72 pb-72">
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
             <div class="section-footer">
-              <a href="#"> <img src="img/logo.png" /></a>
+              <a href="#"><img src="img/logo.png" /></a>
             </div>
             <div class="icons_footer">
               <ul>
                 <li>
-                  <a
-                    href="https://twitter.com/centennialits"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://twitter.com/centennialits" target="_blank" rel="noopener noreferrer">
                     <img src="img/twitter.png" alt="Twitter" />
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://www.facebook.com/centennialinfotech"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://www.facebook.com/centennialinfotech" target="_blank" rel="noopener noreferrer">
                     <img src="img/facebook.png" alt="Facebook" />
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://www.youtube.com/@centennialinfotech"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://www.youtube.com/@centennialinfotech" target="_blank" rel="noopener noreferrer">
                     <img src="img/youtube.png" alt="YouTube" />
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://www.instagram.com/cententialinfotech"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://www.instagram.com/cententialinfotech" target="_blank" rel="noopener noreferrer">
                     <img src="img/instagram.png" alt="Instagram" />
                   </a>
                 </li>
@@ -679,32 +1067,24 @@
             <div class="section-footer">
               <ul>
                 <b><a href="#">Quick links</a></b>
-                <li>
-                  <a href="services"
-                    >Solutions</a
-                  >
-                </li>
-                <li>
-                  <a href="blogs">Blogs</a>
-                </li>
-                <li>
-                  <a href="client">clients</a>
-                </li>
-                <li>
-                  <a href="aboutus">about us</a>
-                </li>
-                <li>
-                  <a href="contact">contact</a>
-                </li>
+                <li><a href="services">Solutions</a></li>
+                <li><a href="blogs">Blogs</a></li>
+                <li><a href="client">clients</a></li>
+                <li><a href="aboutus">about us</a></li>
+                <li><a href="contact">contact</a></li>
+                <li><a href="privacy-policy">Privacy Policy</a></li>
+                <li><a href="terms-and-conditions">Terms &amp; Conditions</a></li>
+                <li><a href="sms-consent">SMS Consent</a></li>
               </ul>
             </div>
           </div>
+
           <div class="col-sm-4 col-md-2 col-lg-2 col-xl-3 col-xxl-3">
             <div class="section-footer">
               <div class="section-footer">
                 <ul>
                   <b><a href="services">Our Services</a></b>
-                  <li><a href="services">UI/UX Design </a></li>
+                  <li><a href="services">UI/UX Design</a></li>
                   <li><a href="services">Web Development</a></li>
                   <li><a href="services">App Development</a></li>
                   <li><a href="services">Quality Assurance</a></li>
@@ -723,14 +1103,15 @@
                   C-124, VIII, Phase-8, Industrial Area, Sector 73, Sahibzada
                   Ajit Singh Nagar, Punjab 140308
                 </li>
-                <span class="email-ft"><b>sales@centennialinfotech.com</b></span
-                ><br />
-                <span><b> +91-81465 11568</b></span>
+                <span class="email-ft"><b>sales@centennialinfotech.com</b></span><br />
+                <span><b>+91-81465 11568</b></span>
               </ul>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <!-- footer section end -->
     </div>
 
     <!-- footer section-->

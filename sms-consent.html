@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SMS Consent | Centennial Infotech</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Opt in to receive SMS communications from Centennial Infotech regarding recruitment opportunities, job applications, interview scheduling, and staffing services."
+    />
+    <meta
+      name="keywords"
+      content="SMS opt-in, SMS consent, Centennial Infotech, recruitment SMS, text message consent"
+    />
+    <meta name="author" content="Centennial Infotech" />
+    <meta property="og:title" content="SMS Consent | Centennial Infotech" />
+    <meta
+      property="og:description"
+      content="Opt in to receive SMS communications from Centennial Infotech."
+    />
+    <meta property="og:image" content="https://centennialinfotech.com/img/logo.png" />
+    <meta property="og:url" content="https://centennialinfotech.com/sms-consent" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SMS Consent | Centennial Infotech" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" sizes="180x180" type="image/x-icon" href="img/logo.png" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="owl.carousel.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="script.js"></script>
+    <script src="product.js"></script>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css?v=3" />
+
+    <style>
+      /* =====================================================
+         SMS Consent Page – styles
+         ===================================================== */
+
+      /* ---------- Hero ---------- */
+      .sms-hero {
+        background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 55%, #0c2d56 100%);
+        padding: 80px 0 64px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sms-hero::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        right: -5%;
+        width: 440px;
+        height: 440px;
+        background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .sms-hero::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: 5%;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .sms-hero .breadcrumb__link ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 16px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .sms-hero .breadcrumb__link ul li {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.9rem;
+      }
+
+      .sms-hero .breadcrumb__link ul li a {
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .sms-hero .breadcrumb__link ul li a:hover { color: #fff; }
+
+      .sms-hero .breadcrumb__link ul li:not(:last-child)::after {
+        content: '/';
+        margin-left: 8px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .sms-hero .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(34, 197, 94, 0.15);
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        color: #86efac;
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 16px;
+        letter-spacing: 0.5px;
+      }
+
+      .sms-hero .hero-badge i { font-size: 0.78rem; }
+
+      .sms-hero .hero-title {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 12px;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+      }
+
+      .sms-hero .hero-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.05rem;
+        max-width: 560px;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* ---------- Page body ---------- */
+      .sms-body {
+        background: #f4f7ff;
+        padding: 64px 0 88px;
+      }
+
+      .sms-page-grid {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 36px;
+        align-items: start;
+      }
+
+      /* =====================================================
+         MAIN OPT-IN FORM CARD
+         ===================================================== */
+      .sms-form-card {
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 6px 40px rgba(10, 22, 40, 0.09);
+        border: 1px solid rgba(59, 130, 246, 0.08);
+        overflow: hidden;
+      }
+
+      /* Card top bar */
+      .sms-form-card__header {
+        background: linear-gradient(135deg, #1e3a5f, #0a1628);
+        padding: 28px 36px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .sms-form-card__header-icon {
+        width: 52px;
+        height: 52px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        color: #86efac;
+        flex-shrink: 0;
+      }
+
+      .sms-form-card__header-text h2 {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0 0 3px;
+      }
+
+      .sms-form-card__header-text p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+        margin: 0;
+      }
+
+      /* Card body */
+      .sms-form-card__body {
+        padding: 36px;
+      }
+
+      /* ---------- Name / Phone inputs ---------- */
+      .sms-field-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .sms-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .sms-field label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #374151;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+      }
+
+      .sms-field label .required {
+        color: #ef4444;
+        margin-left: 2px;
+      }
+
+      .sms-field input,
+      .sms-field select {
+        border: 1.5px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 11px 15px;
+        font-size: 0.95rem;
+        color: #1f2937;
+        font-family: 'Roboto', sans-serif;
+        background: #fafbff;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        outline: none;
+        width: 100%;
+      }
+
+      .sms-field input:focus,
+      .sms-field select:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        background: #fff;
+      }
+
+      .sms-field input::placeholder { color: #9ca3af; }
+
+      /* ---------- Divider ---------- */
+      .sms-divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 24px 0;
+        color: #9ca3af;
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+
+      .sms-divider::before,
+      .sms-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: #e5e7eb;
+      }
+
+      /* =====================================================
+         CONSENT CHECKBOX BLOCK  (the main feature)
+         ===================================================== */
+      .consent-block {
+        background: linear-gradient(135deg, #f0f9ff 0%, #eff6ff 100%);
+        border: 1.5px solid rgba(37, 99, 235, 0.18);
+        border-radius: 16px;
+        padding: 24px 24px 24px 20px;
+        margin-bottom: 28px;
+        position: relative;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .consent-block.is-checked {
+        border-color: rgba(34, 197, 94, 0.4);
+        box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.08);
+        background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      }
+
+      .consent-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      /* Custom checkbox */
+      .consent-label input[type="checkbox"] {
+        display: none;
+      }
+
+      .consent-checkbox-visual {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border: 2px solid #cbd5e1;
+        border-radius: 6px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+        transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+        position: relative;
+      }
+
+      .consent-checkbox-visual::after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+        opacity: 0;
+        transform: scale(0.6);
+        transition: opacity 0.15s, transform 0.15s;
+      }
+
+      .consent-label input[type="checkbox"]:checked ~ .consent-checkbox-visual {
+        background: #22c55e;
+        border-color: #22c55e;
+        box-shadow: 0 2px 8px rgba(34, 197, 94, 0.35);
+      }
+
+      .consent-label input[type="checkbox"]:checked ~ .consent-checkbox-visual::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .consent-text {
+        font-size: 0.93rem;
+        color: #374151;
+        line-height: 1.75;
+      }
+
+      .consent-text .consent-highlight {
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      .consent-text a {
+        color: #2563eb;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+        transition: color 0.18s, border-color 0.18s;
+      }
+
+      .consent-text a:hover {
+        color: #1d4ed8;
+        border-color: #1d4ed8;
+      }
+
+      /* ---------- SMS keywords (STOP / HELP) ---------- */
+      .sms-kw {
+        display: inline-block;
+        background: #1e3a5f;
+        color: #fff;
+        font-weight: 700;
+        padding: 0px 7px;
+        border-radius: 5px;
+        font-size: 0.82rem;
+        letter-spacing: 0.5px;
+        vertical-align: middle;
+      }
+
+      /* ---------- Rates disclaimer line ---------- */
+      .consent-rates {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 14px;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 8px;
+        border: 1px solid rgba(37, 99, 235, 0.1);
+        font-size: 0.8rem;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+
+      .consent-rates i {
+        color: #2563eb;
+        flex-shrink: 0;
+      }
+
+      /* ---------- Submit button ---------- */
+      .sms-submit-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 15px 24px;
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35);
+        transition: opacity 0.2s, transform 0.18s, box-shadow 0.2s;
+        letter-spacing: 0.2px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .sms-submit-btn:disabled {
+        background: linear-gradient(135deg, #9ca3af, #d1d5db);
+        box-shadow: none;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+      .sms-submit-btn:not(:disabled):hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(34, 197, 94, 0.4);
+      }
+
+      .sms-submit-btn:not(:disabled):active {
+        transform: translateY(0);
+      }
+
+      /* ---------- Success state ---------- */
+      .sms-success {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 48px 36px;
+        gap: 16px;
+      }
+
+      .sms-success__icon {
+        width: 72px;
+        height: 72px;
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35);
+        animation: popIn 0.4s cubic-bezier(.22,.68,0,1.4);
+      }
+
+      @keyframes popIn {
+        0%   { transform: scale(0); }
+        100% { transform: scale(1); }
+      }
+
+      .sms-success h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #0f1e3c;
+        margin: 0;
+      }
+
+      .sms-success p {
+        color: #6b7280;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        max-width: 380px;
+        margin: 0;
+      }
+
+      /* =====================================================
+         SIDEBAR INFO PANEL
+         ===================================================== */
+      .sms-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* Info card */
+      .sms-info-card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 4px 20px rgba(10, 22, 40, 0.07);
+        border: 1px solid rgba(59, 130, 246, 0.08);
+      }
+
+      .sms-info-card h4 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: #9ca3af;
+        margin: 0 0 16px;
+      }
+
+      /* Benefit rows */
+      .sms-benefit {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .sms-benefit:last-child { margin-bottom: 0; }
+
+      .sms-benefit__icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      .sms-benefit__icon--blue  { background: rgba(37, 99, 235, 0.1);  color: #2563eb; }
+      .sms-benefit__icon--green { background: rgba(34, 197, 94, 0.1);  color: #16a34a; }
+      .sms-benefit__icon--amber { background: rgba(245, 158, 11, 0.1); color: #d97706; }
+
+      .sms-benefit__text strong {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 2px;
+      }
+
+      .sms-benefit__text span {
+        font-size: 0.82rem;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+
+      /* Quick opt-out panel */
+      .sms-optout-card {
+        background: linear-gradient(135deg, #0a1628, #1e3a5f);
+        border-radius: 18px;
+        padding: 24px;
+        color: #fff;
+      }
+
+      .sms-optout-card h4 {
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: rgba(255,255,255,0.5);
+        margin: 0 0 14px;
+      }
+
+      .optout-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .optout-row:last-of-type { margin-bottom: 0; }
+
+      .optout-kw {
+        background: rgba(255,255,255,0.12);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 4px 14px;
+        border-radius: 8px;
+        letter-spacing: 1px;
+        min-width: 70px;
+        text-align: center;
+      }
+
+      .optout-desc {
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.65);
+        line-height: 1.5;
+      }
+
+      /* Legal links card */
+      .sms-legal-card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 4px 20px rgba(10, 22, 40, 0.07);
+        border: 1px solid rgba(59, 130, 246, 0.08);
+      }
+
+      .sms-legal-card h4 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: #9ca3af;
+        margin: 0 0 14px;
+      }
+
+      .sms-legal-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        text-decoration: none !important;
+        background: #f8faff;
+        border: 1px solid #e8edfa;
+        margin-bottom: 10px;
+        transition: background 0.18s, border-color 0.18s, transform 0.18s;
+        color: inherit;
+      }
+
+      .sms-legal-link:last-child { margin-bottom: 0; }
+
+      .sms-legal-link:hover {
+        background: #eff6ff;
+        border-color: rgba(37, 99, 235, 0.2);
+        transform: translateX(4px);
+        text-decoration: none !important;
+      }
+
+      .sms-legal-link__icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      .sms-legal-link__icon--blue  { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+      .sms-legal-link__icon--teal  { background: rgba(13, 148, 136, 0.1); color: #0d9488; }
+
+      .sms-legal-link__body strong {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #1f2937;
+      }
+
+      .sms-legal-link__body span {
+        font-size: 0.78rem;
+        color: #9ca3af;
+      }
+
+      .sms-legal-link .link-arrow {
+        margin-left: auto;
+        color: #cbd5e1;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+        transition: color 0.18s;
+      }
+
+      .sms-legal-link:hover .link-arrow { color: #2563eb; }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 1024px) {
+        .sms-page-grid {
+          grid-template-columns: 1fr 320px;
+          gap: 24px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .sms-page-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sms-field-group {
+          grid-template-columns: 1fr;
+        }
+
+        .sms-form-card__body {
+          padding: 24px 20px;
+        }
+
+        .sms-form-card__header {
+          padding: 20px 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- top Header -->
+    <div class="top-header"></div>
+
+            <!-- ==================== NAVBAR START ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index">
+          <img src="img/logo.png" alt="logo" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="services">Solutions</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="blogs">Blogs</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="client">Clients</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="servicetosupport">Services</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="productData">Products</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="pricing">Pricing</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus">About</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link active" href="sms-consent">SMS</a>
+            </li>
+
+            <!-- Careers -->
+            <li class="nav-item ms-3">
+              <a
+                href="https://career.centennialinfotech.com/jobs"
+                class="nav-cta-btn careers-btn"
+              >
+                Careers
+              </a>
+            </li>
+
+            <!-- Contact -->
+            <li class="nav-item ms-2">
+              <a href="contact" class="nav-cta-btn contact-btn">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- ==================== NAVBAR END ==================== -->
+
+
+
+    <!-- ==================== HERO ==================== -->
+    <section class="sms-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <div class="breadcrumb__link">
+              <ul>
+                <li><a href="index">Home</a></li>
+                <li>SMS Consent</li>
+              </ul>
+            </div>
+            <div class="hero-badge">
+              <i class="fas fa-mobile-alt"></i>
+              SMS Opt-In
+            </div>
+            <h1 class="hero-title">SMS Communications<br />Opt-In Form</h1>
+            <p class="hero-subtitle">
+              Stay connected with Centennial Infotech. Opt in to receive timely SMS updates
+              about recruitment opportunities, interview schedules, and staffing communications
+              directly to your phone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BODY ==================== -->
+    <section class="sms-body">
+      <div class="container">
+        <div class="sms-page-grid">
+
+          <!-- ====== MAIN FORM CARD ====== -->
+          <div class="sms-form-card" id="sms-form-card">
+
+            <!-- Card header -->
+            <div class="sms-form-card__header">
+              <div class="sms-form-card__header-icon">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+              <div class="sms-form-card__header-text">
+                <h2>SMS Opt-In Consent</h2>
+                <p>Centennial Infotech &mdash; Recruitment &amp; Staffing Communications</p>
+              </div>
+            </div>
+
+            <!-- Form body -->
+            <div class="sms-form-card__body" id="sms-form-body">
+
+              <!-- Name + Phone -->
+              <div class="sms-field-group">
+                <div class="sms-field">
+                  <label for="sms-fname">First Name <span class="required">*</span></label>
+                  <input
+                    type="text"
+                    id="sms-fname"
+                    name="first_name"
+                    placeholder="e.g. Hari"
+                    autocomplete="given-name"
+                  />
+                </div>
+                <div class="sms-field">
+                  <label for="sms-lname">Last Name <span class="required">*</span></label>
+                  <input
+                    type="text"
+                    id="sms-lname"
+                    name="last_name"
+                    placeholder="e.g. Verma"
+                    autocomplete="family-name"
+                  />
+                </div>
+              </div>
+
+              <div class="sms-field-group">
+                <div class="sms-field">
+                  <label for="sms-phone">Mobile Number <span class="required">*</span></label>
+                  <input
+                    type="tel"
+                    id="sms-phone"
+                    name="phone"
+                    placeholder="+91 98765 43210"
+                    autocomplete="tel"
+                  />
+                </div>
+                <div class="sms-field">
+                  <label for="sms-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="sms-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                  />
+                </div>
+              </div>
+
+              <div class="sms-divider">SMS Consent Agreement</div>
+
+              <!-- ====== CONSENT CHECKBOX BLOCK ====== -->
+              <div class="consent-block" id="consent-block">
+                <label class="consent-label" for="sms-consent-checkbox" id="consent-label">
+                  <input
+                    type="checkbox"
+                    id="sms-consent-checkbox"
+                    name="sms_consent"
+                    value="yes"
+                  />
+                  <div class="consent-checkbox-visual" id="consent-visual"></div>
+                  <div class="consent-text">
+                    <span class="consent-highlight">
+                      I agree to receive SMS messages from Centennial Infotech
+                    </span>
+                    regarding recruitment opportunities, job applications, interview scheduling,
+                    staffing communications, and related inquiries. Message frequency varies.
+                    Msg &amp; data rates may apply. Reply
+                    <span class="sms-kw">STOP</span> to unsubscribe or
+                    <span class="sms-kw">HELP</span> for help.
+                    Consent is not a condition of employment or purchase. View our
+                    <a href="terms-and-conditions" target="_blank" rel="noopener noreferrer">
+                      Terms &amp; Conditions
+                    </a>
+                    and
+                    <a href="privacy-policy" target="_blank" rel="noopener noreferrer">
+                      Privacy Policy
+                    </a>.
+                  </div>
+                </label>
+
+                <!-- Rates note -->
+                <div class="consent-rates">
+                  <i class="fas fa-info-circle"></i>
+                  <span>
+                    Standard message &amp; data rates may apply. Frequency of messages depends on
+                    your interaction and job search activity.
+                  </span>
+                </div>
+              </div>
+
+              <!-- Validation message -->
+              <div
+                id="consent-warning"
+                style="display:none; color:#dc2626; font-size:0.85rem; margin-bottom:14px; display:flex; align-items:center; gap:6px;"
+              >
+                <i class="fas fa-exclamation-circle"></i>
+                Please check the consent box before submitting.
+              </div>
+
+              <!-- Submit button -->
+              <button
+                type="button"
+                id="sms-submit-btn"
+                class="sms-submit-btn"
+                disabled
+                onclick="handleSmsSubmit()"
+              >
+                <i class="fas fa-mobile-alt"></i>
+                Confirm SMS Opt-In
+              </button>
+
+              <p style="text-align:center; font-size:0.8rem; color:#9ca3af; margin-top:14px; margin-bottom:0; line-height:1.6;">
+                By submitting, you confirm you are the owner / authorized user of the phone number
+                provided and you agree to the terms above.
+              </p>
+            </div>
+
+            <!-- Success state (hidden by default) -->
+            <div class="sms-success" id="sms-success">
+              <div class="sms-success__icon">
+                <i class="fas fa-check"></i>
+              </div>
+              <h3>You're Opted In!</h3>
+              <p>
+                Thank you for opting in to receive SMS updates from Centennial Infotech. You
+                will receive a confirmation text shortly. Reply
+                <strong>STOP</strong> at any time to unsubscribe.
+              </p>
+              <a href="index" style="margin-top:8px; font-size:0.9rem; color:#2563eb; font-weight:600;">
+                &larr; Return to Home
+              </a>
+            </div>
+          </div>
+          <!-- /sms-form-card -->
+
+          <!-- ====== SIDEBAR ====== -->
+          <aside class="sms-sidebar">
+
+            <!-- Benefits -->
+            <div class="sms-info-card">
+              <h4>What You'll Receive</h4>
+
+              <div class="sms-benefit">
+                <div class="sms-benefit__icon sms-benefit__icon--blue">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="sms-benefit__text">
+                  <strong>Job Opportunities</strong>
+                  <span>Relevant openings matched to your profile and skills</span>
+                </div>
+              </div>
+
+              <div class="sms-benefit">
+                <div class="sms-benefit__icon sms-benefit__icon--green">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="sms-benefit__text">
+                  <strong>Interview Scheduling</strong>
+                  <span>Reminders and confirmations for upcoming interviews</span>
+                </div>
+              </div>
+
+              <div class="sms-benefit">
+                <div class="sms-benefit__icon sms-benefit__icon--amber">
+                  <i class="fas fa-bell"></i>
+                </div>
+                <div class="sms-benefit__text">
+                  <strong>Application Updates</strong>
+                  <span>Status changes on your active job applications</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Opt-out info -->
+            <div class="sms-optout-card">
+              <h4>Manage Your Preferences</h4>
+              <div class="optout-row">
+                <div class="optout-kw">STOP</div>
+                <div class="optout-desc">Unsubscribe from all SMS messages immediately</div>
+              </div>
+              <div class="optout-row">
+                <div class="optout-kw">HELP</div>
+                <div class="optout-desc">Get support or contact information via SMS</div>
+              </div>
+              <p style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin:14px 0 0; line-height:1.6;">
+                Reply to any message with the keyword above. Msg &amp; data rates may apply.
+              </p>
+            </div>
+
+            <!-- Legal links -->
+            <div class="sms-legal-card">
+              <h4>Legal Documents</h4>
+
+              <a
+                href="privacy-policy"
+                class="sms-legal-link"
+                id="sidebar-privacy-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="sms-legal-link__icon sms-legal-link__icon--blue">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="sms-legal-link__body">
+                  <strong>Privacy Policy</strong>
+                  <span>How we collect &amp; protect your data</span>
+                </div>
+                <i class="fas fa-chevron-right link-arrow"></i>
+              </a>
+
+              <a
+                href="terms-and-conditions"
+                class="sms-legal-link"
+                id="sidebar-terms-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="sms-legal-link__icon sms-legal-link__icon--teal">
+                  <i class="fas fa-file-contract"></i>
+                </div>
+                <div class="sms-legal-link__body">
+                  <strong>Terms &amp; Conditions</strong>
+                  <span>Rules governing the use of our services</span>
+                </div>
+                <i class="fas fa-chevron-right link-arrow"></i>
+              </a>
+            </div>
+
+          </aside>
+          <!-- /sidebar -->
+
+        </div>
+        <!-- /sms-page-grid -->
+      </div>
+    </section>
+
+            <!-- footer section -->
+    <div class="footer pt-72 pb-72">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <a href="#"><img src="img/logo.png" /></a>
+            </div>
+            <div class="icons_footer">
+              <ul>
+                <li>
+                  <a href="https://twitter.com/centennialits" target="_blank" rel="noopener noreferrer">
+                    <img src="img/twitter.png" alt="Twitter" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/centennialinfotech" target="_blank" rel="noopener noreferrer">
+                    <img src="img/facebook.png" alt="Facebook" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@centennialinfotech" target="_blank" rel="noopener noreferrer">
+                    <img src="img/youtube.png" alt="YouTube" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/cententialinfotech" target="_blank" rel="noopener noreferrer">
+                    <img src="img/instagram.png" alt="Instagram" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-2 col-lg-2 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <ul>
+                <b><a href="#">Quick links</a></b>
+                <li><a href="services">Solutions</a></li>
+                <li><a href="blogs">Blogs</a></li>
+                <li><a href="client">clients</a></li>
+                <li><a href="aboutus">about us</a></li>
+                <li><a href="contact">contact</a></li>
+                <li><a href="privacy-policy">Privacy Policy</a></li>
+                <li><a href="terms-and-conditions">Terms &amp; Conditions</a></li>
+                <li><a href="sms-consent">SMS Consent</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-2 col-lg-2 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <div class="section-footer">
+                <ul>
+                  <b><a href="services">Our Services</a></b>
+                  <li><a href="services">UI/UX Design</a></li>
+                  <li><a href="services">Web Development</a></li>
+                  <li><a href="services">App Development</a></li>
+                  <li><a href="services">Quality Assurance</a></li>
+                  <li><a href="services">Software Development</a></li>
+                  <li><a href="services">IT Consulting</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+            <div class="section-footer">
+              <ul>
+                <b><a href="#">Office address</a></b>
+                <li>
+                  C-124, VIII, Phase-8, Industrial Area, Sector 73, Sahibzada
+                  Ajit Singh Nagar, Punjab 140308
+                </li>
+                <span class="email-ft"><b>sales@centennialinfotech.com</b></span><br />
+                <span><b>+91-81465 11568</b></span>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer section end -->
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+      (function () {
+        var checkbox   = document.getElementById('sms-consent-checkbox');
+        var submitBtn  = document.getElementById('sms-submit-btn');
+        var block      = document.getElementById('consent-block');
+        var warning    = document.getElementById('consent-warning');
+
+        // Toggle button enabled/disabled and block styling
+        checkbox.addEventListener('change', function () {
+          submitBtn.disabled = !this.checked;
+
+          if (this.checked) {
+            block.classList.add('is-checked');
+            warning.style.display = 'none';
+          } else {
+            block.classList.remove('is-checked');
+          }
+        });
+      })();
+
+      function handleSmsSubmit() {
+        var fname    = document.getElementById('sms-fname').value.trim();
+        var lname    = document.getElementById('sms-lname').value.trim();
+        var phone    = document.getElementById('sms-phone').value.trim();
+        var checkbox = document.getElementById('sms-consent-checkbox');
+        var warning  = document.getElementById('consent-warning');
+
+        // Simple validation
+        if (!fname || !lname || !phone) {
+          alert('Please fill in your First Name, Last Name, and Mobile Number.');
+          return;
+        }
+
+        if (!checkbox.checked) {
+          warning.style.display = 'flex';
+          document.getElementById('consent-block').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        // Hide form body, show success
+        document.getElementById('sms-form-body').style.display = 'none';
+        var success = document.getElementById('sms-success');
+        success.style.display = 'flex';
+      }
+    </script>
+  </body>
+</html>
