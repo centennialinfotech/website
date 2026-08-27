@@ -156,7 +156,7 @@ new_footer_template = """    <!-- footer section -->
                   Ajit Singh Nagar, Punjab 140308
                 </li>
                 <span class="email-ft"><b>sales@centennialinfotech.com</b></span><br />
-                <span><b>+91-81465 11568</b></span>
+                <span><b>U.S.: +1 (419) 847 3416 | India: +91 81465-11568</b></span>
               </ul>
             </div>
           </div>
